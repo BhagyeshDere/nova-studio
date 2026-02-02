@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 /* ============================
-   DESIGN SYSTEM — GLOBAL CSS
-   ============================ */
-
-/* ============================
    CSS RESET
-   ============================ */
+============================ */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +13,7 @@
 
 /* ============================
    ROOT
-   ============================ */
+============================ */
 html {
   width: 100%;
   height: 100%;
@@ -26,37 +22,46 @@ html {
 
 body {
   width: 100%;
-  min-height: 100vh;
-  background: #ffffff;   /* ✅ WHITE BASE */
-  color: #0d0d0d;        /* ✅ BLACK TEXT BASE */
+  min-height: auto;
+  background: #ffffff;
+  color: #0d0d0d;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
+
+  /* Cinematic cursor only for dark pages */
+  cursor: none;
+}
+
+/* Allow normal cursor in forms */
+input,
+textarea,
+button,
+a {
+  cursor: auto;
 }
 
 /* ============================
-   SMOOTH SCROLL SYSTEM (LENIS)
-   ============================ */
+   SMOOTH SCROLL (LENIS)
+============================ */
 #smooth-wrapper {
   width: 100%;
   min-height: 100vh;
   overflow: visible;
   position: relative;
-  background: transparent !important;   /* ✅ FIX */
+  background: transparent !important;
 }
 
 #smooth-content {
   will-change: transform;
-  background: transparent !important;   /* ✅ FIX */
+  background: transparent !important;
 }
 
-
 /* ============================
-   CINEMATIC BIG CURSOR
+   CINEMATIC CURSOR
 ============================ */
-
 .custom-cursor {
   width: 12px;
   height: 12px;
@@ -72,31 +77,27 @@ body {
     width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.35s ease;
-  
-  /* 🔥 THIS IS THE MAGIC */
+
   mix-blend-mode: difference;
 }
 
-/* BIG MODE */
 .cursor-big {
   width: 380px;
   height: 380px;
   background: white;
   opacity: 1;
-  mix-blend-mode: difference;   /* 🔥 inverts colors */
+  mix-blend-mode: difference;
 }
 
-
-
-/* Hide native cursor */
-* {
-  cursor: none;
+/* Disable blend mode on light pages */
+.light-theme .custom-cursor {
+  mix-blend-mode: normal;
+  background: black;
 }
 
 /* ============================
-   TYPOGRAPHY SYSTEM
-   ============================ */
-
+   TYPOGRAPHY
+============================ */
 .big-text {
   font-size: clamp(3rem, 9vw, 11rem);
   line-height: 1;
@@ -110,9 +111,8 @@ body {
 }
 
 /* ============================
-   SECTION SYSTEM
-   ============================ */
-
+   SECTIONS
+============================ */
 .section {
   width: 100%;
   padding: 6vh 8vw;
@@ -130,8 +130,7 @@ body {
 
 /* ============================
    LINKS
-   ============================ */
-
+============================ */
 a {
   text-decoration: none;
   color: inherit;
@@ -139,44 +138,39 @@ a {
 
 /* ============================
    SELECTION
-   ============================ */
-
+============================ */
 ::selection {
-  background: white;
-  color: black;
+  background: black;
+  color: white;
 }
 
 /* ============================
-   SCROLLBAR
-   ============================ */
-
+   SCROLLBAR (LIGHT FRIENDLY)
+============================ */
 body::-webkit-scrollbar {
   width: 10px;
 }
 
 body::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: #f0f0f0;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #444;
+  background: #bbb;
   border-radius: 10px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: #999;
 }
 
 /* ============================
    FIXES
-   ============================ */
-
-/* Prevent scroll freeze */
+============================ */
 main {
   display: block;
 }
 
-/* Navbar must stay interactive */
 nav {
   pointer-events: auto;
 }
@@ -190,8 +184,7 @@ body,
 
 /* ============================
    ANIMATIONS
-   ============================ */
-
+============================ */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -205,26 +198,22 @@ body,
   animation: marquee 20s linear infinite;
 }
 
-
-
 /* ============================
-   WORKS PAGE THEME OVERRIDE
-   ============================ */
-
+   WORKS PAGE THEME
+============================ */
 .works-page {
   background-color: #2f3437;
   color: white;
 }
 
 
+
 /* ============================
-   BLEND MODE ISOLATION FIX
+   DISABLE CURSOR ON LIGHT PAGES
 ============================ */
 
-body,
-main,
-section,
-#smooth-wrapper,
-#smooth-content {
-  isolation: isolate;
+body.light-theme .custom-cursor,
+body.light-theme .cursor-big {
+  display: none !important;
 }
+

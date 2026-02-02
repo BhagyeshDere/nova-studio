@@ -15,20 +15,83 @@ export default function AboutPage() {
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!pageRef.current) return;
+  if (!pageRef.current) return;
 
+  /* ===============================
+     PAGE ENTER — SOFT FADE
+  =============================== */
+  gsap.fromTo(
+    pageRef.current,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+    }
+  );
+
+  /* ===============================
+     SECTION FLOW — CINEMATIC
+  =============================== */
+  gsap.utils.toArray<HTMLElement>(".about-section").forEach((section) => {
     gsap.fromTo(
-      pageRef.current.querySelectorAll(".about-anim"),
+      section,
+      { y: 120, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.4,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+        },
+      }
+    );
+  });
+
+  /* ===============================
+     TEXT REVEAL — HIERARCHY
+  =============================== */
+  gsap.utils.toArray<HTMLElement>(".about-anim").forEach((el) => {
+    gsap.fromTo(
+      el,
       { y: 80, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        stagger: 0.15,
-        duration: 1.2,
+        duration: 1.1,
         ease: "power4.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+        },
       }
     );
-  }, []);
+  });
+
+  /* ===============================
+     IMAGE REVEAL — EDITORIAL
+  =============================== */
+  gsap.utils.toArray<HTMLElement>("img").forEach((img) => {
+    gsap.fromTo(
+      img,
+      { scale: 0.97, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: img,
+          start: "top 90%",
+        },
+      }
+    );
+  });
+
+}, []);
+
 
   return (
     <main ref={pageRef} className="relative w-full overflow-x-hidden bg-white">

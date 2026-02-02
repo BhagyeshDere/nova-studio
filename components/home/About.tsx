@@ -40,43 +40,33 @@ export default function About() {
       <div className="max-w-[1600px] mx-auto">
 
         {/* EDITORIAL FLOW LAYOUT */}
-        <div className="flex flex-col gap-[8vh]">
+        <div className="flex flex-col gap-[10vh]">
 
           {/* PARAGRAPH 1 */}
-          <p className="about-anim text-[19px] leading-[2] text-black/90 text-justify max-w-[1200px]">
+          <p className="about-anim text-[20px] leading-[2.1] text-black/90 text-justify max-w-[1250px]">
             At Reino Studio, we blend technology and art to create innovative
-            designs that open up new possibilities. We understand that sensitivity
-            and technique go hand in hand, working together to benefit your company
-            and customers. Our approach combines strategic thinking with creative
-            execution, ensuring every solution is both functional and emotionally
-            engaging.
+            digital experiences that open up new possibilities for brands and
+            businesses. We believe sensitivity and technique must work together —
+            strategy guiding creativity, and creativity enhancing strategy. Every
+            project we design is built to be functional, emotionally engaging,
+            and visually refined. Our process combines deep research, design
+            thinking, and technical precision to craft solutions that feel natural
+            to users while delivering measurable business impact. We don’t just
+            create interfaces — we build meaningful digital journeys that connect
+            brands with people.
           </p>
 
           {/* PARAGRAPH 2 */}
-          <p className="about-anim text-[19px] leading-[2] text-black/85 text-justify max-w-[1200px]">
-            Specializing in digital platforms, we also work across various mediums.
-            From planning to development, we cover everything from visual identity
-            to interactive installations. Our multidisciplinary expertise allows
-            us to design cohesive systems that perform seamlessly across physical
-            and digital environments.
-          </p>
-
-          {/* PARAGRAPH 3 */}
-          <p className="about-anim text-[19px] leading-[2] text-black/85 text-justify max-w-[1200px]">
-            Our owners are actively involved throughout the design process,
-            ensuring a passionate and results-driven experience. With our
-            dedicated customer service, close collaboration, and streamlined
-            process, we make things simple and efficient, without unnecessary
-            bureaucracy or complexity.
-          </p>
-
-          {/* PARAGRAPH 4 */}
-          <p className="about-anim text-[19px] leading-[2] text-black/80 text-justify max-w-[1200px]">
-            We believe in building long-term partnerships, not just delivering
-            projects. Our focus is on clarity, trust, and sustainable growth —
-            creating solutions that evolve with your brand and scale with your
-            ambitions. We don’t just design visuals — we design systems, meaning,
-            and long-term value.
+          <p className="about-anim text-[20px] leading-[2.1] text-black/85 text-justify max-w-[1250px]">
+            Specializing in digital platforms, we collaborate across multiple
+            disciplines and mediums. From concept to execution, we handle
+            everything from brand identity and UI systems to interactive
+            experiences and scalable products. Our multidisciplinary team brings
+            together designers, strategists, and developers who work as one
+            unified force. We focus on clarity, collaboration, and long-term
+            value — ensuring the systems we design evolve with your brand. Our
+            goal is simple: to create work that not only looks beautiful today
+            but continues to perform, adapt, and grow in the future.
           </p>
 
         </div>

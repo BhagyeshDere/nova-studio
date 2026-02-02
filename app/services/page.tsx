@@ -1,37 +1,70 @@
 "use client";
 
-/* =========================================
-   SERVICES PAGE — NOVA STUDIO
-   Studio-grade editorial layout
-========================================= */
-
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations";
 import Image from "next/image";
 
-
-
 export default function ServicesPage() {
   const pageRef = useRef<HTMLDivElement>(null);
-
- 
-
 
   useEffect(() => {
     if (!pageRef.current) return;
 
+    /* PAGE INTRO */
     gsap.fromTo(
-      pageRef.current.querySelectorAll(".srv-anim"),
-      { y: 80, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.12,
-        duration: 1.1,
-        ease: "power4.out",
-      }
+      pageRef.current,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
     );
+
+    /* SECTION REVEAL */
+    gsap.utils.toArray<HTMLElement>(".srv-section").forEach((section) => {
+      gsap.fromTo(
+        section,
+        { y: 120, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.4,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+          },
+        }
+      );
+    });
+
+    /* TEXT REVEAL */
+    gsap.utils.toArray<HTMLElement>(".srv-anim").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+          },
+        }
+      );
+    });
+
+    /* IMAGE PARALLAX FEEL */
+    gsap.utils.toArray<HTMLElement>(".img-wrap").forEach((wrap) => {
+      gsap.to(wrap, {
+        y: -40,
+        scrollTrigger: {
+          trigger: wrap,
+          scrub: true,
+        },
+      });
+    });
   }, []);
+
 
   return (
     <main ref={pageRef} className="relative w-full overflow-x-hidden bg-white text-black">
@@ -81,17 +114,29 @@ export default function ServicesPage() {
 <section className="relative w-full py-[12vh] bg-white">
   <div className="relative w-full flex justify-center items-center">
 
-    <Image
-      src="/images/services/team.png"
-      alt="Team"
-      width={2200}          // natural large width
-      height={900}          // natural aspect
-      className="w-full h-auto object-contain"
-      priority
-    />
+    {/* Hover wrapper */}
+    <div className="group relative overflow-hidden rounded-2xl">
+
+      <Image
+        src="/images/services/team.png"
+        alt="Team"
+        width={2200}
+        height={900}
+        priority
+        className="
+          w-full h-auto object-contain
+          transition-all duration-[900ms] ease-out
+          group-hover:scale-105
+          group-hover:rotate-[0.6deg]
+          group-hover:contrast-110
+        "
+      />
+
+    </div>
 
   </div>
 </section>
+
 
 
 {/* ===============================
@@ -115,233 +160,283 @@ export default function ServicesPage() {
   </div>
 
 </section>
-
 {/* ===============================
-   HOW WE COLLABORATE — EDITORIAL LAYOUT (IMPROVED)
+   OUR SERVICES — ULTRA PREMIUM
 =============================== */}
-<section className="relative w-full bg-white px-[8vw] py-[22vh]">
+<section className="srv-section relative w-full bg-white px-[8vw] py-[18vh]">
 
-  <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[10vw] items-center">
+  {/* Heading */}
+  <div className="mb-[12vh] max-w-[1200px]">
+    <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
+      Services
+    </span>
 
-    {/* LEFT — GEOMETRY SYSTEM GRAPHIC */}
-    <div className="relative w-full h-[85vh] flex items-center justify-center">
-      <div className="relative w-full h-full max-w-[720px]">
-        <Image
-          src="/images/services/geometry.png"
-          alt="Design System Geometry"
-          fill
-          className="object-contain"
-          priority
-        />
-      </div>
-    </div>
+    <h2 className="srv-anim text-[clamp(3rem,6vw,6rem)] font-semibold leading-[1] mt-[2vh]">
+      What we do
+    </h2>
+  </div>
 
-    {/* RIGHT — CONTENT */}
-    <div className="flex flex-col gap-[8vh]">
+  <div className="flex flex-col gap-[24vh]">
 
-      {/* TITLE BLOCK */}
-      <div className="space-y-[2vh]">
-        <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
-          Process
-        </span>
+{[
+{
+title:"Web Development",
+desc:"We craft modern websites that merge performance with aesthetics. Every build is optimized for speed, SEO, and scalability. Our focus is creating digital platforms that convert and grow. From startups to enterprises, we deliver reliable web ecosystems.",
+bullets:[
+"Responsive websites",
+"SaaS platforms",
+"E-commerce solutions",
+"Landing pages",
+"Performance optimization",
+"SEO architecture",
+"CMS integrations"
+],
+img:"/images/services/web.png"
+},
 
-        <h2 className="text-[clamp(3.2rem,6vw,7rem)] font-semibold leading-[0.95] tracking-tight text-black">
-          How we<br/>collaborate
-        </h2>
-      </div>
+{
+title:"App Development",
+desc:"We design and develop mobile apps that feel natural and intuitive. Our apps are built for stability and long-term growth. We ensure seamless UX across devices. From idea to App Store launch, we handle everything.",
+bullets:[
+"iOS development",
+"Android development",
+"Cross-platform apps",
+"UI systems",
+"Backend integration",
+"Performance tuning",
+"App deployment"
+],
+img:"/images/services/app1.png"
+},
 
-      {/* ITEMS */}
-      <div className="flex flex-col gap-[6vh] max-w-[640px]">
+{
+title:"UI/UX Design",
+desc:"Design is more than visuals — it’s experience. We craft intuitive flows that guide users naturally. Every interface is research-driven and tested. Our goal is clarity, beauty, and usability.",
+bullets:[
+"UX research",
+"User flows",
+"Wireframing",
+"Prototyping",
+"Design systems",
+"Usability testing",
+"Interaction design"
+],
+img:"/images/services/uiux.png"
+},
 
-        {/* ITEM 1 */}
-        <div className="flex gap-8 group">
-          <div className="pt-1 text-black/40 text-[18px]">▲</div>
-          <div>
-            <h3 className="text-[22px] font-semibold mb-[1vh] text-black">
-              Discovery + Strategy
-            </h3>
-            <p className="text-black/65 leading-[1.9] text-[17px]">
-              We dive deep into your ecosystem to understand goals, audience,
-              culture, and context — transforming insights into clear strategic
-              directions and design frameworks.
-            </p>
-          </div>
-        </div>
+{
+title:"MVP to Product",
+desc:"We help founders turn ideas into real products. MVPs are built fast but with future scale in mind. We validate, iterate, and refine. Then we scale into market-ready products.",
+bullets:[
+"Product strategy",
+"MVP validation",
+"Rapid prototyping",
+"Scalable builds",
+"Feature upgrades",
+"Market readiness",
+"Growth support"
+],
+img:"/images/services/mvp.png"
+},
 
-        {/* ITEM 2 */}
-        <div className="flex gap-8 group">
-          <div className="pt-1 text-black/40 text-[18px]">●</div>
-          <div>
-            <h3 className="text-[22px] font-semibold mb-[1vh] text-black">
-              Branding
-            </h3>
-            <p className="text-black/65 leading-[1.9] text-[17px]">
-              We create identities that communicate meaning, purpose, and emotion —
-              from symbol systems to voice, behavior, and visual language.
-            </p>
-          </div>
-        </div>
+{
+title:"AI & Machine Learning",
+desc:"AI helps businesses work smarter. We build systems that learn and automate. Our models extract insights from data. Intelligent tools that improve decision-making.",
+bullets:[
+"AI agents",
+"Chatbots",
+"Predictive analytics",
+"Recommendations",
+"Data modeling",
+"Automation systems",
+"AI integration"
+],
+img:"/images/services/ai.png"
+},
 
-        {/* ITEM 3 */}
-        <div className="flex gap-8 group">
-          <div className="pt-1 grid grid-cols-2 gap-[3px] opacity-60">
-            <span className="block w-[6px] h-[6px] bg-black"></span>
-            <span className="block w-[6px] h-[6px] bg-black"></span>
-            <span className="block w-[6px] h-[6px] bg-black"></span>
-            <span className="block w-[6px] h-[6px] bg-black"></span>
-          </div>
-          <div>
-            <h3 className="text-[22px] font-semibold mb-[1vh] text-black">
-              UX + UI
-            </h3>
-            <p className="text-black/65 leading-[1.9] text-[17px]">
-              We design intuitive, elegant interfaces where aesthetics and usability
-              merge into seamless digital experiences that feel natural to use.
-            </p>
-          </div>
-        </div>
+{
+title:"Hardware & IoT",
+desc:"We connect digital intelligence to physical devices. Our IoT systems enable real-time data flow. Smart automation improves efficiency. Secure and scalable device ecosystems.",
+bullets:[
+"IoT devices",
+"Embedded systems",
+"Sensor integration",
+"Automation tech",
+"Device dashboards",
+"Firmware solutions",
+"Cloud sync"
+],
+img:"/images/services/iot.png"
+},
 
-        {/* ITEM 4 */}
-        <div className="flex gap-8 group">
-          <div className="pt-1 text-black/40 text-[18px]">◯</div>
-          <div>
-            <h3 className="text-[22px] font-semibold mb-[1vh] text-black">
-              Motion Design
-            </h3>
-            <p className="text-black/65 leading-[1.9] text-[17px]">
-              We bring systems to life through animation, interaction, and movement —
-              creating rhythm, emotion, and clarity across digital environments.
-            </p>
-          </div>
-        </div>
+{
+title:"ERP & CRM",
+desc:"Enterprise tools that centralize operations. We streamline workflows and reporting. Improve customer relationships with smart CRM. Powerful dashboards for better decisions.",
+bullets:[
+"ERP systems",
+"CRM platforms",
+"Workflow automation",
+"Analytics dashboards",
+"Data migration",
+"Role management",
+"System integration"
+],
+img:"/images/services/erp.png"
+},
 
-      </div>
+{
+title:"Resource Outsourcing",
+desc:"Scale your team without hiring overhead. Our experts integrate smoothly. Flexible and reliable talent support. Long-term collaboration mindset.",
+bullets:[
+"Dedicated teams",
+"Flexible hiring",
+"Senior developers",
+"UI/UX specialists",
+"Project managers",
+"QA engineers",
+"Long-term support"
+],
+img:"/images/services/outsource.png"
+},
 
-    </div>
+{
+title:"Custom Software",
+desc:"Every business is unique — your software should be too. We build tailored digital systems. Secure, scalable, and future-ready. Built exactly around your workflow.",
+bullets:[
+"Enterprise apps",
+"API development",
+"System optimization",
+"Maintenance support",
+"Cloud solutions",
+"Security systems",
+"Custom dashboards"
+],
+img:"/images/services/software.png"
+}
+
+].map((s,i)=>{
+
+const right = i % 2 !== 0
+
+return (
+<div key={i} className="grid lg:grid-cols-2 gap-[10vw] items-center">
+
+{/* IMAGE */}
+<div
+  className={`
+    relative w-full 
+    h-[620px] lg:h-[760px] 
+    rounded-2xl 
+    overflow-hidden 
+    group
+    ${right?"lg:order-2":"lg:order-1"}
+  `}
+>
+  <Image
+    src={s.img}
+    alt={s.title}
+    fill
+    className="
+      object-cover
+      transition-transform
+      duration-[1600ms]
+      ease-out
+      group-hover:scale-110
+    "
+  />
+</div>
+
+{/* TEXT */}
+<div className={`srv-anim max-w-[820px] ${right?"lg:order-1 text-right ml-auto":"text-left"}`}>
+
+  <h3 className="text-[clamp(3rem,4vw,3.6rem)] font-semibold mb-8 leading-tight">
+    {s.title}
+  </h3>
+
+  <p className="text-black/70 text-[20px] leading-[2] mb-10">
+    {s.desc}
+  </p>
+
+  <ul className={`
+    space-y-4 
+    text-black/80 
+    text-[19px] 
+    leading-[1.9]
+    ${right?"inline-block text-left":"text-left"}
+  `}>
+    {s.bullets.map((b,idx)=>(
+      <li key={idx} className="flex gap-4 items-start">
+        <span className="text-[22px] leading-none mt-[6px]">•</span>
+        <span>{b}</span>
+      </li>
+    ))}
+  </ul>
+
+</div>
+
+
+</div>
+)
+
+})}
 
   </div>
 </section>
 
 {/* ===============================
-   WHY WORK WITH US — EDITORIAL (IMPROVED)
+   WHY WORK WITH US — CENTERED EDITORIAL
 =============================== */}
-<section className="relative w-full bg-white px-[8vw] py-[22vh]">
+<section className="relative w-full bg-white px-[8vw] py-[24vh]">
 
-  <div className="max-w-[1700px] mx-auto">
+  <div className="max-w-[1200px] mx-auto text-center">
+
+    {/* Label */}
+    <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
+      Partnership
+    </span>
 
     {/* Title */}
-    <div className="mb-[14vh]">
-      <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
-        Partnership
-      </span>
+    <h2 className="
+      srv-anim
+      text-[clamp(3.5rem,7vw,7rem)]
+      font-semibold
+      leading-[0.95]
+      mt-[3vh]
+      mb-[10vh]
+      text-[#2b2e2f]
+    ">
+      Why work with us
+    </h2>
 
-      <h2 className="srv-anim text-[clamp(3.2rem,6vw,6.5rem)] font-semibold leading-[1] mt-[2vh] text-[#2b2e2f]">
-        Why work with us
-      </h2>
-    </div>
+    {/* Full Description */}
+    <div className="
+      srv-anim
+      text-[20px]
+      leading-[2]
+      text-black/70
+      max-w-[950px]
+      mx-auto
+    ">
+      <p>
+        Our goal is to simplify complexity, add value, and amplify impact.
+        Every delivery is born from a collaborative process — balancing
+        sensitivity, strategy, and execution to create meaningful outcomes
+        with consistency and precision.
+      </p>
 
-    {/* Content grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[10vw]">
-
-      <div className="srv-anim max-w-[640px] text-[18px] leading-[1.9] text-black/70">
-        <p>
-          Our goal is to simplify complexity, add value, and amplify impact.
-          Every delivery is born from a collaborative process — balancing
-          sensitivity, strategy, and execution to create meaningful outcomes
-          with consistency and precision.
-        </p>
-      </div>
-
-      <div className="srv-anim max-w-[640px] text-[18px] leading-[1.9] text-black/70">
-        <p>
-          Working with us is not outsourcing — it’s partnership.
-          We embed ourselves into your process, your culture, and your vision,
-          building long-term systems instead of short-term solutions.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* ===============================
-   SHOWCASE — EDITORIAL (IMPROVED)
-=============================== */}
-<section className="relative w-full bg-white py-[22vh]">
-
-  <div className="max-w-[1700px] mx-auto">
-
-    {/* Headline */}
-    <div className="w-full text-center mb-[14vh]">
-      <h2 className="srv-anim text-[clamp(3rem,6vw,6rem)] font-semibold leading-tight text-black">
-        See how we’ve helped<br />brands go further
-      </h2>
-      <p className="srv-anim mt-[3vh] text-black/60 text-[18px]">
-        Real systems. Real impact. Real growth.
+      <p className="mt-6">
+        Working with us is not outsourcing — it’s partnership.
+        We embed ourselves into your process, your culture, and your vision,
+        building long-term systems instead of short-term solutions.
+        We think with you, design with purpose, and build with care —
+        ensuring every project grows with your brand and evolves over time.
       </p>
     </div>
 
-    {/* Image */}
-    <div className="relative w-full flex justify-center">
-      <div className="relative w-full max-w-[1400px] aspect-[16/9] rounded-2xl overflow-hidden">
-        <Image
-          src="/images/services/showcase.png"
-          alt="Showcase"
-          fill
-          className="object-contain"
-          priority
-        />
-      </div>
-    </div>
-
   </div>
 
 </section>
 
-{/* ===============================
-   LIFESTYLE — CINEMATIC
-=============================== */}
-<section className="relative w-full bg-white py-[22vh] flex justify-center">
-  <div className="relative w-full max-w-[1400px] mx-auto">
-    <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden">
-      <Image
-        src="/images/services/lifestyle.png"
-        alt="Lifestyle"
-        fill
-        className="object-contain"
-        priority
-      />
-    </div>
-  </div>
-</section>
-
-{/* ===============================
-   TECH SHOWCASE — EDITORIAL CTA
-=============================== */}
-<section className="relative w-full bg-white py-[22vh] flex flex-col justify-center items-center">
-
-  <div className="relative w-full max-w-[1400px] mx-auto">
-    <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden">
-      <Image
-        src="/images/services/tech-showcase.png"
-        alt="Tech Showcase"
-        fill
-        className="object-contain"
-        priority
-      />
-    </div>
-  </div>
-
-  {/* Button */}
-  <div className="mt-[10vh]">
-    <button className="px-12 py-5 rounded-full bg-black text-white text-[16px] tracking-wide hover:scale-105 transition-transform duration-300">
-      View All Work →
-    </button>
-  </div>
-
-</section>
 
 
 

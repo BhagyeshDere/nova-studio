@@ -1,124 +1,108 @@
 "use client";
 
-/* =========================================
-   CONTACT PAGE — NOVA STUDIO
-   Image-accurate layout (fixed grid)
-========================================= */
-
-import { useState } from "react";
-
-const interests = [
-  "Site from scratch",
-  "App from scratch",
-  "UX/UI design",
-  "Branding",
-  "Animation 2D",
-  "Animation 3D",
-  "Motion Graphics",
-  "Illustration",
-];
+import { useEffect, useRef } from "react";
+import { gsap } from "@/lib/animations";
 
 export default function ContactPage() {
-  const [selected, setSelected] = useState<string[]>([]);
+  const pageRef = useRef<HTMLDivElement>(null);
 
-  const toggleInterest = (item: string) => {
-    setSelected((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+  useEffect(() => {
+    document.body.classList.add("light-theme");
+
+    if (!pageRef.current) return;
+
+    gsap.fromTo(
+      pageRef.current.querySelectorAll(".reveal"),
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.12, duration: 0.9 }
     );
-  };
+
+    return () => {
+      document.body.classList.remove("light-theme");
+    };
+  }, []);
 
   return (
-    <main className="relative w-full min-h-screen bg-white overflow-x-hidden">
+    <main ref={pageRef} className="bg-[#f3f4f6] text-black min-h-screen">
 
-      {/* ===============================
-         HEADER SECTION
-      =============================== */}
-      <section className="relative w-full px-[6vw] pt-[18vh]">
-
-        {/* Title */}
-        <h1 className="text-[clamp(4rem,7vw,7rem)] font-semibold leading-[1.05] tracking-tight text-black">
-          Hey! Tell us all <br /> the things<span className="ml-2">.</span>
-        </h1>
-
-        {/* Address */}
-        <div className="mt-[6vh] text-black text-[17px] space-y-1">
-          <p>Avenida San Martin. 830, 102</p>
-          <p>Leblon – Rio de Janeiro</p>
-        </div>
-
-        {/* Contact info */}
-        <div className="mt-[6vh] text-black text-[16px] space-y-2">
-          <div className="flex items-center gap-2">
-            <span>✉</span>
-            <span>contact@reinostudio.com</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span>☎</span>
-            <span>+55 21 98479-6999</span>
-          </div>
-        </div>
-
-      </section>
-
-      {/* ===============================
-         FORM SECTION
-      =============================== */}
-      <section className="relative w-full px-[6vw] pt-[12vh] pb-[20vh]">
-
-        {/* Interests title */}
-        <p className="text-[18px] text-black mb-[4vh]">
-          I'm interested in...
+      {/* HERO */}
+      <section className="text-center px-[6vw] pt-[14vh]">
+        <p className="reveal uppercase tracking-[0.4em] text-sm text-black/60 mb-6">
+          CONTACT NOVA STUDIO
         </p>
 
-        {/* Interests — 4 + 4 GRID */}
-        <div className="grid grid-cols-4 gap-x-4 gap-y-4 mb-[10vh] max-w-[1100px]">
-          {interests.map((item) => (
-            <button
-              key={item}
-              onClick={() => toggleInterest(item)}
-              className={`w-full px-4 py-2 rounded-full border text-[14px] transition-colors text-center
-                ${
-                  selected.includes(item)
-                    ? "bg-black text-white border-black"
-                    : "bg-white text-black border-black"
-                }
-              `}
-            >
-              {item}
-            </button>
-          ))}
+        <h1 className="reveal text-[clamp(3.5rem,8vw,7rem)] font-semibold">
+          Let’s Build the Future
+          <br /> Together
+        </h1>
+
+        <p className="reveal mt-6 text-black/60 max-w-[640px] mx-auto">
+          Connect with our creative team to craft meaningful digital
+          experiences and high-impact brand identities.
+        </p>
+      </section>
+
+      {/* CONTENT */}
+      <section className="px-[6vw] py-[12vh]">
+        <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-[6vw]">
+
+          {/* FORM */}
+          <div className="reveal bg-white border border-gray-200 rounded-xl p-10 shadow-sm">
+            <h3 className="text-xl font-semibold mb-8">
+              Send Us a Message
+            </h3>
+
+            <div className="space-y-6">
+
+              <input placeholder="Full Name"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-white text-black outline-none focus:ring-2 focus:ring-black/20 focus:border-black transition" />
+
+              <input placeholder="Email Address" type="email"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-white text-black outline-none focus:ring-2 focus:ring-black/20 focus:border-black transition" />
+
+              <input placeholder="Company (Optional)"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-white text-black outline-none focus:ring-2 focus:ring-black/20 focus:border-black transition" />
+
+              <textarea rows={4} placeholder="Project Details"
+                className="w-full mt-2 px-4 py-3 rounded-lg border border-gray-300 bg-white text-black outline-none focus:ring-2 focus:ring-black/20 focus:border-black transition resize-none" />
+
+              <button className="w-full mt-4 bg-black text-white py-4 rounded-lg font-medium hover:bg-gray-800 transition">
+                Submit Inquiry
+              </button>
+
+            </div>
+          </div>
+
+          {/* INFO */}
+          <div className="reveal pt-4">
+            <h3 className="text-2xl font-semibold mb-4">
+              Get in Touch
+            </h3>
+
+            <p className="text-black/60 mb-10">
+              Our experts are ready to collaborate on your next
+              creative project.
+            </p>
+
+            <div className="space-y-8">
+              <div>
+                <p className="text-sm text-blue-600 uppercase mb-2">Email</p>
+                <p className="text-lg font-medium">hello@novastudio.com</p>
+              </div>
+
+              <div>
+                <p className="text-sm text-blue-600 uppercase mb-2">Phone</p>
+                <p className="text-lg font-medium">+91 98765 43210</p>
+              </div>
+
+              <div>
+                <p className="text-sm text-blue-600 uppercase mb-2">Location</p>
+                <p className="text-lg font-medium">Mumbai, Maharashtra, India</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        {/* Inputs */}
-        <div className="max-w-[1100px] space-y-6">
-
-          <input
-            type="text"
-            placeholder="Your name"
-            className="w-full border border-black px-4 py-3 text-[18px] outline-none"
-          />
-
-          <input
-            type="email"
-            placeholder="Your email"
-            className="w-full border border-black px-4 py-3 text-[18px] outline-none"
-          />
-
-          <textarea
-            placeholder="Tell us about your project"
-            rows={6}
-            className="w-full border border-black px-4 py-3 text-[18px] outline-none resize-none"
-          />
-
-        </div>
-
-        {/* Submit */}
-        <div className="mt-[8vh]">
-          <button className="border border-black px-6 py-2 text-[18px] text-black">
-            Send Request
-          </button>
-        </div>
-
       </section>
 
     </main>

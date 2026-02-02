@@ -9,6 +9,7 @@ const links = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Works", href: "/works" },
+  { name: "Career", href: "/career" }, // ✅ Added
   { name: "Contact", href: "/contact" },
 ];
 
@@ -62,14 +63,14 @@ export default function Navbar() {
         {/* LEFT — Logo */}
         <div className="flex items-center gap-4">
           <span
-            className="text-[14px] tracking-[0.4em] uppercase font-semibold"   // 🔥 bigger + bold
+            className="text-[14px] tracking-[0.4em] uppercase font-semibold"
             style={{ color: isDark ? "#ffffff" : "#000000" }}
           >
             NOVA
           </span>
 
           <span
-            className="w-[8px] h-[8px] rounded-full"   // 🔥 bigger dot
+            className="w-[8px] h-[8px] rounded-full"
             style={{ backgroundColor: isDark ? "#ffffff" : "#000000" }}
           ></span>
         </div>
@@ -80,10 +81,10 @@ export default function Navbar() {
             flex 
             items-center 
             gap-[3.2vw] 
-            text-[14px]              /* 🔥 bigger text */
+            text-[14px]
             tracking-[0.28em]
             uppercase
-            font-semibold            /* 🔥 bold */
+            font-semibold
           "
         >
           {links.map((link) => {
@@ -102,7 +103,7 @@ export default function Navbar() {
                 {/* Active dot */}
                 {active && (
                   <span
-                    className="absolute -left-4 text-[14px] leading-none font-bold"  // 🔥 bigger active dot
+                    className="absolute -left-4 text-[14px] leading-none font-bold"
                     style={{ color: isDark ? "#ffffff" : "#000000" }}
                   >
                     •

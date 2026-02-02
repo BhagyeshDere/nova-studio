@@ -61,21 +61,21 @@ export default function SayHi() {
         overflow-hidden
       "
     >
-      {/* HARD BLACK BACKGROUND LAYER */}
+      {/* HARD BLACK BACKGROUND */}
       <div className="absolute inset-0 bg-black z-0" />
 
       {/* CONTENT */}
       <div className="relative z-10 text-white">
 
         {/* Top right contact */}
-        <div className="absolute top-[6vh] right-[6vw] text-sm opacity-80 flex items-center gap-3 text-white">
+        <div className="absolute top-[6vh] right-[6vw] text-sm opacity-80 flex items-center gap-3">
           <span>📞</span>
           <span>+55 21 98479-6999</span>
         </div>
 
-        {/* Massive typography */}
+        {/* Big Title */}
         <div className="relative">
-          <h1 className="hi-line text-[clamp(5rem,14vw,18rem)] leading-[0.85] font-bold tracking-tight whitespace-nowrap text-white">
+          <h1 className="hi-line text-[clamp(5rem,14vw,18rem)] leading-[0.85] font-bold tracking-tight whitespace-nowrap">
             SAY HI!
           </h1>
         </div>
@@ -86,7 +86,7 @@ export default function SayHi() {
           <p>Let’s collaborate and make great stuff.</p>
         </div>
 
-        {/* Divider line */}
+        {/* Divider */}
         <div className="relative mt-[14vh] w-full h-[1px] bg-white/30">
           <div
             ref={dotRef}
@@ -95,36 +95,43 @@ export default function SayHi() {
         </div>
 
         {/* Bottom navigation */}
-        <div className="hi-nav mt-[6vh] flex justify-between items-center text-sm text-white">
+        <div className="hi-nav mt-[6vh] flex justify-between items-center text-sm">
 
           {/* Left links */}
           <div className="flex gap-[3.5vw] uppercase tracking-widest">
-            <Link href="/" className="opacity-70 hover:opacity-100 transition text-white">
+
+            <Link href="/" className="opacity-70 hover:opacity-100 transition">
               Studio
             </Link>
 
-            <Link href="/about" className="opacity-70 hover:opacity-100 transition text-white">
+            <Link href="/about" className="opacity-70 hover:opacity-100 transition">
               About
             </Link>
 
-            <Link href="/services" className="opacity-70 hover:opacity-100 transition text-white">
+            <Link href="/services" className="opacity-70 hover:opacity-100 transition">
               Services
             </Link>
 
-            <Link href="/works" className="opacity-70 hover:opacity-100 transition text-white">
+            <Link href="/works" className="opacity-70 hover:opacity-100 transition">
               Works
             </Link>
 
-            <Link href="/contact" className="opacity-70 hover:opacity-100 transition text-white">
+            {/* ✅ Career added */}
+            <Link href="/career" className="opacity-70 hover:opacity-100 transition">
+              Career
+            </Link>
+
+            <Link href="/contact" className="opacity-70 hover:opacity-100 transition">
               Contact
             </Link>
+
           </div>
 
           {/* Right socials */}
-          <div className="flex gap-6 text-lg opacity-80 text-white">
-            <a href="#" aria-label="Instagram" className="text-white hover:opacity-100 transition">◎</a>
-            <a href="#" aria-label="LinkedIn" className="text-white hover:opacity-100 transition">in</a>
-            <a href="#" aria-label="WhatsApp" className="text-white hover:opacity-100 transition">◯</a>
+          <div className="flex gap-6 text-lg opacity-80">
+            <a href="#" aria-label="Instagram" className="hover:opacity-100 transition">◎</a>
+            <a href="#" aria-label="LinkedIn" className="hover:opacity-100 transition">in</a>
+            <a href="#" aria-label="WhatsApp" className="hover:opacity-100 transition">◯</a>
           </div>
 
         </div>

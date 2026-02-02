@@ -29,13 +29,8 @@ export default function Philosophy() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-black text-white px-[6vw] py-[20vh] relative overflow-hidden"
+      className="w-full bg-black text-white px-[6vw] py-[6vh] relative overflow-hidden"
     >
-      
-
-      {/* Editorial content */}
-      
- 
     </section>
   );
 }
