@@ -32,14 +32,16 @@ export default function About() {
       className="
         relative
         w-full
-        bg-transparent
+        bg-white
         text-black
         overflow-hidden
+        py-[14vh]
+        px-[6vw]
       "
     >
       <div className="max-w-[1600px] mx-auto">
 
-        {/* EDITORIAL FLOW LAYOUT */}
+        {/* EDITORIAL FLOW */}
         <div className="flex flex-col gap-[10vh]">
 
           {/* PARAGRAPH 1 */}
@@ -70,6 +72,7 @@ export default function About() {
           </p>
 
         </div>
+
       </div>
     </section>
   );

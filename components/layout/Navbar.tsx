@@ -9,12 +9,12 @@ const links = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Works", href: "/works" },
-  { name: "Career", href: "/career" }, // ✅ Added
+  { name: "Career", href: "/career" },
   { name: "Contact", href: "/contact" },
 ];
 
-// ✅ Pages that are DARK
-const darkRoutes = ["/", "/works", "/about"];
+// ✅ Pages that use WHITE navbar text
+const darkRoutes = ["/", "/works", "/about", "/career"];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -72,7 +72,7 @@ export default function Navbar() {
           <span
             className="w-[8px] h-[8px] rounded-full"
             style={{ backgroundColor: isDark ? "#ffffff" : "#000000" }}
-          ></span>
+          />
         </div>
 
         {/* RIGHT — Menu */}

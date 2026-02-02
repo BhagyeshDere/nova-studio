@@ -26,11 +26,6 @@ export default function Philosophy() {
     );
   }, []);
 
-  return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-black text-white px-[6vw] py-[6vh] relative overflow-hidden"
-    >
-    </section>
-  );
+  // ✅ Renders nothing → no space → no black band
+  return null;
 }

@@ -43,24 +43,21 @@ export default function Home() {
 {/* ===============================
    ABOUT — REVEAL STORY
 =============================== */}
-<section className="w-full bg-black text-white px-[8vw] py-[10vh]">
+<section className="w-full bg-white text-black px-[8vw] py-[10vh]">
 
   <ScrollReveal>
-    <span className="text-white">
+    <span className="text-black">
       We blend technology and art to create innovative designs that open up new possibilities.
     </span>
   </ScrollReveal>
 
   <div className="mt-[6vh]">
-    <div className="text-white">
+    <div className="text-black">
       <About />
     </div>
   </div>
 
 </section>
-
-
-
 
       {/* ===============================
          PHILOSOPHY — BIG EDITORIAL

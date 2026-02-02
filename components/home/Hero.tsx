@@ -7,31 +7,31 @@ export default function Hero() {
     <section className="relative h-screen w-full bg-[#2f3437] overflow-visible">
 
       {/* HERO TEXT */}
-<div className="relative z-20 h-screen flex items-center px-[8vw]">
-  <motion.h1
-    initial={{ opacity: 0, y: 60 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.2, ease: "easeOut" }}
-    style={{ color: "#ffffff" }}   // ✅ hard force white
-    className="
-      font-semibold 
-      leading-[1.05] 
-      text-[clamp(3rem,7vw,8rem)] 
-      max-w-[85vw]
-      ml-auto
-      text-right
-      !text-white              /* ✅ force tailwind override */
-    "
-  >
-    We craft identity,
-    <br />
-    experience and presence.
-  </motion.h1>
-</div>
+      <div className="relative z-20 h-screen flex items-center px-[8vw]">
 
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="
+            font-semibold
+            text-white
+            leading-[1.05]
+            text-right
+            ml-auto
+            max-w-[80vw]
+            text-[clamp(2.8rem,6vw,6.5rem)]
+          "
+        >
+          We craft identity,
+          <br />
+          experience and presence.
+        </motion.h1>
 
-      {/* UI CONTENT (ANCHOR LAYER) */}
-      <div className="absolute bottom-[8vh] left-0 w-full z-30 px-[8vw] pointer-events-auto">
+      </div>
+
+      {/* UI CONTENT */}
+      <div className="absolute bottom-[8vh] left-0 w-full z-30 px-[8vw]">
 
         <div className="flex items-center justify-between text-white/90">
 
@@ -55,11 +55,9 @@ export default function Hero() {
           </div>
 
           {/* RIGHT LINK */}
-          <div>
-            <button className="text-[14px] text-white/80 hover:text-white transition flex items-center gap-2">
-              ← Our Works
-            </button>
-          </div>
+          <button className="text-[14px] text-white/80 hover:text-white transition">
+            ← Our Works
+          </button>
 
         </div>
       </div>

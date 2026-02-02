@@ -160,157 +160,78 @@ export default function ServicesPage() {
   </div>
 
 </section>
+
 {/* ===============================
-   OUR SERVICES — ULTRA PREMIUM
+   OUR SERVICES — FULL WIDTH EDITORIAL
 =============================== */}
-<section className="srv-section relative w-full bg-white px-[8vw] py-[18vh]">
+<section className="relative w-full bg-white">
 
-  {/* Heading */}
-  <div className="mb-[12vh] max-w-[1200px]">
-    <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
-      Services
-    </span>
+{/* Heading */}
+<div className="px-[8vw] pt-[18vh] pb-[12vh] max-w-[1200px]">
+  <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
+    Services
+  </span>
 
-    <h2 className="srv-anim text-[clamp(3rem,6vw,6rem)] font-semibold leading-[1] mt-[2vh]">
-      What we do
-    </h2>
-  </div>
+  <h2 className="text-[clamp(3rem,6vw,6rem)] font-semibold leading-[1] mt-[2vh]">
+    What we do
+  </h2>
+</div>
 
-  <div className="flex flex-col gap-[24vh]">
+<div className="flex flex-col gap-[22vh]">
 
 {[
 {
 title:"Web Development",
-desc:"We craft modern websites that merge performance with aesthetics. Every build is optimized for speed, SEO, and scalability. Our focus is creating digital platforms that convert and grow. From startups to enterprises, we deliver reliable web ecosystems.",
-bullets:[
-"Responsive websites",
-"SaaS platforms",
-"E-commerce solutions",
-"Landing pages",
-"Performance optimization",
-"SEO architecture",
-"CMS integrations"
-],
+desc:"We craft modern websites blending performance with aesthetics. Optimized for SEO, speed, and scalability.",
+bullets:["Responsive sites","SaaS platforms","E-commerce","SEO structure"],
 img:"/images/services/web.png"
 },
-
 {
 title:"App Development",
-desc:"We design and develop mobile apps that feel natural and intuitive. Our apps are built for stability and long-term growth. We ensure seamless UX across devices. From idea to App Store launch, we handle everything.",
-bullets:[
-"iOS development",
-"Android development",
-"Cross-platform apps",
-"UI systems",
-"Backend integration",
-"Performance tuning",
-"App deployment"
-],
+desc:"Mobile apps that feel natural and intuitive. Built for stability and long-term growth.",
+bullets:["iOS & Android","Cross-platform","Backend APIs","Deployment"],
 img:"/images/services/app1.png"
 },
-
 {
 title:"UI/UX Design",
-desc:"Design is more than visuals — it’s experience. We craft intuitive flows that guide users naturally. Every interface is research-driven and tested. Our goal is clarity, beauty, and usability.",
-bullets:[
-"UX research",
-"User flows",
-"Wireframing",
-"Prototyping",
-"Design systems",
-"Usability testing",
-"Interaction design"
-],
+desc:"Design is experience. We craft intuitive flows focused on clarity and usability.",
+bullets:["UX research","Wireframes","Prototypes","Design systems"],
 img:"/images/services/uiux.png"
 },
-
 {
 title:"MVP to Product",
-desc:"We help founders turn ideas into real products. MVPs are built fast but with future scale in mind. We validate, iterate, and refine. Then we scale into market-ready products.",
-bullets:[
-"Product strategy",
-"MVP validation",
-"Rapid prototyping",
-"Scalable builds",
-"Feature upgrades",
-"Market readiness",
-"Growth support"
-],
+desc:"We help founders transform ideas into real scalable products.",
+bullets:["MVP builds","Validation","Rapid prototyping","Scaling"],
 img:"/images/services/mvp.png"
 },
-
 {
-title:"AI & Machine Learning",
-desc:"AI helps businesses work smarter. We build systems that learn and automate. Our models extract insights from data. Intelligent tools that improve decision-making.",
-bullets:[
-"AI agents",
-"Chatbots",
-"Predictive analytics",
-"Recommendations",
-"Data modeling",
-"Automation systems",
-"AI integration"
-],
+title:"AI & ML",
+desc:"AI systems that learn, automate and deliver insights.",
+bullets:["AI agents","Chatbots","Analytics","Automation"],
 img:"/images/services/ai.png"
 },
-
 {
 title:"Hardware & IoT",
-desc:"We connect digital intelligence to physical devices. Our IoT systems enable real-time data flow. Smart automation improves efficiency. Secure and scalable device ecosystems.",
-bullets:[
-"IoT devices",
-"Embedded systems",
-"Sensor integration",
-"Automation tech",
-"Device dashboards",
-"Firmware solutions",
-"Cloud sync"
-],
+desc:"Smart connected ecosystems linking physical devices with digital intelligence.",
+bullets:["IoT devices","Sensors","Automation","Dashboards"],
 img:"/images/services/iot.png"
 },
-
 {
 title:"ERP & CRM",
-desc:"Enterprise tools that centralize operations. We streamline workflows and reporting. Improve customer relationships with smart CRM. Powerful dashboards for better decisions.",
-bullets:[
-"ERP systems",
-"CRM platforms",
-"Workflow automation",
-"Analytics dashboards",
-"Data migration",
-"Role management",
-"System integration"
-],
+desc:"Enterprise systems that streamline operations and relationships.",
+bullets:["ERP systems","CRM tools","Dashboards","Automation"],
 img:"/images/services/erp.png"
 },
-
 {
 title:"Resource Outsourcing",
-desc:"Scale your team without hiring overhead. Our experts integrate smoothly. Flexible and reliable talent support. Long-term collaboration mindset.",
-bullets:[
-"Dedicated teams",
-"Flexible hiring",
-"Senior developers",
-"UI/UX specialists",
-"Project managers",
-"QA engineers",
-"Long-term support"
-],
+desc:"Scale teams with expert talent and flexible support.",
+bullets:["Dedicated teams","Developers","Designers","QA support"],
 img:"/images/services/outsource.png"
 },
-
 {
 title:"Custom Software",
-desc:"Every business is unique — your software should be too. We build tailored digital systems. Secure, scalable, and future-ready. Built exactly around your workflow.",
-bullets:[
-"Enterprise apps",
-"API development",
-"System optimization",
-"Maintenance support",
-"Cloud solutions",
-"Security systems",
-"Custom dashboards"
-],
+desc:"Tailored software built exactly around your workflow.",
+bullets:["Enterprise apps","APIs","Security","Cloud systems"],
 img:"/images/services/software.png"
 }
 
@@ -319,69 +240,84 @@ img:"/images/services/software.png"
 const right = i % 2 !== 0
 
 return (
-<div key={i} className="grid lg:grid-cols-2 gap-[10vw] items-center">
+<div key={i} className="relative w-full group">
 
-{/* IMAGE */}
-<div
-  className={`
-    relative w-full 
-    h-[620px] lg:h-[760px] 
-    rounded-2xl 
-    overflow-hidden 
-    group
-    ${right?"lg:order-2":"lg:order-1"}
-  `}
->
-  <Image
-    src={s.img}
-    alt={s.title}
-    fill
-    className="
-      object-cover
-      transition-transform
-      duration-[1600ms]
-      ease-out
-      group-hover:scale-110
-    "
-  />
-</div>
+  {/* FULL WIDTH IMAGE */}
+  <div className="relative w-full h-[90vh] overflow-hidden">
 
-{/* TEXT */}
-<div className={`srv-anim max-w-[820px] ${right?"lg:order-1 text-right ml-auto":"text-left"}`}>
 
-  <h3 className="text-[clamp(3rem,4vw,3.6rem)] font-semibold mb-8 leading-tight">
-    {s.title}
-  </h3>
+    {/* IMAGE */}
+    <Image
+      src={s.img}
+      alt={s.title}
+      fill
+      className="
+        object-cover
+        transition-all
+        duration-[1400ms]
+        ease-out
+        group-hover:scale-110
+        group-hover:rotate-[0.6deg]
+        group-hover:contrast-110
+        group-hover:brightness-95
+      "
+    />
 
-  <p className="text-black/70 text-[20px] leading-[2] mb-10">
-    {s.desc}
-  </p>
+    {/* DARK OVERLAY */}
+    <div className="
+      absolute inset-0 bg-black/30
+      transition-all duration-700
+      group-hover:bg-black/10
+    "/>
 
-  <ul className={`
-    space-y-4 
-    text-black/80 
-    text-[19px] 
-    leading-[1.9]
-    ${right?"inline-block text-left":"text-left"}
+  </div>
+
+  {/* TEXT BLOCK */}
+  <div className={`
+    relative -mt-[18vh]
+    px-[8vw]
+    ${right ? "text-right" : "text-left"}
   `}>
-    {s.bullets.map((b,idx)=>(
-      <li key={idx} className="flex gap-4 items-start">
-        <span className="text-[22px] leading-none mt-[6px]">•</span>
-        <span>{b}</span>
-      </li>
-    ))}
-  </ul>
 
-</div>
+    <div className={`
+      bg-white
+      max-w-[720px]
+      p-[4vw]
+      shadow-xl
+      transition-all duration-500
+      group-hover:shadow-2xl
+      ${right ? "ml-auto" : ""}
+    `}>
 
+      <h3 className="text-[clamp(2.5rem,4vw,3.4rem)] font-semibold mb-6">
+        {s.title}
+      </h3>
+
+      <p className="text-black/70 text-[18px] leading-[1.9] mb-6">
+        {s.desc}
+      </p>
+
+      <ul className="space-y-2 text-black/80 text-[17px]">
+        {s.bullets.map((b,idx)=>(
+          <li key={idx} className="flex gap-3">
+            <span>•</span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  </div>
 
 </div>
 )
 
 })}
 
-  </div>
+</div>
 </section>
+
+
 
 {/* ===============================
    WHY WORK WITH US — CENTERED EDITORIAL
