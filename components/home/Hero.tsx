@@ -4,11 +4,17 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full bg-[#2f3437] overflow-visible">
+    <section className="relative min-h-screen w-full bg-[#2f3437] overflow-hidden">
 
       {/* HERO TEXT */}
-      <div className="relative z-20 h-screen flex items-center px-[8vw]">
-
+      <div
+        className="
+          relative z-20
+          min-h-screen
+          flex items-center
+          px-6 sm:px-10 lg:px-[8vw]
+        "
+      >
         <motion.h1
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
@@ -17,31 +23,48 @@ export default function Hero() {
             font-semibold
             text-white
             leading-[1.05]
+            tracking-[-0.02em]
+
             text-right
             ml-auto
-            max-w-[80vw]
-            text-[clamp(2.8rem,6vw,6.5rem)]
+
+            w-full
+            max-w-[1100px]
+
+            text-[clamp(2.6rem,6vw,6.5rem)]
           "
         >
           We craft identity,
           <br />
           experience and presence.
         </motion.h1>
-
       </div>
 
       {/* UI CONTENT */}
-      <div className="absolute bottom-[8vh] left-0 w-full z-30 px-[8vw]">
+      <div
+        className="
+          absolute
+          bottom-[6vh] sm:bottom-[8vh]
+          left-0 w-full z-30
+          px-6 sm:px-10 lg:px-[8vw]
+        "
+      >
+        <div
+          className="
+            flex items-center justify-between
+            text-white/90
 
-        <div className="flex items-center justify-between text-white/90">
-
+            flex-col sm:flex-row
+            gap-6 sm:gap-0
+          "
+        >
           {/* LEFT BUTTONS */}
-          <div className="flex items-center gap-6">
-            <button className="w-[46px] h-[46px] rounded-full border border-white/40 flex items-center justify-center hover:border-white transition">
+          <div className="flex items-center gap-5">
+            <button className="w-[44px] h-[44px] rounded-full border border-white/40 flex items-center justify-center hover:border-white transition">
               ●
             </button>
 
-            <button className="w-[46px] h-[46px] rounded-full border border-white/40 flex items-center justify-center hover:border-white transition">
+            <button className="w-[44px] h-[44px] rounded-full border border-white/40 flex items-center justify-center hover:border-white transition">
               ▶
             </button>
           </div>
@@ -58,7 +81,6 @@ export default function Hero() {
           <button className="text-[14px] text-white/80 hover:text-white transition">
             ← Our Works
           </button>
-
         </div>
       </div>
 

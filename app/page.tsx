@@ -1,10 +1,5 @@
 "use client";
 
-/* =========================================
-   HOME — REACT BITS EXPERIENCE ENGINE
-   Cinematic Studio Homepage
-========================================= */
-
 import Hero from "@/components/home/Hero";
 import WorksShowcase from "@/components/home/WorksShowcase";
 import About from "@/components/home/About";
@@ -13,115 +8,116 @@ import Clients from "@/components/home/Clients";
 import CTA from "@/components/home/CTA";
 import FloatingHero from "@/components/layout/FloatingHero";
 
-/* ===== React Bits Components ===== */
 import BlurText from "@/reactbits/BlurText";
 import ScrollReveal from "@/reactbits/ScrollReveal";
-
 import ServicesFlowing from "@/components/home/ServicesFlowing";
-
-/* =========================================
-   Home Component
-========================================= */
 
 export default function Home() {
   return (
-   <main className="relative w-full overflow-x-hidden">
+    <main className="relative w-full overflow-x-hidden">
 
-
-
-      {/* ===============================
-         HERO — ENTRY SCENE
-      =============================== */}
       <Hero />
-      <FloatingHero /> 
+      <FloatingHero />
 
-      {/* ===============================
-         FEATURED WORKS
-      =============================== */}
       <WorksShowcase />
 
-{/* ===============================
-   ABOUT — REVEAL STORY
-=============================== */}
-<section className="w-full bg-white text-black px-[8vw] py-[10vh]">
+     {/* ABOUT */}
+<section className="w-full bg-white text-black px-6 sm:px-10 lg:px-[8vw] py-[8vh] sm:py-[10vh]">
 
   <ScrollReveal>
-    <span className="text-black">
+    <span
+      className="
+        block
+        font-semibold
+        leading-[1.2]
+        tracking-[-0.02em]
+        text-black
+
+        text-[clamp(2.4rem,6vw,4.5rem)]
+        max-w-[1200px] xl:max-w-[1400px]
+      "
+    >
       We blend technology and art to create innovative designs that open up new possibilities.
     </span>
   </ScrollReveal>
 
-  <div className="mt-[6vh]">
-    <div className="text-black">
-      <About />
-    </div>
+  <div className="mt-[5vh] sm:mt-[6vh]">
+    <About />
   </div>
 
 </section>
 
-      {/* ===============================
-         PHILOSOPHY — BIG EDITORIAL
-      =============================== */}
       <Philosophy />
 
-{/* ===============================
-   CINEMATIC BLUR LINE — EDITORIAL BLOCK
-=============================== */}
-<section className="w-full bg-white text-black px-[8vw] py-[10vh]">
+    {/* ================= CINEMATIC LINE ================= */}
+<section
+  className="
+    w-full
+    bg-white
+    text-black
 
-  <BlurText
-    text="We design experiences, not just interfaces."
-    animateBy="words"
-    direction="top"
-    className="
-      text-[5.5vw]              /* bigger */
-      font-black                /* maximum bold */
-      leading-[1.05]
-      max-w-[1400px]
-      text-black
-      tracking-[-0.02em]        /* tight but powerful */
-      uppercase                 /* cinematic feel */
-    "
-  />
+    px-6 sm:px-10 lg:px-[8vw]
 
-  <div className="mt-[5vh] max-w-[950px] space-y-[3vh] text-black/65 text-[19px] leading-[1.9]">
-    <p>
-      Every interaction is crafted with intention — from the first impression
-      to the final detail. We believe great digital products are not just seen,
-      but felt.
-    </p>
+    /* Reduced vertical space */
+    py-[6vh] sm:py-[8vh] lg:py-[10vh]
+  "
+>
+  <div className="max-w-[1500px] mx-auto">
 
-    <p>
-      Our process blends strategy, design, and technology into seamless
-      experiences that connect emotionally, perform technically, and scale
-      naturally with your brand.
-    </p>
+    {/* Headline */}
+    <BlurText
+      text="We design experiences, not just interfaces."
+      animateBy="words"
+      direction="top"
+      className="
+        font-black
+        uppercase
+        tracking-[-0.02em]
+        leading-[1.05]
+
+        text-[clamp(2.6rem,7vw,5.5rem)]
+        max-w-[1100px]
+      "
+    />
+
+    {/* Body text */}
+    <div
+      className="
+        /* Reduced gap */
+        mt-[3vh] sm:mt-[4vh] lg:mt-[5vh]
+
+        max-w-[720px]
+        space-y-6
+
+        text-black/70
+        leading-[1.9]
+
+        text-[16px]
+        sm:text-[18px]
+        lg:text-[19px]
+      "
+    >
+      <p>
+        Every interaction is crafted with intention — from the first impression
+        to the final detail. We believe great digital products are not just seen,
+        but felt.
+      </p>
+
+      <p>
+        Our process blends strategy, design, and technology into seamless
+        experiences that connect emotionally, perform technically, and scale
+        naturally with your brand.
+      </p>
+    </div>
+
   </div>
-
 </section>
 
 
-      {/* ===============================
-         SERVICES — FLOWING CAPSULE SYSTEM
-      =============================== */}
-      <ServicesFlowing />
+<ServicesFlowing />
+<Clients />
+<CTA />
 
-      {/* ===============================
-         CLIENTS GRID
-      =============================== */}
-      <Clients />
-
-      {/* ===============================
-         CTA — BUSINESS CONVERSION
-      =============================== */}
-      <CTA />
-
-      {/* ===============================
-         FINAL SAY HI — GLOBAL FOOTER
-         (Handled by layout.tsx now)
-      =============================== */}
-      {/* <SayHi /> ❌ REMOVED */}
-      
 
     </main>
   );

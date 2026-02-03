@@ -12,81 +12,90 @@ export default function WorksShowcase() {
 
     gsap.fromTo(
       sectionRef.current.querySelectorAll(".work-img"),
-      { y: 120, opacity: 0 },
+      { y: 80, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        stagger: 0.25,
-        duration: 1.2,
-        ease: "power4.out",
+        stagger: 0.2,
+        duration: 1,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 85%",
+          start: "top 90%",
         },
       }
     );
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="
-        relative
-        w-full
-        bg-white
-        overflow-hidden
-      "
-      style={{ backgroundColor: "#ffffff" }}   // pure white
-    >
-      {/* White background layer */}
-      <div className="absolute inset-0 bg-white z-0"></div>
+<section
+  ref={sectionRef}
+  className="relative w-full bg-white overflow-hidden"
+>
 
-      {/* Content */}
-      <div
-        className="
+  {/* CONTENT */}
+  <div className="
+    relative
+    w-full
+    flex justify-center
+    pt-[14vh] sm:pt-[20vh] lg:pt-[26vh]
+    pb-[12vh] sm:pb-[16vh] lg:pb-[18vh]
+    px-5 sm:px-10
+  ">
+
+    <div className="
+      w-full max-w-[1500px]
+      grid
+      grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+      gap-10 lg:gap-0
+      items-center
+    ">
+
+      {/* SPACER — only desktop */}
+      <div className="hidden lg:block" />
+
+      {/* POSTER */}
+      <div className="work-img flex justify-center">
+        <div className="
           relative
-          z-10
-          w-full
-          flex
-          justify-center
-          pt-[28vh]
-          pb-[18vh]
-        "
-      >
-        {/* Main cinematic grid */}
-        <div className="w-full max-w-[1600px] grid grid-cols-3 items-center">
-
-          {/* spacer column */}
-          <div />
-
-          {/* Poster */}
-          <div className="work-img flex justify-center">
-            <div className="relative w-[420px] h-[80vh] overflow-hidden bg-white">
-              <Image
-                src="/images/works/poster.png"
-                alt="Poster"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Mobile */}
-          <div className="work-img flex justify-center">
-            <div className="relative w-[420px] h-[80vh] overflow-hidden bg-white">
-              <Image
-                src="/images/works/mobile.png"
-                alt="Mobile"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-
+          w-full max-w-[360px] lg:max-w-[420px]
+          h-[60vh] sm:h-[70vh] lg:h-[80vh]
+          overflow-hidden
+          bg-white
+          rounded-lg
+        ">
+          <Image
+            src="/images/works/poster.png"
+            alt="Poster"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
-    </section>
+
+      {/* MOBILE */}
+      <div className="work-img flex justify-center">
+        <div className="
+          relative
+          w-full max-w-[360px] lg:max-w-[420px]
+          h-[60vh] sm:h-[70vh] lg:h-[80vh]
+          overflow-hidden
+          bg-white
+          rounded-lg
+        ">
+          <Image
+            src="/images/works/mobile.png"
+            alt="Mobile"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   );
 }

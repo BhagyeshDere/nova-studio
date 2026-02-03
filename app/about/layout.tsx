@@ -1,6 +1,6 @@
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="works-page">
+    <div className="w-full min-h-screen">
       {children}
     </div>
   );

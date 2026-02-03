@@ -20,7 +20,7 @@ export default function About() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 85%",
         },
       }
     );
@@ -30,45 +30,51 @@ export default function About() {
     <section
       ref={sectionRef}
       className="
-        relative
         w-full
-        bg-white
-        text-black
+        bg-white text-black
         overflow-hidden
-        py-[14vh]
-        px-[6vw]
+
+        px-5 sm:px-10 lg:px-[8vw]
+
+        /* Reduced padding */
+        py-10 sm:py-14 lg:py-16
       "
     >
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1100px] mx-auto">
 
-        {/* EDITORIAL FLOW */}
-        <div className="flex flex-col gap-[10vh]">
+        <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
 
           {/* PARAGRAPH 1 */}
-          <p className="about-anim text-[20px] leading-[2.1] text-black/90 text-justify max-w-[1250px]">
-            At Reino Studio, we blend technology and art to create innovative
+          <p
+            className="
+              about-anim
+              text-[16px] sm:text-[18px] lg:text-[20px]
+              leading-[1.9] sm:leading-[2]
+              text-black/90
+            "
+          >
+            At Nova Studio, we blend technology and art to create innovative
             digital experiences that open up new possibilities for brands and
             businesses. We believe sensitivity and technique must work together —
-            strategy guiding creativity, and creativity enhancing strategy. Every
-            project we design is built to be functional, emotionally engaging,
-            and visually refined. Our process combines deep research, design
-            thinking, and technical precision to craft solutions that feel natural
-            to users while delivering measurable business impact. We don’t just
-            create interfaces — we build meaningful digital journeys that connect
-            brands with people.
+            strategy guiding creativity, and creativity enhancing strategy.
+            Every project we design is built to be functional, emotionally
+            engaging, and visually refined.
           </p>
 
           {/* PARAGRAPH 2 */}
-          <p className="about-anim text-[20px] leading-[2.1] text-black/85 text-justify max-w-[1250px]">
+          <p
+            className="
+              about-anim
+              text-[16px] sm:text-[18px] lg:text-[20px]
+              leading-[1.9] sm:leading-[2]
+              text-black/80
+            "
+          >
             Specializing in digital platforms, we collaborate across multiple
-            disciplines and mediums. From concept to execution, we handle
-            everything from brand identity and UI systems to interactive
-            experiences and scalable products. Our multidisciplinary team brings
-            together designers, strategists, and developers who work as one
-            unified force. We focus on clarity, collaboration, and long-term
-            value — ensuring the systems we design evolve with your brand. Our
-            goal is simple: to create work that not only looks beautiful today
-            but continues to perform, adapt, and grow in the future.
+            disciplines. From concept to execution, we handle brand identity,
+            UI systems, and interactive experiences. Our team works as one
+            unified force focused on clarity and long-term value — creating
+            work that performs, adapts, and grows with your brand.
           </p>
 
         </div>

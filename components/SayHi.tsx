@@ -11,24 +11,22 @@ export default function SayHi() {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Text animation
     gsap.fromTo(
       sectionRef.current.querySelectorAll(".hi-line, .hi-sub, .hi-nav"),
-      { y: 140, opacity: 0 },
+      { y: 120, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        stagger: 0.15,
-        duration: 1.4,
+        stagger: 0.12,
+        duration: 1.3,
         ease: "power4.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 85%",
         },
       }
     );
 
-    // Moving dot animation
     if (dotRef.current) {
       gsap.fromTo(
         dotRef.current,
@@ -47,93 +45,103 @@ export default function SayHi() {
   return (
     <section
       ref={sectionRef}
-      style={{
-        backgroundColor: "#000000",
-        color: "#ffffff",
-      }}
       className="
-        relative
-        isolate
-        w-full 
-        min-h-[75vh]
-        px-[6vw] 
-        py-[18vh] 
+        relative isolate
+        w-full
+        bg-black text-white
+        px-5 sm:px-10 lg:px-[6vw]
+        py-[14vh] sm:py-[16vh] lg:py-[18vh]
         overflow-hidden
       "
     >
-      {/* HARD BLACK BACKGROUND */}
-      <div className="absolute inset-0 bg-black z-0" />
+      {/* TOP RIGHT CONTACT */}
+      <div className="
+        absolute
+        top-6 right-5 sm:right-10 lg:right-[6vw]
+        text-xs sm:text-sm
+        opacity-80
+        flex items-center gap-2
+      ">
+        <span>📞</span>
+        <span>+55 21 98479-6999</span>
+      </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 text-white">
+      {/* BIG TITLE */}
+      <h1
+        className="
+          hi-line
+          font-bold
+          tracking-tight
+          leading-[0.9]
+          text-[clamp(3.5rem,14vw,18rem)]
+        "
+      >
+        SAY HI!
+      </h1>
 
-        {/* Top right contact */}
-        <div className="absolute top-[6vh] right-[6vw] text-sm opacity-80 flex items-center gap-3">
-          <span>📞</span>
-          <span>+55 21 98479-6999</span>
+      {/* SUBTEXT */}
+      <div className="
+        hi-sub
+        mt-[5vh]
+        max-w-[520px]
+        text-[15px] sm:text-[16px]
+        text-white/80
+        leading-relaxed
+      ">
+        <p>Tell us about your project.</p>
+        <p>Let’s collaborate and make great stuff.</p>
+      </div>
+
+      {/* DIVIDER */}
+      <div className="
+        relative
+        mt-[10vh] sm:mt-[12vh]
+        w-full h-[1px]
+        bg-white/30
+      ">
+        <div
+          ref={dotRef}
+          className="
+            absolute
+            top-[-5px]
+            left-1/2
+            w-3 h-3
+            bg-white
+            rounded-full
+          "
+        />
+      </div>
+
+      {/* BOTTOM NAV */}
+      <div className="
+        hi-nav
+        mt-[6vh]
+        flex flex-col md:flex-row
+        gap-6 md:gap-0
+        justify-between
+        items-start md:items-center
+        text-xs sm:text-sm
+      ">
+
+        {/* LINKS */}
+        <div className="
+          flex flex-wrap
+          gap-x-6 gap-y-3
+          uppercase tracking-widest
+        ">
+          <Link href="/">Studio</Link>
+          <Link href="/about">About</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/works">Works</Link>
+          <Link href="/career">Career</Link>
+          <Link href="/contact">Contact</Link>
         </div>
 
-        {/* Big Title */}
-        <div className="relative">
-          <h1 className="hi-line text-[clamp(5rem,14vw,18rem)] leading-[0.85] font-bold tracking-tight whitespace-nowrap">
-            SAY HI!
-          </h1>
-        </div>
-
-        {/* Sub text */}
-        <div className="hi-sub mt-[6vh] max-w-[520px] text-[16px] leading-relaxed text-white/80">
-          <p>Tell us about your project.</p>
-          <p>Let’s collaborate and make great stuff.</p>
-        </div>
-
-        {/* Divider */}
-        <div className="relative mt-[14vh] w-full h-[1px] bg-white/30">
-          <div
-            ref={dotRef}
-            className="absolute top-[-6px] left-1/2 w-3 h-3 bg-white rounded-full"
-          />
-        </div>
-
-        {/* Bottom navigation */}
-        <div className="hi-nav mt-[6vh] flex justify-between items-center text-sm">
-
-          {/* Left links */}
-          <div className="flex gap-[3.5vw] uppercase tracking-widest">
-
-            <Link href="/" className="opacity-70 hover:opacity-100 transition">
-              Studio
-            </Link>
-
-            <Link href="/about" className="opacity-70 hover:opacity-100 transition">
-              About
-            </Link>
-
-            <Link href="/services" className="opacity-70 hover:opacity-100 transition">
-              Services
-            </Link>
-
-            <Link href="/works" className="opacity-70 hover:opacity-100 transition">
-              Works
-            </Link>
-
-            {/* ✅ Career added */}
-            <Link href="/career" className="opacity-70 hover:opacity-100 transition">
-              Career
-            </Link>
-
-            <Link href="/contact" className="opacity-70 hover:opacity-100 transition">
-              Contact
-            </Link>
-
-          </div>
-
-          {/* Right socials */}
-          <div className="flex gap-6 text-lg opacity-80">
-            <a href="#" aria-label="Instagram" className="hover:opacity-100 transition">◎</a>
-            <a href="#" aria-label="LinkedIn" className="hover:opacity-100 transition">in</a>
-            <a href="#" aria-label="WhatsApp" className="hover:opacity-100 transition">◯</a>
-          </div>
-
+        {/* SOCIALS */}
+        <div className="flex gap-6 text-lg opacity-80">
+          <a href="#">◎</a>
+          <a href="#">in</a>
+          <a href="#">◯</a>
         </div>
 
       </div>

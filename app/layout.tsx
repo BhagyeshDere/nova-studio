@@ -1,20 +1,75 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import ClientLayout from "./ClientLayout";
 
+/* ============================
+   SEO + META
+============================ */
 export const metadata: Metadata = {
-  title: "NOVA Studio",
+  title: {
+    default: "NOVA Studio",
+    template: "%s | NOVA Studio",
+  },
   description: "Designing identity, experience & presence.",
+
+  keywords: [
+    "Design Studio",
+    "UI UX Design",
+    "Brand Identity",
+    "Web Design",
+    "Creative Studio",
+    "NOVA Studio",
+  ],
+
+  authors: [{ name: "NOVA Studio" }],
+
+  openGraph: {
+    title: "NOVA Studio",
+    description: "Designing identity, experience & presence.",
+    siteName: "NOVA Studio",
+    type: "website",
+    locale: "en_US",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "NOVA Studio",
+    description: "Designing identity, experience & presence.",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
+/* ============================
+   VIEWPORT
+============================ */
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#0d0d0d",
+};
+
+/* ============================
+   ROOT LAYOUT
+============================ */
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="overflow-x-hidden">
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className="
+          overflow-x-hidden
+          antialiased
+          bg-white
+          text-black
+        "
+      >
         <ClientLayout>
           {children}
         </ClientLayout>

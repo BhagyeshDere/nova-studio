@@ -7,57 +7,71 @@
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Medium.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
   font-weight: 700;
-  font-style: normal;
+  font-display: swap;
 }
 
 
 /* ============================
-   TAILWIND BASE OVERRIDE
+   BASE RESET
 ============================ */
 @layer base {
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+
     background: #ffffff;
     color: #0d0d0d;
 
-    /* ✅ Global font */
     font-family: "Satoshi", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Headings */
   h1,h2,h3,h4,h5,h6 {
     font-family: "Satoshi", sans-serif;
   }
 
-  /* Forms */
   button, input, textarea {
     font-family: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    height: auto;
   }
 }
 
 
 /* ============================
-   SMOOTH SCROLL (LENIS)
+   LENIS SMOOTH SCROLL
 ============================ */
 #smooth-wrapper {
   width: 100%;
   min-height: 100vh;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
 }
 
@@ -69,41 +83,59 @@
 /* ============================
    CINEMATIC CURSOR
 ============================ */
-body.dark-theme {
+
+body {
   cursor: none;
 }
 
-input, textarea, button, a {
-  cursor: auto;
+a, button {
+  cursor: pointer;
 }
 
+/* Default dot */
 .custom-cursor {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background: white;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 999999;
+
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;
+
+  transition:
+    width .25s ease,
+    height .25s ease,
+    transform .15s ease;
+
+  will-change: transform;
 }
 
+/* 🔥 BIG CINEMATIC CIRCLE */
 .cursor-big {
-  width: 380px;
-  height: 380px;
+  width: 220px;
+  height: 220px;
   background: white;
   mix-blend-mode: difference;
 }
 
-body.light-theme .custom-cursor,
-body.light-theme .cursor-big {
-  display: none !important;
+/* Hide on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .cursor-big {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto;
+  }
 }
 
 
 /* ============================
-   TYPOGRAPHY
+   TYPOGRAPHY HELPERS
 ============================ */
 .big-text {
   font-size: clamp(3rem, 9vw, 11rem);
@@ -119,10 +151,16 @@ body.light-theme .cursor-big {
 
 
 /* ============================
-   SECTIONS
+   SECTION HELPERS
 ============================ */
 .section {
-  padding: 6vh 8vw;
+  padding: 6vh 5vw;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 6vh 8vw;
+  }
 }
 
 .section-dark {
@@ -149,12 +187,25 @@ a {
    SCROLLBAR
 ============================ */
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 body::-webkit-scrollbar-thumb {
   background: #bbb;
   border-radius: 10px;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+
+/* ============================
+   SELECTION STYLE (Premium Touch)
+============================ */
+::selection {
+  background: #111;
+  color: white;
 }
 
 
@@ -168,4 +219,17 @@ body::-webkit-scrollbar-thumb {
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+
+/* ============================
+   PERFORMANCE OPTIMIZATIONS
+============================ */
+
+/* Reduce heavy effects on mobile */
+@media (max-width: 768px) {
+  * {
+    backdrop-filter: none !important;
+  }
 }

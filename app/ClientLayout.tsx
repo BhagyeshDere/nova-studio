@@ -12,28 +12,45 @@ export default function ClientLayout({
 }) {
   const pathname = usePathname();
 
-  // ✅ Dark page detection
-  const isWorks = pathname.startsWith("/works");
+  // Dark theme pages
+  const isDarkPage =
+    pathname.startsWith("/works") ||
+    pathname.startsWith("/about") ||
+    pathname.startsWith("/career");
 
   return (
     <>
-      {/* Cursor */}
+      {/* Custom Cursor */}
       <Cursor />
 
       {/* Navbar */}
       <Navbar />
 
-      {/* Lenis Structure */}
+      {/* Smooth Scroll Wrapper */}
       <div
         id="smooth-wrapper"
-        className={isWorks ? "works-page" : ""}
+        className={`
+          relative
+          w-full
+          overflow-x-hidden
+          ${isDarkPage ? "bg-[#2f3437]" : "bg-white"}
+        `}
       >
-        <div id="smooth-content">
+        <div
+          id="smooth-content"
+          className="
+            min-h-screen
+            flex
+            flex-col
+          "
+        >
 
           {/* Page Content */}
-          {children}
+          <main className="flex-1 w-full">
+            {children}
+          </main>
 
-          {/* Global Cinematic Footer */}
+          {/* Global Footer / CTA */}
           <SayHi />
 
         </div>

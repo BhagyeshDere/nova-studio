@@ -7,20 +7,30 @@ export default function FloatingHero() {
     <div
       className="
         absolute
-        left-[8vw]
-        top-[74vh]
         z-[30]
         pointer-events-none
+
+        left-1/2 -translate-x-1/2
+        sm:left-[8vw] sm:translate-x-0
+
+        top-[68vh]
+        sm:top-[72vh]
+        lg:top-[74vh]
       "
     >
       <div
         className="
           relative
-          w-[48vw]
+
+          w-[88vw]
+          sm:w-[70vw]
+          md:w-[56vw]
+          lg:w-[48vw]
+
           max-w-[900px]
-          h-[36vh]
-          md:h-[40vh]
-          lg:h-[44vh]
+
+          /* 🔥 SHORTER HEIGHT */
+          aspect-[16/7]
         "
       >
         <Image
@@ -31,6 +41,7 @@ export default function FloatingHero() {
           className="
             object-cover
             shadow-[0_25px_60px_rgba(0,0,0,0.22)]
+            rounded-lg
           "
         />
       </div>

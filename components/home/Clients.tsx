@@ -2,27 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations";
+import Image from "next/image";
 
 const clients = [
-  { name: "NXP", src: "/images/clients/nxp.svg" },
-  { name: "IKEA", src: "/images/clients/ikea.svg" },
-  { name: "Zara", src: "/images/clients/zara.svg" },
-  { name: "Zebra Technologies", src: "/images/clients/zebratechnologies.svg" },
-
-  { name: "Lenovo", src: "/images/clients/lenovo.svg" },
-  { name: "BMW", src: "/images/clients/bmw.svg" },
-  { name: "PayPal", src: "/images/clients/paypal.svg" },
-  { name: "Spotify", src: "/images/clients/spotify.svg" },
-
-  { name: "Samsung", src: "/images/clients/samsung.svg" },
-  { name: "Meta", src: "/images/clients/meta.svg" },
-  { name: "Sony", src: "/images/clients/sony.svg" },
-  { name: "FIFA", src: "/images/clients/fifa.svg" },
-
-  { name: "Peugeot", src: "/images/clients/peugeot.svg" },
-  { name: "Unraid", src: "/images/clients/unraid.svg" },
-  { name: "CountingWorks Pro", src: "/images/clients/countingworkspro.svg" },
-  { name: "McDonalds", src: "/images/clients/mcdonalds.svg" },
+  "nxp","ikea","zara","zebratechnologies",
+  "lenovo","bmw","paypal","spotify",
+  "samsung","meta","sony","fifa",
+  "peugeot","unraid","countingworkspro","mcdonalds"
 ];
 
 export default function Clients() {
@@ -31,67 +17,77 @@ export default function Clients() {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    gsap.fromTo(
+    gsap.from(
       sectionRef.current.querySelectorAll(".client-logo"),
-      { y: 50, opacity: 0 },
       {
-        y: 0,
-        opacity: 1,
-        stagger: 0.06,
+        y: 40,
+        opacity: 0,
+        stagger: 0.08,
         duration: 1,
-        ease: "power4.out",
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 85%",
+          start: "top 92%",
+          once: true,
         },
       }
     );
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-white">
-      <div className="px-[8vw] py-[14vh]">
+    <section ref={sectionRef} className="w-full bg-white">
 
-        {/* Label */}
-        <div className="mb-[8vh] text-[11px] uppercase tracking-[0.35em] opacity-50">
-          <h1>Trusted by global brands</h1>
-        </div>
+      <div className="px-6 lg:px-[8vw] py-[12vh] sm:py-[14vh]">
 
-        {/* 4 × 4 GRID */}
-        <div
-          className="
-            grid
-            grid-cols-4
-            gap-y-[10vh]
-            gap-x-[8vw]
-            items-center
-            justify-items-center
-          "
-        >
-          {clients.map((client, i) => (
-            <div
-              key={i}
-              className="
-                client-logo
-                flex
-                items-center
-                justify-center
-              "
-            >
-              <img
-                src={client.src}
-                alt={client.name}
-                className="
-                  h-[88px]
-                  w-auto
-                  opacity-85
-                  grayscale
-                  transition-all
-                  duration-500
-                  hover:opacity-100
-                  hover:grayscale-0
-                "
-              />
+        {/* TITLE */}
+        <h2 className="
+          text-center
+          text-[12px]
+          uppercase
+          tracking-[0.35em]
+          text-black/50
+          mb-[8vh]
+        ">
+          Trusted by global brands
+        </h2>
+
+        {/* GRID */}
+        <div className="
+          grid
+          grid-cols-2
+          sm:grid-cols-3
+          md:grid-cols-4
+          gap-y-[6vh]
+          sm:gap-y-[8vh]
+          gap-x-[6vw]
+          place-items-center
+        ">
+          {clients.map((name,i)=>(
+            <div key={i} className="client-logo">
+
+              <div className="
+                relative
+                h-[40px]
+                sm:h-[55px]
+                md:h-[65px]
+                w-[120px]
+                sm:w-[150px]
+              ">
+                <Image
+                  src={`/images/clients/${name}.svg`}
+                  alt={name}
+                  fill
+                  className="
+                    object-contain
+                    opacity-80
+                    transition
+                    duration-300
+                    hover:opacity-100
+                    hover:scale-110
+                  "
+                />
+              </div>
+
             </div>
           ))}
         </div>

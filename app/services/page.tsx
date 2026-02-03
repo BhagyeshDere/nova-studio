@@ -10,32 +10,12 @@ export default function ServicesPage() {
   useEffect(() => {
     if (!pageRef.current) return;
 
-    /* PAGE INTRO */
     gsap.fromTo(
       pageRef.current,
       { opacity: 0, y: 40 },
       { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
     );
 
-    /* SECTION REVEAL */
-    gsap.utils.toArray<HTMLElement>(".srv-section").forEach((section) => {
-      gsap.fromTo(
-        section,
-        { y: 120, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.4,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-          },
-        }
-      );
-    });
-
-    /* TEXT REVEAL */
     gsap.utils.toArray<HTMLElement>(".srv-anim").forEach((el) => {
       gsap.fromTo(
         el,
@@ -44,330 +24,233 @@ export default function ServicesPage() {
           y: 0,
           opacity: 1,
           duration: 1.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 90%",
-          },
+          scrollTrigger: { trigger: el, start: "top 90%" },
         }
       );
     });
-
-    /* IMAGE PARALLAX FEEL */
-    gsap.utils.toArray<HTMLElement>(".img-wrap").forEach((wrap) => {
-      gsap.to(wrap, {
-        y: -40,
-        scrollTrigger: {
-          trigger: wrap,
-          scrub: true,
-        },
-      });
-    });
   }, []);
 
+  const services = [
+    {
+      title:"Website Development & SEO Services",
+      desc:"High-performance websites built for visibility and growth.",
+      bullets:["Corporate sites","E-commerce","SEO optimization","Speed performance"],
+      img:"/images/services/web.png"
+    },
+    {
+      title:"UI & UX Design",
+      desc:"Design systems focused on clarity and usability.",
+      bullets:["UX research","Wireframes","Prototypes","Design systems"],
+      img:"/images/services/uiux1.png"
+    },
+    {
+      title:"Custom Software Development",
+      desc:"Tailor-made systems for your business logic.",
+      bullets:["Enterprise apps","API integrations","Cloud systems","Security-first"],
+      img:"/images/services/software.png"
+    },
+    {
+      title:"Mobile & Web App",
+      desc:"Apps that feel smooth, fast and intuitive.",
+      bullets:["iOS & Android","Cross-platform","Backend APIs","Deployment"],
+      img:"/images/services/app1.png"
+    },
+    {
+      title:"Software Maintenance & Support",
+      desc:"Reliable support to keep systems running.",
+      bullets:["Monitoring","Bug fixing","Upgrades","24/7 support"],
+      img:"/images/services/support.png"
+    },
+    {
+      title:"IoT Application Development",
+      desc:"Smart ecosystems connecting devices and data.",
+      bullets:["Sensors","Dashboards","Automation","Real-time data"],
+      img:"/images/services/iot.png"
+    },
+    {
+      title:"AI-ML Solutions",
+      desc:"Automation and intelligence for modern business.",
+      bullets:["AI agents","Chatbots","Analytics","Predictions"],
+      img:"/images/services/ai.png"
+    },
+    {
+      title:"Infrastructure Management Services",
+      desc:"Secure and scalable infrastructure solutions.",
+      bullets:["Cloud setup","DevOps","Security","Monitoring"],
+      img:"/images/services/infrastructure.png"
+    }
+  ];
 
   return (
-    <main ref={pageRef} className="relative w-full overflow-x-hidden bg-white text-black">
+<main ref={pageRef} className="w-full overflow-x-hidden bg-white text-black">
 
-{/* ===============================
-   HERO — REINO STYLE
-=============================== */}
-<section className="relative w-full min-h-[100vh] px-[6vw] pt-[22vh] pb-[14vh] bg-white">
+{/* ================= HERO ================= */}
+<section
+  className="
+    px-5 sm:px-10 lg:px-[6vw]
+    pt-[14vh] sm:pt-[18vh] lg:pt-[22vh]
+    pb-[10vh]
+  "
+>
 
-  {/* Wide container */}
-  <div className="w-full">
+  <h1
+    className="
+      srv-anim
+      font-semibold
+      text-[#2b2e2f]
 
-    <h1 className="srv-anim font-semibold tracking-tight text-[#2b2e2f] leading-[0.95]
-      text-[clamp(3.2rem,7vw,8.5rem)]">
+      leading-[0.95]
+      tracking-[-0.03em]
 
-      <span className="block whitespace-nowrap">
-        We are a design studio that
-      </span>
+      /* RESPONSIVE SIZE */
+      text-[clamp(2.6rem,6.5vw,8rem)]
 
-      <span className="block whitespace-nowrap">
-        loves to create together.
-      </span>
+      /* FULL WIDTH */
+      w-full
 
-    </h1>
+      /* Better line wrapping */
+      text-balance
+    "
+  >
+    <span className="block">
+      We are a design studio that
+    </span>
 
-    {/* Paragraph */}
-    <div className="srv-anim mt-[10vh] max-w-[560px] text-[16.5px] leading-[1.9] text-black/80">
-    <p>
-      At Reino, we believe the best ideas are born from collaboration. That’s why
-      we work side by side with other creative agencies, acting as a natural
-      extension of their teams. We get into the flow, understand the culture, and
-      wear the project’s jersey as if it were our own.
-    </p>
-  </div>
+    <span className="block">
+      loves to create together.
+    </span>
+  </h1>
 
-  </div>
+  <p
+    className="
+      srv-anim
+      mt-8 sm:mt-10
+      max-w-[560px]
+      text-[15px] sm:text-[17px]
+      leading-[1.8]
+      text-black/80
+    "
+  >
+    We work side by side with agencies, acting as an extension
+    of their teams and building meaningful digital experiences.
+  </p>
 
 </section>
 
 
+{/* ================= TEAM IMAGE ================= */} <section className="py-[8vh] sm:py-[10vh]"> <div className="group overflow-hidden rounded-xl mx-5 sm:mx-10 lg:mx-[6vw]"> <Image src="/images/services/team.png" alt="Team" width={2200} height={900} className=" w-full h-auto object-cover transition duration-700 group-hover:scale-105 " /> </div> </section>
 
+{/* ================= INTRO TEXT ================= */}
+<section
+  className="
+    px-5 sm:px-10 lg:px-[8vw]
+    py-[10vh] sm:py-[14vh] lg:py-[16vh]
+  "
+>
 
-
-{/* ===============================
-   TEAM STRIP — FULL IMAGE (NO CROP)
-=============================== */}
-<section className="relative w-full py-[12vh] bg-white">
-  <div className="relative w-full flex justify-center items-center">
-
-    {/* Hover wrapper */}
-    <div className="group relative overflow-hidden rounded-2xl">
-
-      <Image
-        src="/images/services/team.png"
-        alt="Team"
-        width={2200}
-        height={900}
-        priority
-        className="
-          w-full h-auto object-contain
-          transition-all duration-[900ms] ease-out
-          group-hover:scale-105
-          group-hover:rotate-[0.6deg]
-          group-hover:contrast-110
-        "
-      />
-
-    </div>
-
-  </div>
-</section>
-
-
-
-{/* ===============================
-   PART OF YOUR TEAM — PARAGRAPH
-=============================== */}
-<section className="relative w-full px-[8vw] py-[18vh] bg-white text-black">
-
-  <h2 className="text-[clamp(3rem,6vw,6rem)] font-semibold leading-tight mb-[8vh]">
-    Part of your team,<br />
+  <h2
+    className="
+      text-[clamp(2.2rem,6vw,6rem)]
+      font-semibold
+      mb-6 sm:mb-8
+      leading-[1.1]
+    "
+  >
+    Part of your team,
+    <br />
     from start to finish
   </h2>
 
-  <div className="max-w-[720px]">
-    <p className="text-[18px] leading-[1.9] text-black/75">
-      More than providers, we are partners. This means we take part in the
-      entire process — from strategic conception to final delivery — bringing
-      our expertise in UX, UI, Motion Design, and Branding. Our main strength is
-      flexibility: we adapt the depth and format of our contribution to match
-      the needs of each project.
-    </p>
-  </div>
-
-</section>
-
-{/* ===============================
-   OUR SERVICES — FULL WIDTH EDITORIAL
-=============================== */}
-<section className="relative w-full bg-white">
-
-{/* Heading */}
-<div className="px-[8vw] pt-[18vh] pb-[12vh] max-w-[1200px]">
-  <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
-    Services
-  </span>
-
-  <h2 className="text-[clamp(3rem,6vw,6rem)] font-semibold leading-[1] mt-[2vh]">
-    What we do
-  </h2>
-</div>
-
-<div className="flex flex-col gap-[22vh]">
-
-{[
-{
-title:"Web Development",
-desc:"We craft modern websites blending performance with aesthetics. Optimized for SEO, speed, and scalability.",
-bullets:["Responsive sites","SaaS platforms","E-commerce","SEO structure"],
-img:"/images/services/web.png"
-},
-{
-title:"App Development",
-desc:"Mobile apps that feel natural and intuitive. Built for stability and long-term growth.",
-bullets:["iOS & Android","Cross-platform","Backend APIs","Deployment"],
-img:"/images/services/app1.png"
-},
-{
-title:"UI/UX Design",
-desc:"Design is experience. We craft intuitive flows focused on clarity and usability.",
-bullets:["UX research","Wireframes","Prototypes","Design systems"],
-img:"/images/services/uiux.png"
-},
-{
-title:"MVP to Product",
-desc:"We help founders transform ideas into real scalable products.",
-bullets:["MVP builds","Validation","Rapid prototyping","Scaling"],
-img:"/images/services/mvp.png"
-},
-{
-title:"AI & ML",
-desc:"AI systems that learn, automate and deliver insights.",
-bullets:["AI agents","Chatbots","Analytics","Automation"],
-img:"/images/services/ai.png"
-},
-{
-title:"Hardware & IoT",
-desc:"Smart connected ecosystems linking physical devices with digital intelligence.",
-bullets:["IoT devices","Sensors","Automation","Dashboards"],
-img:"/images/services/iot.png"
-},
-{
-title:"ERP & CRM",
-desc:"Enterprise systems that streamline operations and relationships.",
-bullets:["ERP systems","CRM tools","Dashboards","Automation"],
-img:"/images/services/erp.png"
-},
-{
-title:"Resource Outsourcing",
-desc:"Scale teams with expert talent and flexible support.",
-bullets:["Dedicated teams","Developers","Designers","QA support"],
-img:"/images/services/outsource.png"
-},
-{
-title:"Custom Software",
-desc:"Tailored software built exactly around your workflow.",
-bullets:["Enterprise apps","APIs","Security","Cloud systems"],
-img:"/images/services/software.png"
-}
-
-].map((s,i)=>{
-
-const right = i % 2 !== 0
-
-return (
-<div key={i} className="relative w-full group">
-
-  {/* FULL WIDTH IMAGE */}
-  <div className="relative w-full h-[90vh] overflow-hidden">
-
-
-    {/* IMAGE */}
-    <Image
-      src={s.img}
-      alt={s.title}
-      fill
-      className="
-        object-cover
-        transition-all
-        duration-[1400ms]
-        ease-out
-        group-hover:scale-110
-        group-hover:rotate-[0.6deg]
-        group-hover:contrast-110
-        group-hover:brightness-95
-      "
-    />
-
-    {/* DARK OVERLAY */}
-    <div className="
-      absolute inset-0 bg-black/30
-      transition-all duration-700
-      group-hover:bg-black/10
-    "/>
-
-  </div>
-
-  {/* TEXT BLOCK */}
-  <div className={`
-    relative -mt-[18vh]
-    px-[8vw]
-    ${right ? "text-right" : "text-left"}
-  `}>
-
-    <div className={`
-      bg-white
+  <p
+    className="
       max-w-[720px]
-      p-[4vw]
-      shadow-xl
-      transition-all duration-500
-      group-hover:shadow-2xl
-      ${right ? "ml-auto" : ""}
-    `}>
+      text-[16px] sm:text-[18px]
+      leading-[1.8]
+      text-black/75
+    "
+  >
+    More than providers, we are partners. We adapt our
+    contribution to match the needs of each project.
+  </p>
 
-      <h3 className="text-[clamp(2.5rem,4vw,3.4rem)] font-semibold mb-6">
-        {s.title}
-      </h3>
-
-      <p className="text-black/70 text-[18px] leading-[1.9] mb-6">
-        {s.desc}
-      </p>
-
-      <ul className="space-y-2 text-black/80 text-[17px]">
-        {s.bullets.map((b,idx)=>(
-          <li key={idx} className="flex gap-3">
-            <span>•</span>
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-
-    </div>
-  </div>
-
-</div>
-)
-
-})}
-
-</div>
 </section>
 
+{/* ================= SERVICES ================= */}
+<section className="w-full">
 
-
-{/* ===============================
-   WHY WORK WITH US — CENTERED EDITORIAL
-=============================== */}
-<section className="relative w-full bg-white px-[8vw] py-[24vh]">
-
-  <div className="max-w-[1200px] mx-auto text-center">
-
-    {/* Label */}
-    <span className="text-[13px] tracking-[0.3em] uppercase text-black/50">
-      Partnership
+  {/* HEADER */}
+  <div className="px-5 sm:px-10 lg:px-[8vw] pt-[10vh] pb-[6vh]">
+    <span className="uppercase text-sm tracking-[0.3em] text-black/50">
+      Services
     </span>
 
-    {/* Title */}
-    <h2 className="
-      srv-anim
-      text-[clamp(3.5rem,7vw,7rem)]
-      font-semibold
-      leading-[0.95]
-      mt-[3vh]
-      mb-[10vh]
-      text-[#2b2e2f]
-    ">
-      Why work with us
+    <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-semibold mt-4">
+      What we do
     </h2>
+  </div>
 
-    {/* Full Description */}
-    <div className="
-      srv-anim
-      text-[20px]
-      leading-[2]
-      text-black/70
-      max-w-[950px]
-      mx-auto
-    ">
-      <p>
-        Our goal is to simplify complexity, add value, and amplify impact.
-        Every delivery is born from a collaborative process — balancing
-        sensitivity, strategy, and execution to create meaningful outcomes
-        with consistency and precision.
-      </p>
+  {/* SERVICES LIST */}
+  <div className="flex flex-col gap-[14vh] sm:gap-[18vh]">
 
-      <p className="mt-6">
-        Working with us is not outsourcing — it’s partnership.
-        We embed ourselves into your process, your culture, and your vision,
-        building long-term systems instead of short-term solutions.
-        We think with you, design with purpose, and build with care —
-        ensuring every project grows with your brand and evolves over time.
-      </p>
-    </div>
+    {services.map((s,i)=>{
+
+      const isRight = i % 2 !== 0;
+
+      return(
+        <div key={i} className="group">
+
+          {/* IMAGE */}
+          <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden">
+            <Image
+              src={s.img}
+              alt={s.title}
+              fill
+              className="object-cover transition duration-[1200ms] group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"/>
+          </div>
+
+          {/* TEXT CARD — POSITION CHANGES ONLY */}
+          <div className="relative -mt-[8vh] sm:-mt-[12vh] px-5 sm:px-10 lg:px-[8vw]">
+
+            <div
+              className={`
+                bg-white
+                max-w-[680px]
+                p-6 sm:p-10
+                shadow-xl
+                text-left
+                ${isRight ? "ml-auto" : ""}
+              `}
+            >
+
+              {/* TITLE */}
+              <h3 className="text-[clamp(1.8rem,5vw,3rem)] font-semibold mb-4">
+                {s.title}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p className="text-black/70 text-[16px] leading-[1.8] mb-4">
+                {s.desc}
+              </p>
+
+              {/* BULLETS */}
+              <ul className="space-y-2 text-black/80 text-[15px]">
+                {s.bullets.map((b,idx)=>(
+                  <li key={idx} className="flex gap-2">
+                    <span>•</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+      )
+    })}
 
   </div>
 
@@ -376,6 +259,24 @@ return (
 
 
 
-    </main>
+{/* ================= WHY US ================= */}
+<section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] text-center">
+
+<span className="uppercase text-sm tracking-[0.3em] text-black/50">
+  Partnership
+</span>
+
+<h2 className="text-[clamp(2.5rem,7vw,6rem)] font-semibold mt-6 mb-10">
+  Why work with us
+</h2>
+
+<p className="text-[18px] leading-[1.9] text-black/70 max-w-[900px] mx-auto">
+  We simplify complexity and amplify impact. Working with us is partnership —
+  we embed into your culture and vision, building long-term systems.
+</p>
+
+</section>
+
+</main>
   );
 }
