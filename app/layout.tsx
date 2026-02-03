@@ -49,7 +49,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#0d0d0d",
+  themeColor: "#071A1F", // brand color
 };
 
 /* ============================
@@ -64,6 +64,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className="
+          min-h-screen
           overflow-x-hidden
           antialiased
           bg-white

@@ -6,7 +6,6 @@ import About from "@/components/home/About";
 import Philosophy from "@/components/home/Philosophy";
 import Clients from "@/components/home/Clients";
 import CTA from "@/components/home/CTA";
-import FloatingHero from "@/components/layout/FloatingHero";
 
 import BlurText from "@/reactbits/BlurText";
 import ScrollReveal from "@/reactbits/ScrollReveal";
@@ -17,107 +16,93 @@ export default function Home() {
     <main className="relative w-full overflow-x-hidden">
 
       <Hero />
-      <FloatingHero />
 
       <WorksShowcase />
 
-     {/* ABOUT */}
-<section className="w-full bg-white text-black px-6 sm:px-10 lg:px-[8vw] py-[8vh] sm:py-[10vh]">
+      {/* ABOUT */}
+      <section className="w-full bg-white text-black px-6 sm:px-10 lg:px-[8vw] pt-0 pb-[8vh] sm:pb-[10vh]">
 
-  <ScrollReveal>
-    <span
-      className="
-        block
-        font-semibold
-        leading-[1.2]
-        tracking-[-0.02em]
-        text-black
+        <ScrollReveal>
+          <span
+            className="
+              block
+              font-semibold
+              leading-[1.2]
+              tracking-[-0.02em]
+              text-black
+              text-[clamp(2.4rem,6vw,4.5rem)]
+              max-w-[1200px] xl:max-w-[1400px]
+            "
+          >
+            We blend technology and art to create innovative designs that open up new possibilities.
+          </span>
+        </ScrollReveal>
 
-        text-[clamp(2.4rem,6vw,4.5rem)]
-        max-w-[1200px] xl:max-w-[1400px]
-      "
-    >
-      We blend technology and art to create innovative designs that open up new possibilities.
-    </span>
-  </ScrollReveal>
+        <div className="mt-[5vh] sm:mt-[6vh]">
+          <About />
+        </div>
 
-  <div className="mt-[5vh] sm:mt-[6vh]">
-    <About />
-  </div>
-
-</section>
+      </section>
 
       <Philosophy />
 
-    {/* ================= CINEMATIC LINE ================= */}
-<section
-  className="
-    w-full
-    bg-white
-    text-black
+      {/* CINEMATIC LINE */}
+      <section
+        className="
+          w-full
+          bg-white
+          text-black
+          px-6 sm:px-10 lg:px-[8vw]
+          pt-0 pb-[6vh] sm:pb-[8vh] lg:pb-[10vh]
+        "
+      >
+        <div className="max-w-[1500px] mx-auto">
 
-    px-6 sm:px-10 lg:px-[8vw]
+          <BlurText
+            text="We design experiences, not just interfaces."
+            animateBy="words"
+            direction="top"
+            className="
+              font-black
+              uppercase
+              tracking-[-0.02em]
+              leading-[1.05]
+              text-[clamp(2.6rem,7vw,5.5rem)]
+              max-w-[1100px]
+            "
+          />
 
-    /* Reduced vertical space */
-    py-[6vh] sm:py-[8vh] lg:py-[10vh]
-  "
->
-  <div className="max-w-[1500px] mx-auto">
+          <div
+            className="
+              mt-[3vh] sm:mt-[4vh] lg:mt-[5vh]
+              max-w-[720px]
+              space-y-6
+              text-black/70
+              leading-[1.9]
+              text-[16px]
+              sm:text-[18px]
+              lg:text-[19px]
+            "
+          >
+            <p>
+              Every interaction is crafted with intention — from the first impression
+              to the final detail. We believe great digital products are not just seen,
+              but felt.
+            </p>
 
-    {/* Headline */}
-    <BlurText
-      text="We design experiences, not just interfaces."
-      animateBy="words"
-      direction="top"
-      className="
-        font-black
-        uppercase
-        tracking-[-0.02em]
-        leading-[1.05]
+            <p>
+              Our process blends strategy, design, and technology into seamless
+              experiences that connect emotionally, perform technically, and scale
+              naturally with your brand.
+            </p>
+          </div>
 
-        text-[clamp(2.6rem,7vw,5.5rem)]
-        max-w-[1100px]
-      "
-    />
+        </div>
+      </section>
 
-    {/* Body text */}
-    <div
-      className="
-        /* Reduced gap */
-        mt-[3vh] sm:mt-[4vh] lg:mt-[5vh]
-
-        max-w-[720px]
-        space-y-6
-
-        text-black/70
-        leading-[1.9]
-
-        text-[16px]
-        sm:text-[18px]
-        lg:text-[19px]
-      "
-    >
-      <p>
-        Every interaction is crafted with intention — from the first impression
-        to the final detail. We believe great digital products are not just seen,
-        but felt.
-      </p>
-
-      <p>
-        Our process blends strategy, design, and technology into seamless
-        experiences that connect emotionally, perform technically, and scale
-        naturally with your brand.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<ServicesFlowing />
-<Clients />
-<CTA />
-
+      <ServicesFlowing />
+      <Clients />
+      <CTA />
 
     </main>
   );

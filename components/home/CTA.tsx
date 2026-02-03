@@ -29,18 +29,19 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-black text-white px-[6vw] py-[20vh]"
+      className="
+        w-full
+        bg-white text-black
+        px-[6vw]
+        py-[8vh] sm:py-[10vh]
+      "
     >
       <div className="max-w-[1400px]">
 
-       
-
-        {/* Content grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[6vw]">
-
-          
-
+          {/* Your content here */}
         </div>
+
       </div>
     </section>
   );

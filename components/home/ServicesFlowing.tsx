@@ -33,9 +33,10 @@ export default function ServicesFlowing() {
   ref={sectionRef}
   className="
     w-full
-    bg-white text-black
+    bg-white text-[#071A1F]
     px-5 sm:px-10 lg:px-[6vw]
-    py-[12vh] sm:py-[14vh]
+    pt-0
+    pb-[12vh] sm:pb-[14vh]
   "
 >
   <div className="max-w-[1600px] mx-auto text-center">
@@ -46,7 +47,7 @@ export default function ServicesFlowing() {
       text-sm
       tracking-[0.35em]
       uppercase
-      opacity-60
+      text-[#1F6677]
       mb-[6vh]
     ">
       What can we do for you
@@ -61,19 +62,14 @@ export default function ServicesFlowing() {
     ">
 
       {/* LINE 1 */}
-      <div className="
-        flow-line
-        flex flex-wrap
-        items-center justify-center
-        gap-3 sm:gap-[2vw]
-      ">
+      <div className="flow-line flex flex-wrap items-center justify-center gap-3 sm:gap-[2vw]">
         <span>MOTION</span>
 
         <div className="
           w-[160px] sm:w-[22vw]
           h-[46px] sm:h-[6.5vw]
           rounded-full overflow-hidden
-          border border-black/10
+          border border-[#1F6677]/30
         ">
           <FlowingCapsule
             text="MOTION GRAPHICS"
@@ -86,19 +82,14 @@ export default function ServicesFlowing() {
       </div>
 
       {/* LINE 2 */}
-      <div className="
-        flow-line
-        flex flex-wrap
-        items-center justify-center
-        gap-3 sm:gap-[2vw]
-      ">
+      <div className="flow-line flex flex-wrap items-center justify-center gap-3 sm:gap-[2vw]">
         <span>WEB</span>
 
         <div className="
           w-[180px] sm:w-[24vw]
           h-[46px] sm:h-[6.5vw]
           rounded-full overflow-hidden
-          border border-black/10
+          border border-[#1F6677]/30
         ">
           <FlowingCapsule
             text="DIGITAL PRODUCT"
@@ -111,19 +102,14 @@ export default function ServicesFlowing() {
       </div>
 
       {/* LINE 3 */}
-      <div className="
-        flow-line
-        flex flex-wrap
-        items-center justify-center
-        gap-3 sm:gap-[2vw]
-      ">
+      <div className="flow-line flex flex-wrap items-center justify-center gap-3 sm:gap-[2vw]">
         <span>BRAND</span>
 
         <div className="
           w-[180px] sm:w-[24vw]
           h-[46px] sm:h-[6.5vw]
           rounded-full overflow-hidden
-          border border-black/10
+          border border-[#1F6677]/30
         ">
           <FlowingCapsule
             text="BRAND IDENTITY"
@@ -140,22 +126,21 @@ export default function ServicesFlowing() {
     {/* BUTTON */}
     <div className="flow-fade mt-[8vh] sm:mt-[10vh]">
       <Link href="/works">
-        <button
-          className="
-            px-8 sm:px-12
-            py-3 sm:py-4
-            bg-black text-white
-            rounded-full
-            text-[14px] sm:text-[15px]
-            font-medium
-            tracking-wide
-            border border-black
-            transition-all duration-300
-            hover:bg-white
-            hover:text-black
-            hover:scale-105
-          "
-        >
+        <button className="
+          px-8 sm:px-12
+          py-3 sm:py-4
+          bg-[#1F6677]
+          text-white
+          rounded-full
+          text-[14px] sm:text-[15px]
+          font-medium
+          tracking-wide
+          border border-[#1F6677]
+          transition-all duration-300
+          hover:bg-white
+          hover:text-[#1F6677]
+          hover:scale-105
+        ">
           View all Works →
         </button>
       </Link>

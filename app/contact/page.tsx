@@ -26,7 +26,7 @@ export default function ContactPage() {
     <main
       ref={pageRef}
       className="
-        bg-gradient-to-b from-white to-gray-100
+        bg-gradient-to-b from-white to-[#F3FAFB]
         text-black
         min-h-screen
         overflow-x-hidden
@@ -42,7 +42,7 @@ export default function ContactPage() {
   pb-[8vh] sm:pb-[10vh]
 ">
 
-  <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-black/50 mb-6">
+  <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-6">
     CONTACT NOVA STUDIO
   </p>
 
@@ -77,8 +77,8 @@ export default function ContactPage() {
 <div className="
   reveal
   bg-white
-  shadow-lg
-  border border-black/5
+  shadow-xl
+  border border-[#1F6677]/15
   rounded-2xl
   p-6 sm:p-10
 ">
@@ -91,33 +91,33 @@ export default function ContactPage() {
 
     <input
       placeholder="Full Name"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-black transition"
+      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-[#1F6677] transition"
     />
 
     <input
       placeholder="Email Address"
       type="email"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-black transition"
+      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-[#1F6677] transition"
     />
 
     <input
       placeholder="Company (Optional)"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-black transition"
+      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-[#1F6677] transition"
     />
 
     <textarea
       rows={4}
       placeholder="Project Details"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none resize-none focus:border-black transition"
+      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none resize-none focus:border-[#1F6677] transition"
     />
 
     <button className="
       w-full
-      bg-black text-white
+      bg-[#071A1F] text-white
       py-4
       rounded-md
       transition
-      hover:bg-blue-600
+      hover:bg-[#1F6677]
     ">
       Submit Inquiry
     </button>
@@ -140,7 +140,7 @@ export default function ContactPage() {
   <div className="space-y-7">
 
     <div>
-      <p className="text-xs sm:text-sm text-blue-600 uppercase mb-2 tracking-wide">
+      <p className="text-xs sm:text-sm text-[#1F6677] uppercase mb-2 tracking-wide">
         Email
       </p>
       <p className="text-base sm:text-lg font-medium break-all">
@@ -149,7 +149,7 @@ export default function ContactPage() {
     </div>
 
     <div>
-      <p className="text-xs sm:text-sm text-blue-600 uppercase mb-2 tracking-wide">
+      <p className="text-xs sm:text-sm text-[#1F6677] uppercase mb-2 tracking-wide">
         Phone
       </p>
       <p className="text-base sm:text-lg font-medium">
@@ -158,7 +158,7 @@ export default function ContactPage() {
     </div>
 
     <div>
-      <p className="text-xs sm:text-sm text-blue-600 uppercase mb-2 tracking-wide">
+      <p className="text-xs sm:text-sm text-[#1F6677] uppercase mb-2 tracking-wide">
         Location
       </p>
       <p className="text-base sm:text-lg font-medium">
@@ -185,7 +185,7 @@ export default function ContactPage() {
       rounded-2xl
       overflow-hidden
       shadow-xl
-      border border-black/10
+      border border-[#1F6677]/20
     ">
 
       <iframe

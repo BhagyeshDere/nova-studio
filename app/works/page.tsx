@@ -38,7 +38,7 @@ export default function WorksPage() {
   ];
 
   return (
-<main ref={pageRef} className="w-full overflow-x-hidden bg-[#2f3437]">
+<main ref={pageRef} className="w-full overflow-x-hidden bg-[#071A1F]">
 
 {/* HERO */}
 <section className="min-h-screen flex items-center px-5 sm:px-8 lg:px-[8vw] pt-[18vh]">
@@ -52,7 +52,7 @@ export default function WorksPage() {
 <section key={p.id} className="relative py-[16vh] lg:py-[22vh] overflow-hidden">
 
 {/* BIG NUMBER */}
-<div className={`hidden md:block absolute ${i%2?"left-[4vw]":"right-[4vw]"} top-[6vh] text-[22vw] font-semibold text-white/5 select-none`}>
+<div className={`hidden md:block absolute ${i%2?"left-[4vw]":"right-[4vw]"} top-[6vh] text-[22vw] font-semibold text-[#1F6677]/10 select-none`}>
   {p.id}
 </div>
 
@@ -75,13 +75,15 @@ export default function WorksPage() {
       fill
       className="object-cover"
     />
+
+    {/* Teal cinematic overlay */}
+    <div className="absolute inset-0 bg-[#1F6677]/15 hover:bg-[#1F6677]/5 transition"/>
   </div>
 
   <h2 className={`work-anim text-white mt-[4vh] text-[clamp(1.8rem,3.5vw,3.2rem)] font-semibold leading-tight ${i%2?"text-right":""}`}>
     {p.desc}
   </h2>
 </div>
-
 
 </div>
 </div>

@@ -31,12 +31,10 @@ export default function About() {
       ref={sectionRef}
       className="
         w-full
-        bg-white text-black
+        bg-white
+        text-[#071A1F]
         overflow-hidden
-
         px-5 sm:px-10 lg:px-[8vw]
-
-        /* Reduced padding */
         py-10 sm:py-14 lg:py-16
       "
     >
@@ -50,7 +48,7 @@ export default function About() {
               about-anim
               text-[16px] sm:text-[18px] lg:text-[20px]
               leading-[1.9] sm:leading-[2]
-              text-black/90
+              text-[#071A1F]/90
             "
           >
             At Nova Studio, we blend technology and art to create innovative
@@ -67,7 +65,7 @@ export default function About() {
               about-anim
               text-[16px] sm:text-[18px] lg:text-[20px]
               leading-[1.9] sm:leading-[2]
-              text-black/80
+              text-[#071A1F]/75
             "
           >
             Specializing in digital platforms, we collaborate across multiple

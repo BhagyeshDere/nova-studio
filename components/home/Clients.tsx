@@ -45,7 +45,7 @@ export default function Clients() {
           text-[12px]
           uppercase
           tracking-[0.35em]
-          text-black/50
+          text-[#1F6677]
           mb-[8vh]
         ">
           Trusted by global brands
@@ -63,6 +63,7 @@ export default function Clients() {
           place-items-center
         ">
           {clients.map((name,i)=>(
+
             <div key={i} className="client-logo">
 
               <div className="
@@ -89,6 +90,7 @@ export default function Clients() {
               </div>
 
             </div>
+
           ))}
         </div>
 

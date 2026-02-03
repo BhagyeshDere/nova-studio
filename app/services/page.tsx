@@ -82,55 +82,17 @@ export default function ServicesPage() {
   ];
 
   return (
-<main ref={pageRef} className="w-full overflow-x-hidden bg-white text-black">
+<main ref={pageRef} className="w-full overflow-x-hidden bg-white text-[#071A1F]">
 
-{/* ================= HERO ================= */}
-<section
-  className="
-    px-5 sm:px-10 lg:px-[6vw]
-    pt-[14vh] sm:pt-[18vh] lg:pt-[22vh]
-    pb-[10vh]
-  "
->
+{/* HERO */}
+<section className="px-5 sm:px-10 lg:px-[6vw] pt-[14vh] sm:pt-[18vh] lg:pt-[22vh] pb-[10vh]">
 
-  <h1
-    className="
-      srv-anim
-      font-semibold
-      text-[#2b2e2f]
-
-      leading-[0.95]
-      tracking-[-0.03em]
-
-      /* RESPONSIVE SIZE */
-      text-[clamp(2.6rem,6.5vw,8rem)]
-
-      /* FULL WIDTH */
-      w-full
-
-      /* Better line wrapping */
-      text-balance
-    "
-  >
-    <span className="block">
-      We are a design studio that
-    </span>
-
-    <span className="block">
-      loves to create together.
-    </span>
+  <h1 className="srv-anim font-semibold text-[#071A1F] leading-[0.95] tracking-[-0.03em] text-[clamp(2.6rem,6.5vw,8rem)] w-full">
+    <span className="block">We are a design studio that</span>
+    <span className="block">loves to create together.</span>
   </h1>
 
-  <p
-    className="
-      srv-anim
-      mt-8 sm:mt-10
-      max-w-[560px]
-      text-[15px] sm:text-[17px]
-      leading-[1.8]
-      text-black/80
-    "
-  >
+  <p className="srv-anim mt-8 sm:mt-10 max-w-[560px] text-[15px] sm:text-[17px] leading-[1.8] text-[#071A1F]/80">
     We work side by side with agencies, acting as an extension
     of their teams and building meaningful digital experiences.
   </p>
@@ -138,49 +100,40 @@ export default function ServicesPage() {
 </section>
 
 
-{/* ================= TEAM IMAGE ================= */} <section className="py-[8vh] sm:py-[10vh]"> <div className="group overflow-hidden rounded-xl mx-5 sm:mx-10 lg:mx-[6vw]"> <Image src="/images/services/team.png" alt="Team" width={2200} height={900} className=" w-full h-auto object-cover transition duration-700 group-hover:scale-105 " /> </div> </section>
+{/* TEAM IMAGE */}
+<section className="py-[8vh] sm:py-[10vh]">
+  <div className="group overflow-hidden rounded-xl mx-5 sm:mx-10 lg:mx-[6vw]">
+    <Image
+      src="/images/services/team.png"
+      alt="Team"
+      width={2200}
+      height={900}
+      className="w-full h-auto object-cover transition duration-700 group-hover:scale-105"
+    />
+  </div>
+</section>
 
-{/* ================= INTRO TEXT ================= */}
-<section
-  className="
-    px-5 sm:px-10 lg:px-[8vw]
-    py-[10vh] sm:py-[14vh] lg:py-[16vh]
-  "
->
 
-  <h2
-    className="
-      text-[clamp(2.2rem,6vw,6rem)]
-      font-semibold
-      mb-6 sm:mb-8
-      leading-[1.1]
-    "
-  >
-    Part of your team,
-    <br />
-    from start to finish
+{/* INTRO TEXT */}
+<section className="px-5 sm:px-10 lg:px-[8vw] py-[10vh] sm:py-[14vh] lg:py-[16vh]">
+
+  <h2 className="text-[clamp(2.2rem,6vw,6rem)] font-semibold mb-6 sm:mb-8 leading-[1.1]">
+    Part of your team,<br/>from start to finish
   </h2>
 
-  <p
-    className="
-      max-w-[720px]
-      text-[16px] sm:text-[18px]
-      leading-[1.8]
-      text-black/75
-    "
-  >
+  <p className="max-w-[720px] text-[16px] sm:text-[18px] leading-[1.8] text-[#071A1F]/75">
     More than providers, we are partners. We adapt our
     contribution to match the needs of each project.
   </p>
 
 </section>
 
-{/* ================= SERVICES ================= */}
+
+{/* SERVICES */}
 <section className="w-full">
 
-  {/* HEADER */}
   <div className="px-5 sm:px-10 lg:px-[8vw] pt-[10vh] pb-[6vh]">
-    <span className="uppercase text-sm tracking-[0.3em] text-black/50">
+    <span className="uppercase text-sm tracking-[0.3em] text-[#1F6677]">
       Services
     </span>
 
@@ -189,17 +142,14 @@ export default function ServicesPage() {
     </h2>
   </div>
 
-  {/* SERVICES LIST */}
   <div className="flex flex-col gap-[14vh] sm:gap-[18vh]">
 
     {services.map((s,i)=>{
-
       const isRight = i % 2 !== 0;
 
       return(
         <div key={i} className="group">
 
-          {/* IMAGE */}
           <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden">
             <Image
               src={s.img}
@@ -207,38 +157,25 @@ export default function ServicesPage() {
               fill
               className="object-cover transition duration-[1200ms] group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"/>
+            <div className="absolute inset-0 bg-[#1F6677]/30 group-hover:bg-[#1F6677]/10 transition"/>
           </div>
 
-          {/* TEXT CARD — POSITION CHANGES ONLY */}
           <div className="relative -mt-[8vh] sm:-mt-[12vh] px-5 sm:px-10 lg:px-[8vw]">
 
-            <div
-              className={`
-                bg-white
-                max-w-[680px]
-                p-6 sm:p-10
-                shadow-xl
-                text-left
-                ${isRight ? "ml-auto" : ""}
-              `}
-            >
+            <div className={`bg-white max-w-[680px] p-6 sm:p-10 shadow-xl text-left ${isRight ? "ml-auto" : ""}`}>
 
-              {/* TITLE */}
               <h3 className="text-[clamp(1.8rem,5vw,3rem)] font-semibold mb-4">
                 {s.title}
               </h3>
 
-              {/* DESCRIPTION */}
-              <p className="text-black/70 text-[16px] leading-[1.8] mb-4">
+              <p className="text-[#071A1F]/70 text-[16px] leading-[1.8] mb-4">
                 {s.desc}
               </p>
 
-              {/* BULLETS */}
-              <ul className="space-y-2 text-black/80 text-[15px]">
+              <ul className="space-y-2 text-[#071A1F]/80 text-[15px]">
                 {s.bullets.map((b,idx)=>(
                   <li key={idx} className="flex gap-2">
-                    <span>•</span>
+                    <span className="text-[#1F6677]">•</span>
                     {b}
                   </li>
                 ))}
@@ -257,12 +194,10 @@ export default function ServicesPage() {
 </section>
 
 
-
-
-{/* ================= WHY US ================= */}
+{/* WHY US */}
 <section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] text-center">
 
-<span className="uppercase text-sm tracking-[0.3em] text-black/50">
+<span className="uppercase text-sm tracking-[0.3em] text-[#1F6677]">
   Partnership
 </span>
 
@@ -270,7 +205,7 @@ export default function ServicesPage() {
   Why work with us
 </h2>
 
-<p className="text-[18px] leading-[1.9] text-black/70 max-w-[900px] mx-auto">
+<p className="text-[18px] leading-[1.9] text-[#071A1F]/70 max-w-[900px] mx-auto">
   We simplify complexity and amplify impact. Working with us is partnership —
   we embed into your culture and vision, building long-term systems.
 </p>

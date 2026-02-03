@@ -30,32 +30,26 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <main ref={pageRef} className="w-full bg-white text-black overflow-x-hidden">
+<main ref={pageRef} className="w-full bg-white text-[#071A1F] overflow-x-hidden">
 
 {/* ================= HERO ================= */}
 <section className="
-  bg-[#2f3437] text-white
+  bg-gradient-to-br from-[#071A1F] via-[#0E3A43] to-[#1F6677]
+  text-white
   px-6 sm:px-10 lg:px-[8vw]
   pt-[18vh] sm:pt-[20vh]
   pb-[14vh] sm:pb-[18vh]
 ">
   <div className="max-w-[1400px] mx-auto">
 
-    <h1 className="about-anim
-      text-[clamp(2.6rem,8vw,8rem)]
-      leading-[1.05]
-      font-semibold
-    ">
+    <h1 className="about-anim text-[clamp(2.6rem,8vw,8rem)] leading-[1.05] font-semibold">
       Designing meaning,<br/>not just visuals.
     </h1>
 
-    <p className="
-      about-anim
-      mt-6 sm:mt-8
-      max-w-[720px]
+    <p className="about-anim mt-6 sm:mt-8 max-w-[720px]
       text-[16px] sm:text-[18px]
       leading-[1.8]
-      text-white/80
+      text-white/85
     ">
       NOVA Studio is a digital design studio crafting immersive identities,
       scalable systems, and cinematic digital experiences for modern brands.
@@ -67,36 +61,18 @@ export default function AboutPage() {
 
 
 {/* ================= INTRO ================= */}
-<section className="
-  bg-white
-  px-6 sm:px-10 lg:px-[8vw]
-  py-[14vh] sm:py-[18vh]
-">
-  <div className="
-    max-w-[1400px] mx-auto
-    grid lg:grid-cols-2
-    gap-[10vh] lg:gap-[10vw]
-  ">
+<section className="bg-white px-6 sm:px-10 lg:px-[8vw] py-[14vh] sm:py-[18vh]">
+  <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-[10vh] lg:gap-[10vw]">
 
     <div>
-      <h2 className="about-anim
-        text-[clamp(2.2rem,5vw,4.5rem)]
-        font-semibold
-        leading-[1.1]
-      ">
+      <h2 className="about-anim text-[clamp(2.2rem,5vw,4.5rem)] font-semibold leading-[1.1]">
         We design how brands <br /> live and evolve.
       </h2>
 
-      <div className="about-anim mt-8 w-[60px] h-[2px] bg-black/20"/>
+      <div className="about-anim mt-8 w-[60px] h-[2px] bg-[#1F6677]/40"/>
     </div>
 
-    <div className="
-      space-y-6
-      text-[16px] sm:text-[18px]
-      leading-[1.9]
-      text-black/70
-      max-w-[720px]
-    ">
+    <div className="space-y-6 text-[16px] sm:text-[18px] leading-[1.9] text-black/70 max-w-[720px]">
       <p className="about-anim">We believe design is infrastructure — not decoration...</p>
       <p className="about-anim">At NOVA Studio, we approach every project as a living system...</p>
       <p className="about-anim text-black/60">Our work sits at the intersection of strategy...</p>
@@ -106,29 +82,22 @@ export default function AboutPage() {
 </section>
 
 
-
 {/* ================= STUDIO IMAGE ================= */}
 <section className="bg-white py-[10vh] sm:py-[12vh]">
 
-  <div className="relative w-full
-    h-[55vh] sm:h-[70vh] lg:h-[90vh]
-  ">
+  <div className="relative w-full h-[55vh] sm:h-[70vh] lg:h-[90vh]">
     <Image src="/images/about/studio.png" alt="Studio" fill className="object-cover"/>
-    <div className="absolute inset-0 bg-black/10"/>
+    <div className="absolute inset-0 bg-[#071A1F]/10"/>
   </div>
 
-  <div className="
-    px-6 sm:px-10 lg:px-[8vw]
-    pt-[10vh]
-    max-w-[1100px]
-  ">
-    <span className="about-anim uppercase tracking-[0.35em] text-sm text-black/50">Studio</span>
+  <div className="px-6 sm:px-10 lg:px-[8vw] pt-[10vh] max-w-[1100px]">
+    <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">Studio</span>
 
     <h3 className="about-anim text-[clamp(2rem,4vw,3.2rem)] font-semibold mt-4 mb-6">
       Our Studio
     </h3>
 
-    <div className="about-anim w-[60px] h-[2px] bg-black/20 mb-8"/>
+    <div className="about-anim w-[60px] h-[2px] bg-[#1F6677]/40 mb-8"/>
 
     <div className="space-y-6 text-[16px] sm:text-[18px] leading-[1.9] text-black/70">
       <p className="about-anim">Our studio is built for deep thinking...</p>
@@ -140,19 +109,13 @@ export default function AboutPage() {
 </section>
 
 
-
 {/* ================= VISION & MISSION ================= */}
-<section className="
-  bg-[#f7f7f7]
-  px-6 sm:px-10 lg:px-[8vw]
-  py-[14vh]
-">
+<section className="bg-[#E8F4F5] px-6 sm:px-10 lg:px-[8vw] py-[14vh]">
 
 <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-[8vh]">
 
-  {/* VISION */}
   <div>
-    <span className="about-anim uppercase tracking-[0.35em] text-sm text-black/40">
+    <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">
       Vision
     </span>
 
@@ -167,9 +130,8 @@ export default function AboutPage() {
     </p>
   </div>
 
-  {/* MISSION */}
   <div>
-    <span className="about-anim uppercase tracking-[0.35em] text-sm text-black/40">
+    <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">
       Mission
     </span>
 
@@ -187,31 +149,25 @@ export default function AboutPage() {
 </div>
 </section>
 
+
 {/* ================= CULTURE ================= */}
-<section className="
-  bg-white
-  px-6 sm:px-10 lg:px-[8vw]
-  py-[14vh] sm:py-[18vh]
-">
+<section className="bg-white px-6 sm:px-10 lg:px-[8vw] py-[14vh] sm:py-[18vh]">
 
   <div className="grid lg:grid-cols-2 gap-[8vh] lg:gap-[8vw] items-center">
 
-    <div className="about-anim relative w-full
-      h-[50vh] sm:h-[65vh] lg:h-[75vh]
-      rounded-3xl overflow-hidden shadow-xl
-    ">
+    <div className="about-anim relative w-full h-[50vh] sm:h-[65vh] lg:h-[75vh] rounded-3xl overflow-hidden shadow-xl">
       <Image src="/images/about/culture.png" alt="Culture" fill className="object-cover"/>
-      <div className="absolute inset-0 bg-black/10"/>
+      <div className="absolute inset-0 bg-[#071A1F]/10"/>
     </div>
 
     <div className="max-w-[620px]">
-      <span className="about-anim uppercase tracking-[0.35em] text-sm text-black/50">Culture</span>
+      <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">Culture</span>
 
       <h3 className="about-anim text-[clamp(2rem,3vw,2.6rem)] font-semibold mt-4 mb-6">
         Our Culture
       </h3>
 
-      <div className="about-anim w-[60px] h-[2px] bg-black/20 mb-8"/>
+      <div className="about-anim w-[60px] h-[2px] bg-[#1F6677]/40 mb-8"/>
 
       <div className="space-y-6 text-[16px] sm:text-[18px] leading-[1.9] text-black/70">
         <p className="about-anim">Collaboration and curiosity shape our culture...</p>
@@ -227,27 +183,22 @@ export default function AboutPage() {
 {/* ================= PROCESS ================= */}
 <section className="bg-white py-[12vh]">
 
-  <div className="relative w-full
-    h-[50vh] sm:h-[65vh] lg:h-[85vh]
-  ">
+  <div className="relative w-full h-[50vh] sm:h-[65vh] lg:h-[85vh]">
     <Image src="/images/about/cinematic-1.png" alt="Process" fill className="object-cover"/>
-    <div className="absolute inset-0 bg-black/10"/>
+    <div className="absolute inset-0 bg-[#071A1F]/10"/>
   </div>
 
-  <div className="
-    px-6 sm:px-10 lg:px-[8vw]
-    pt-[10vh]
-  ">
+  <div className="px-6 sm:px-10 lg:px-[8vw] pt-[10vh]">
     <div className="max-w-[1100px] grid lg:grid-cols-2 gap-[8vw]">
 
       <div>
-        <span className="about-anim uppercase tracking-[0.35em] text-sm text-black/50">Process</span>
+        <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">Process</span>
 
         <h3 className="about-anim text-[clamp(2rem,3vw,3rem)] font-semibold mt-4 mb-6">
           Our Process
         </h3>
 
-        <div className="about-anim w-[60px] h-[2px] bg-black/20"/>
+        <div className="about-anim w-[60px] h-[2px] bg-[#1F6677]/40"/>
       </div>
 
       <div className="space-y-6 text-[16px] sm:text-[18px] leading-[1.9] text-black/70">
@@ -263,20 +214,18 @@ export default function AboutPage() {
 
 
 {/* ================= FINAL ================= */}
-<section className="
-  px-6 sm:px-10 lg:px-[8vw]
-  py-[14vh] sm:py-[18vh]
-  text-center
-">
+<section className="px-6 sm:px-10 lg:px-[8vw] py-[14vh] sm:py-[18vh] text-center">
+
   <h2 className="about-anim text-[clamp(2rem,6vw,5rem)] font-semibold">
     We don’t design projects.<br/>We design futures.
   </h2>
 
-  <p className="about-anim mt-6 text-black/60">
+  <p className="about-anim mt-6 text-[#1F6677]">
     NOVA Studio — Designing identity, experience & presence.
   </p>
+
 </section>
 
-    </main>
+</main>
   );
 }

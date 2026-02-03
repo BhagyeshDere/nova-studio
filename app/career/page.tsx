@@ -26,7 +26,7 @@ export default function CareersPage() {
   return (
     <main
       ref={pageRef}
-      className="bg-[#f8f8f6] text-black overflow-x-hidden text-[15px] sm:text-[16px]"
+      className="bg-white text-black overflow-x-hidden text-[15px] sm:text-[16px]"
     >
 
 {/* ================= HERO ================= */}
@@ -34,14 +34,14 @@ export default function CareersPage() {
   relative
   min-h-[70vh] sm:min-h-[80vh] lg:h-[90vh]
   flex items-center justify-center text-center
-  bg-[#2f3437]
+  bg-[#071A1F]
 ">
 
-  <div className="absolute inset-0 bg-gradient-to-b from-[#3a3f42] to-[#2f3437]" />
+  <div className="absolute inset-0 bg-gradient-to-b from-[#0E2E34] to-[#071A1F]" />
 
   <div className="relative z-10 px-5 sm:px-10 lg:px-[8vw] text-white">
 
-    <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-white/60 mb-6">
+    <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-6">
       CAREERS
     </p>
 
@@ -76,7 +76,7 @@ export default function CareersPage() {
   </div>
 
   <div className="max-w-[680px]">
-    <span className="reveal uppercase tracking-[0.3em] text-sm text-black/40">
+    <span className="reveal uppercase tracking-[0.3em] text-sm text-[#1F6677]">
       Our Studio
     </span>
 
@@ -84,7 +84,7 @@ export default function CareersPage() {
       A studio built on curiosity.
     </h2>
 
-    <div className="reveal w-16 h-[2px] bg-black/20 mb-8"/>
+    <div className="reveal w-16 h-[2px] bg-[#1F6677]/40 mb-8"/>
 
     <p className="reveal text-black/70 leading-[1.8] mb-6">
       Meaningful work comes from deep thinking and collaboration.
@@ -108,11 +108,11 @@ export default function CareersPage() {
 <section className="
   px-5 sm:px-10 lg:px-[8vw]
   py-[16vh] sm:py-[18vh] lg:py-[22vh]
-  bg-white
+  bg-[#F6FBFC]
 ">
 
   <div className="mb-[10vh]">
-    <p className="reveal uppercase tracking-[0.35em] text-sm text-black/40 mb-4">
+    <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-4">
       Open Roles
     </p>
 
@@ -133,7 +133,7 @@ export default function CareersPage() {
       { role:"Brand Designer", type:"Contract", desc:"Craft brand identities."},
       { role:"Motion Designer", type:"Full-time", desc:"Create cinematic motion."},
     ].map((job,i)=>(
-      <div key={i} className="reveal group py-8 border-t border-black/15">
+      <div key={i} className="reveal group py-8 border-t border-[#1F6677]/20">
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
@@ -148,11 +148,11 @@ export default function CareersPage() {
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="uppercase text-xs tracking-[0.3em] text-black/40">
+            <span className="uppercase text-xs tracking-[0.3em] text-[#1F6677]">
               {job.type}
             </span>
 
-            <span className="text-xl md:group-hover:translate-x-2 transition">
+            <span className="text-xl md:group-hover:translate-x-2 transition text-[#1F6677]">
               →
             </span>
           </div>
@@ -162,7 +162,7 @@ export default function CareersPage() {
       </div>
     ))}
 
-    <div className="border-t border-black/15 mt-4"/>
+    <div className="border-t border-[#1F6677]/20 mt-4"/>
   </div>
 </section>
 
@@ -180,14 +180,14 @@ export default function CareersPage() {
 
 {/* ================= CTA ================= */}
 <section className="
-  bg-white
+  bg-[#071A1F]
   px-5 sm:px-10 lg:px-[8vw]
   py-[16vh] sm:py-[18vh] lg:py-[22vh]
 ">
 
-  <div className="max-w-[900px] mx-auto text-center">
+  <div className="max-w-[900px] mx-auto text-center text-white">
 
-    <p className="reveal uppercase tracking-[0.35em] text-sm text-black/40 mb-6">
+    <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-6">
       Careers
     </p>
 
@@ -195,7 +195,7 @@ export default function CareersPage() {
       Don’t see your role?
     </h2>
 
-    <p className="reveal text-black/60 text-[16px] sm:text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12">
+    <p className="reveal text-white/70 text-[16px] sm:text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12">
       We’re always open to meeting thoughtful people.
     </p>
 
@@ -204,11 +204,11 @@ export default function CareersPage() {
       className="
         reveal inline-flex items-center gap-3
         px-10 py-4
-        border border-black
+        border border-[#1F6677]
         rounded-full
         text-[15px]
         transition
-        hover:bg-black hover:text-white
+        hover:bg-[#1F6677]
       "
     >
       careers@novastudio.com
