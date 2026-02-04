@@ -39,26 +39,35 @@ export default function Hero() {
           px-6 sm:px-10 lg:px-[8vw]
         "
       >
-        <motion.h1
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="
-            font-semibold
-            text-white
-            leading-[1.05]
-            tracking-[-0.02em]
-            text-right
-            ml-auto
-            w-full
-            max-w-[1100px]
-            text-[clamp(2.6rem,6vw,6.5rem)]
-          "
-        >
-          We craft identity,
-          <br />
-          experience and presence.
-        </motion.h1>
+       <motion.h1
+  initial={{ opacity: 0, y: 60 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1.2, ease: "easeOut" }}
+  className="
+    font-semibold
+    text-white
+    leading-[1.05]
+    tracking-[-0.02em]
+
+    text-right
+    ml-auto
+    w-full
+    max-w-[1400px]
+
+    text-[clamp(2rem,6vw,6rem)]
+  "
+>
+  {/* LINE 1 */}
+  <span className="block md:whitespace-nowrap">
+    We build powerful software
+  </span>
+
+  {/* LINE 2 */}
+  <span className="block">
+    for modern businesses.
+  </span>
+</motion.h1>
+
       </div>
 
       {/* UI CONTENT */}

@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function SayHi() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -13,7 +12,9 @@ export default function SayHi() {
     if (!sectionRef.current) return;
 
     gsap.fromTo(
-      sectionRef.current.querySelectorAll(".hi-line, .hi-sub, .hi-nav"),
+      sectionRef.current.querySelectorAll(
+        ".hi-line, .hi-sub, .hi-contact, .hi-nav, .hi-footer"
+      ),
       { y: 120, opacity: 0 },
       {
         y: 0,
@@ -50,163 +51,156 @@ export default function SayHi() {
         relative isolate
         w-full
         bg-[#0E2E34] text-white
-        px-5 sm:px-10 lg:px-[6vw]
-
-        /* RESPONSIVE VERTICAL SPACING */
-        py-[10vh] sm:py-[14vh] lg:py-[18vh]
-
+        px-5 sm:px-8 md:px-10 lg:px-[6vw]
+        py-[10vh] sm:py-[14vh] lg:py-[20vh]
         overflow-hidden
       "
     >
-      {/* ===== LOGO ===== */}
-      <Link
-        href="/"
-        className="
-          absolute
-          top-5 sm:top-6
-          left-5 sm:left-10 lg:left-[6vw]
-          z-20
-          group
-        "
-      >
-        <div className="
-          p-[6px]
-          rounded-lg
-          border border-[#1F6677]/40
-          transition-all duration-300
-          group-hover:border-[#1F6677]
-        ">
-          <Image
-            src="/images/logo3.png"
-            alt="NOVA Logo"
-            width={36}
-            height={36}
-            className="group-hover:scale-105 transition"
-          />
-        </div>
-      </Link>
 
-      {/* Cinematic glow — scaled for mobile */}
-      <div className="
-        absolute -top-20 -left-20
-        w-[300px] h-[300px]
-        sm:w-[500px] sm:h-[500px]
-        bg-[#1F6677]/30
-        blur-[120px] sm:blur-[160px]
-        rounded-full
-      " />
+{/* ================= TOP GRID ================= */}
+<div className="
+  grid
+  lg:grid-cols-2
+  gap-[8vh] sm:gap-[10vh]
+  items-start
+">
 
-      {/* TOP RIGHT CONTACT */}
-      <div className="
-        absolute
-        top-5 sm:top-6
-        right-5 sm:right-10 lg:right-[6vw]
+{/* ===== LEFT SIDE ===== */}
+<div>
 
-        text-[11px] sm:text-sm
-        text-white/70
-        flex items-center gap-2
-      ">
-        <span className="text-[#1F6677]">📞</span>
-        <span>+55 21 98479-6999</span>
-      </div>
+<h1
+  className="
+    hi-line
+    font-bold
+    tracking-tight
+    leading-[0.9]
+    whitespace-nowrap
+    text-[clamp(2.5rem,10vw,12rem)]
+  "
+>
+  SAY HI!
+</h1>
 
-      {/* BIG TITLE */}
-      <h1
-        className="
-          hi-line
-          font-bold
-          tracking-tight
-          leading-[0.9]
 
-          /* SAFER RESPONSIVE SCALE */
-          text-[clamp(2.8rem,12vw,12rem)]
+<div className="
+  hi-sub
+  mt-[4vh]
+  max-w-[520px]
+  text-[14px] sm:text-[16px]
+  text-white/70
+  leading-relaxed
+">
+  <p>Tell us about your project.</p>
+  <p>Let’s collaborate and make great stuff.</p>
+</div>
 
-          mt-[8vh] sm:mt-[10vh]
-        "
-      >
-        SAY HI!
-      </h1>
+</div>
 
-      {/* SUBTEXT */}
-      <div className="
-        hi-sub
-        mt-[4vh] sm:mt-[5vh]
-        max-w-[520px]
+{/* ===== RIGHT SIDE CONTACT ===== */}
+<div
+  className="
+    hi-contact
+    grid grid-cols-1 sm:grid-cols-2
+    gap-6 sm:gap-8
+    text-sm text-white/70
+  "
+>
 
-        text-[14px] sm:text-[16px]
-        text-white/70
-        leading-relaxed
-      ">
-        <p>Tell us about your project.</p>
-        <p>Let’s collaborate and make great stuff.</p>
-      </div>
+<div>
+  <p className="text-white font-medium mb-2">Mail ID</p>
+  <p className="break-all">info@dwi4u.com</p>
+</div>
 
-      {/* DIVIDER */}
-      <div className="
-        relative
-        mt-[6vh] sm:mt-[10vh]
-        w-full h-[1px]
-        bg-white/20
-      ">
-        <div
-          ref={dotRef}
-          className="
-            absolute
-            top-[-5px]
-            left-1/2
-            w-3 h-3
-            bg-[#1F6677]
-            rounded-full
-            shadow-[0_0_12px_#1F6677]
-          "
-        />
-      </div>
+<div>
+  <p className="text-white font-medium mb-2">Phone</p>
+  <p>+91 9284117439</p>
+</div>
 
-      {/* BOTTOM NAV */}
-      <div className="
-        hi-nav
-        mt-[5vh] sm:mt-[6vh]
+<div>
+  <p className="text-white font-medium mb-2">Business Enquiry</p>
+  <p>+91 8669086844</p>
+  <p>+91 9595505063</p>
+</div>
 
-        flex flex-col md:flex-row
-        gap-6 md:gap-0
-        justify-between
-        items-start md:items-center
+<div>
+  <p className="text-white font-medium mb-2">Location</p>
+  <p>
+    Office No. 235, 2nd Floor,<br/>
+    Xion Mall, Beside DMart,<br/>
+    Hinjewadi Phase 1,<br/>
+    Pune - 411057
+  </p>
+</div>
 
-        text-xs sm:text-sm
-      ">
+</div>
+</div>
 
-        {/* LINKS */}
-        <div className="
-          flex flex-wrap
-          gap-x-5 sm:gap-x-6
-          gap-y-3
+{/* ===== DIVIDER ===== */}
+<div className="relative mt-[8vh] sm:mt-[10vh] w-full h-[1px] bg-white/20">
+  <div
+    ref={dotRef}
+    className="
+      absolute
+      top-[-5px]
+      left-1/2
+      w-3 h-3
+      bg-[#1F6677]
+      rounded-full
+      shadow-[0_0_12px_#1F6677]
+    "
+  />
+</div>
 
-          uppercase tracking-widest
-          text-white/70
-        ">
-          {["Studio","About","Services","Works","Career","Contact"].map((item,i)=>(
-            <Link 
-              key={i}
-              href={`/${item.toLowerCase()}`}
-              className="hover:text-[#1F6677] transition"
-            >
-              {item}
-            </Link>
-          ))}
-        </div>
+{/* ===== NAV ===== */}
+<div
+  className="
+    hi-nav
+    mt-[5vh] sm:mt-[6vh]
+    flex flex-wrap
+    gap-x-5 sm:gap-x-6
+    gap-y-3
+    uppercase tracking-widest
+    text-white/70
+    text-xs sm:text-sm
+  "
+>
+  {["Home","About","Services","Works","Career","Contact"].map((item,i)=>(
+    <Link 
+      key={i}
+      href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+      className="hover:text-[#1F6677] transition"
+    >
+      {item}
+    </Link>
+  ))}
+</div>
 
-        {/* SOCIALS */}
-        <div className="
-          flex gap-5 sm:gap-6
-          text-lg
-          text-white/60
-        ">
-          <a href="#" className="hover:text-[#1F6677] transition">◎</a>
-          <a href="#" className="hover:text-[#1F6677] transition">in</a>
-          <a href="#" className="hover:text-[#1F6677] transition">◯</a>
-        </div>
+{/* ===== FOOTER BOTTOM ===== */}
+<div
+  className="
+    hi-footer
+    mt-[6vh]
+    flex flex-col md:flex-row
+    justify-between
+    items-start md:items-center
+    gap-4 sm:gap-6
+    text-xs sm:text-sm
+    text-white/50
+  "
+>
 
-      </div>
+<p>
+  © 2025 DW Innovation Pvt. Ltd. All rights reserved.
+</p>
+
+<div className="flex flex-wrap gap-4 sm:gap-6">
+  <Link href="#" className="hover:text-[#1F6677]">Privacy Policy</Link>
+  <Link href="#" className="hover:text-[#1F6677]">Terms of Service</Link>
+  <Link href="#" className="hover:text-[#1F6677]">Sitemap</Link>
+</div>
+
+</div>
+
     </section>
   );
 }

@@ -51,12 +51,12 @@ export default function About() {
               text-[#071A1F]/90
             "
           >
-            At Nova Studio, we blend technology and art to create innovative
-            digital experiences that open up new possibilities for brands and
-            businesses. We believe sensitivity and technique must work together —
-            strategy guiding creativity, and creativity enhancing strategy.
-            Every project we design is built to be functional, emotionally
-            engaging, and visually refined.
+            At Qiro Tech, we build powerful software solutions that help
+            businesses operate smarter and grow faster. By combining
+            technology, design, and strategy, we create digital products that
+            are scalable, secure, and built for real-world performance.
+            Every solution we develop focuses on reliability, usability,
+            and long-term business value.
           </p>
 
           {/* PARAGRAPH 2 */}
@@ -68,11 +68,11 @@ export default function About() {
               text-[#071A1F]/75
             "
           >
-            Specializing in digital platforms, we collaborate across multiple
-            disciplines. From concept to execution, we handle brand identity,
-            UI systems, and interactive experiences. Our team works as one
-            unified force focused on clarity and long-term value — creating
-            work that performs, adapts, and grows with your brand.
+            From custom software and mobile applications to AI-ML systems,
+            IoT platforms, and infrastructure management, Qiro Tech works
+            across multiple domains to deliver end-to-end digital solutions.
+            Our team collaborates closely with clients to transform ideas into
+            high-impact technology that evolves with their business.
           </p>
 
         </div>

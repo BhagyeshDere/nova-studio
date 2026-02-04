@@ -34,7 +34,8 @@ export default function Home() {
               max-w-[1200px] xl:max-w-[1400px]
             "
           >
-            We blend technology and art to create innovative designs that open up new possibilities.
+            Qiro Tech delivers smart software solutions that help businesses
+            innovate, automate, and grow in the digital era.
           </span>
         </ScrollReveal>
 
@@ -59,7 +60,7 @@ export default function Home() {
         <div className="max-w-[1500px] mx-auto">
 
           <BlurText
-            text="We design experiences, not just interfaces."
+            text="We build future-ready software for modern businesses."
             animateBy="words"
             direction="top"
             className="
@@ -85,15 +86,15 @@ export default function Home() {
             "
           >
             <p>
-              Every interaction is crafted with intention — from the first impression
-              to the final detail. We believe great digital products are not just seen,
-              but felt.
+              At Qiro Tech, we specialize in Website Development, UI/UX Design,
+              Custom Software, Mobile & Web Applications, and enterprise-grade
+              digital solutions.
             </p>
 
             <p>
-              Our process blends strategy, design, and technology into seamless
-              experiences that connect emotionally, perform technically, and scale
-              naturally with your brand.
+              From AI-ML systems and IoT platforms to infrastructure management
+              and long-term support, we create reliable technology that scales
+              with your business.
             </p>
           </div>
 

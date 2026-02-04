@@ -10,24 +10,62 @@ export default function ServicesPage() {
   useEffect(() => {
     if (!pageRef.current) return;
 
+    // ===== PAGE LOAD ANIMATION =====
     gsap.fromTo(
       pageRef.current,
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
+      { opacity: 0, scale: 0.98 },
+      { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }
     );
 
+    // ===== STAGGER ALL SECTIONS =====
+    gsap.fromTo(
+      pageRef.current.querySelectorAll("section"),
+      { y: 60, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+      }
+    );
+
+    // ===== SCROLL REVEAL =====
     gsap.utils.toArray<HTMLElement>(".srv-anim").forEach((el) => {
       gsap.fromTo(
         el,
-        { y: 60, opacity: 0 },
+        { y: 80, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 1.1,
-          scrollTrigger: { trigger: el, start: "top 90%" },
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
         }
       );
     });
+
+    // ===== SERVICE CARDS PARALLAX REVEAL =====
+    gsap.utils.toArray<HTMLElement>(".group").forEach((card) => {
+      gsap.fromTo(
+        card,
+        { y: 120, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          },
+        }
+      );
+    });
+
   }, []);
 
   const services = [
@@ -88,57 +126,29 @@ export default function ServicesPage() {
 <section className="px-5 sm:px-10 lg:px-[6vw] pt-[14vh] sm:pt-[18vh] lg:pt-[22vh] pb-[10vh]">
 
   <h1 className="srv-anim font-semibold text-[#071A1F] leading-[0.95] tracking-[-0.03em] text-[clamp(2.6rem,6.5vw,8rem)] w-full">
-    <span className="block">We are a design studio that</span>
-    <span className="block">loves to create together.</span>
+    <span className="block">We build powerful software</span>
+    <span className="block">for modern businesses.</span>
   </h1>
 
   <p className="srv-anim mt-8 sm:mt-10 max-w-[560px] text-[15px] sm:text-[17px] leading-[1.8] text-[#071A1F]/80">
-    We work side by side with agencies, acting as an extension
-    of their teams and building meaningful digital experiences.
+    At Qiro Tech, we partner with businesses to design,
+    develop, and scale digital solutions — from custom
+    software and AI systems to cloud infrastructure and
+    enterprise applications.
   </p>
 
 </section>
-
-
-{/* TEAM IMAGE */}
-<section className="py-[8vh] sm:py-[10vh]">
-  <div className="group overflow-hidden rounded-xl mx-5 sm:mx-10 lg:mx-[6vw]">
-    <Image
-      src="/images/services/team.png"
-      alt="Team"
-      width={2200}
-      height={900}
-      className="w-full h-auto object-cover transition duration-700 group-hover:scale-105"
-    />
-  </div>
-</section>
-
-
-{/* INTRO TEXT */}
-<section className="px-5 sm:px-10 lg:px-[8vw] py-[10vh] sm:py-[14vh] lg:py-[16vh]">
-
-  <h2 className="text-[clamp(2.2rem,6vw,6rem)] font-semibold mb-6 sm:mb-8 leading-[1.1]">
-    Part of your team,<br/>from start to finish
-  </h2>
-
-  <p className="max-w-[720px] text-[16px] sm:text-[18px] leading-[1.8] text-[#071A1F]/75">
-    More than providers, we are partners. We adapt our
-    contribution to match the needs of each project.
-  </p>
-
-</section>
-
 
 {/* SERVICES */}
 <section className="w-full">
 
   <div className="px-5 sm:px-10 lg:px-[8vw] pt-[10vh] pb-[6vh]">
     <span className="uppercase text-sm tracking-[0.3em] text-[#1F6677]">
-      Services
+      Our Expertise
     </span>
 
     <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-semibold mt-4">
-      What we do
+      Technology Solutions We Deliver
     </h2>
   </div>
 
@@ -192,7 +202,6 @@ export default function ServicesPage() {
   </div>
 
 </section>
-
 
 {/* WHY US */}
 <section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] text-center">

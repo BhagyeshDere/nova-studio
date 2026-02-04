@@ -43,7 +43,7 @@ export default function ContactPage() {
 ">
 
   <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-6">
-    CONTACT NOVA STUDIO
+    CONTACT DW INNOVATION
   </p>
 
   <h1 className="reveal text-[clamp(2.2rem,7vw,4.5rem)] font-semibold leading-[1.1]">
@@ -53,8 +53,8 @@ export default function ContactPage() {
   </h1>
 
   <p className="reveal mt-6 text-black/60 max-w-[640px] mx-auto text-[16px] sm:text-lg leading-[1.8]">
-    Connect with our creative team to craft meaningful digital
-    experiences and high-impact brand identities.
+    Connect with our team to build powerful digital solutions
+    and innovative technology experiences.
   </p>
 
 </section>
@@ -134,7 +134,7 @@ export default function ContactPage() {
 
   <p className="text-black/60 mb-8 sm:mb-10 leading-[1.7]">
     Our experts are ready to collaborate on your next
-    creative project.
+    technology project.
   </p>
 
   <div className="space-y-7">
@@ -144,7 +144,7 @@ export default function ContactPage() {
         Email
       </p>
       <p className="text-base sm:text-lg font-medium break-all">
-        hello@novastudio.com
+        info@dwi4u.com
       </p>
     </div>
 
@@ -153,7 +153,17 @@ export default function ContactPage() {
         Phone
       </p>
       <p className="text-base sm:text-lg font-medium">
-        +91 98765 43210
+        +91 9284117439
+      </p>
+    </div>
+
+    <div>
+      <p className="text-xs sm:text-sm text-[#1F6677] uppercase mb-2 tracking-wide">
+        Business Enquiry
+      </p>
+      <p className="text-base sm:text-lg font-medium">
+        +91 8669086844<br/>
+        +91 9595505063
       </p>
     </div>
 
@@ -162,7 +172,9 @@ export default function ContactPage() {
         Location
       </p>
       <p className="text-base sm:text-lg font-medium">
-        Mumbai, Maharashtra, India
+        Office No. 235, 2nd Floor, Xion Mall,<br/>
+        Beside DMart, Hinjewadi Phase 1,<br/>
+        Pune - 411057
       </p>
     </div>
 
@@ -189,7 +201,7 @@ export default function ContactPage() {
     ">
 
       <iframe
-        src="https://www.google.com/maps?q=Mumbai,Maharashtra,India&output=embed"
+        src="https://www.google.com/maps?q=Hinjewadi,Pune,India&output=embed"
         width="100%"
         height="350"
         className="sm:h-[450px]"

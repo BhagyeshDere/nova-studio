@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { name: "Studio", href: "/" },
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Works", href: "/works" },
@@ -58,42 +58,25 @@ export default function Navbar() {
           show ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        
         <div
           className={`
-            relative
             w-full px-5 md:px-[6vw]
             h-[90px] md:h-[110px]
             flex items-center justify-between
             ${textColor}
           `}
         >
-          {/* ===== LOGO ===== */}
-<Link href="/" className="group">
-  <div
-    className="
-      p-[6px]
-      rounded-lg
-      border border-[#1F6677]/40
-      transition-all duration-300
-      group-hover:border-[#1F6677]
-    "
-  >
-    <Image
-      src="/images/logo3.png"
-      alt="Logo"
-      width={40}
-      height={40}
-      priority
-      className="
-        transition-transform duration-300
-        group-hover:scale-105
-      "
-    />
-  </div>
-</Link>
-
-
+          {/* ===== LOGO (NO BORDER) ===== */}
+          <Link href="/" className="group">
+            <Image
+              src="/images/logo.svg"
+              alt="Logo"
+              width={50}
+              height={50}
+              priority
+              className="transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
 
           {/* ===== DESKTOP MENU ===== */}
           <div
@@ -111,11 +94,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="
-                    relative
-                    hover:text-[#1F6677]
-                    transition
-                  "
+                  className="relative hover:text-[#1F6677] transition"
                   style={{ opacity: active ? 1 : 0.7 }}
                 >
                   {active && (

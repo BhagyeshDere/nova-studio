@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "@/lib/animations";
 import Image from "next/image";
 
 export default function CareersPage() {
   const pageRef = useRef<HTMLDivElement>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (!pageRef.current) return;
@@ -23,6 +24,75 @@ export default function CareersPage() {
     );
   }, []);
 
+  const jobs = [
+    {
+      role: "Software Engineer",
+      type: "Full-time",
+      desc: "Build scalable applications and APIs.",
+      responsibilities: [
+        "Develop scalable backend services",
+        "Write clean and maintainable code",
+        "Collaborate with cross-functional teams",
+        "Participate in code reviews",
+      ],
+      requirements: [
+        "2+ years experience in development",
+        "Strong JS/TS knowledge",
+        "API & database experience",
+        "Problem-solving mindset",
+      ],
+    },
+    {
+      role: "Frontend Developer",
+      type: "Full-time",
+      desc: "Create modern responsive interfaces.",
+      responsibilities: [
+        "Build responsive UI",
+        "Optimize performance",
+        "Work with design systems",
+      ],
+      requirements: [
+        "React/Next.js experience",
+        "Good CSS/Tailwind skills",
+        "UI/UX understanding",
+      ],
+    },
+    {
+      role: "AI/ML Engineer",
+      type: "Full-time",
+      desc: "Develop intelligent AI-driven solutions.",
+      responsibilities: [
+        "Build ML models",
+        "Deploy AI services",
+        "Analyze datasets",
+      ],
+      requirements: [
+        "Python & ML frameworks",
+        "Data analysis skills",
+        "AI deployment knowledge",
+      ],
+    },
+    {
+      role: "DevOps Engineer",
+      type: "Full-time",
+      desc: "Manage cloud infrastructure and CI/CD.",
+      responsibilities: [
+        "Maintain CI/CD pipelines",
+        "Cloud deployments",
+        "Infrastructure monitoring",
+      ],
+      requirements: [
+        "AWS/GCP/Azure experience",
+        "Docker & CI/CD knowledge",
+        "Security best practices",
+      ],
+    },
+  ];
+
+  const toggleJob = (i: number) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
+
   return (
     <main
       ref={pageRef}
@@ -30,86 +100,26 @@ export default function CareersPage() {
     >
 
 {/* ================= HERO ================= */}
-<section className="
-  relative
-  min-h-[70vh] sm:min-h-[80vh] lg:h-[90vh]
-  flex items-center justify-center text-center
-  bg-[#071A1F]
-">
-
+<section className="relative min-h-[70vh] sm:min-h-[80vh] lg:h-[90vh] flex items-center justify-center text-center bg-[#071A1F]">
   <div className="absolute inset-0 bg-gradient-to-b from-[#0E2E34] to-[#071A1F]" />
 
   <div className="relative z-10 px-5 sm:px-10 lg:px-[8vw] text-white">
-
     <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-6">
       CAREERS
     </p>
 
     <h1 className="reveal text-[clamp(2.4rem,9vw,6rem)] font-semibold leading-[1.05]">
-      Build the future<br/>with us.
+      Build technology<br/>that shapes the future.
     </h1>
 
     <p className="reveal mt-6 max-w-[620px] mx-auto text-white/80 text-[16px] sm:text-lg leading-[1.8]">
-      Join a team that values clarity, craft, and meaningful design.
-      We collaborate deeply and build work that matters.
-    </p>
-
-  </div>
-</section>
-
-{/* ================= CULTURE ================= */}
-<section className="
-  px-5 sm:px-10 lg:px-[8vw]
-  py-[14vh] sm:py-[16vh] lg:py-[18vh]
-  grid grid-cols-1 lg:grid-cols-2
-  gap-12 lg:gap-[8vw]
-  items-center bg-white
-">
-
-  <div className="reveal relative h-[55vh] sm:h-[65vh] lg:h-[70vh] rounded-3xl overflow-hidden">
-    <Image
-      src="/images/careers/culture.png"
-      alt="Studio culture"
-      fill
-      className="object-cover transition duration-700 hover:scale-105"
-    />
-  </div>
-
-  <div className="max-w-[680px]">
-    <span className="reveal uppercase tracking-[0.3em] text-sm text-[#1F6677]">
-      Our Studio
-    </span>
-
-    <h2 className="reveal text-[clamp(2rem,5vw,3.4rem)] font-semibold mt-4 mb-6">
-      A studio built on curiosity.
-    </h2>
-
-    <div className="reveal w-16 h-[2px] bg-[#1F6677]/40 mb-8"/>
-
-    <p className="reveal text-black/70 leading-[1.8] mb-6">
-      Meaningful work comes from deep thinking and collaboration.
-      Our studio is a shared creative space.
-    </p>
-
-    <p className="reveal text-black/70 leading-[1.8] mb-6">
-      Designers and developers operate as one system,
-      connecting creativity with execution.
-    </p>
-
-    <p className="reveal text-black/60 leading-[1.8]">
-      We value intention over speed.
-      Thoughtful design that evolves and lasts.
+      Join Qiro Tech and work on real-world software solutions.
     </p>
   </div>
-
 </section>
 
 {/* ================= OPEN ROLES ================= */}
-<section className="
-  px-5 sm:px-10 lg:px-[8vw]
-  py-[16vh] sm:py-[18vh] lg:py-[22vh]
-  bg-[#F6FBFC]
-">
+<section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] bg-[#F6FBFC]">
 
   <div className="mb-[10vh]">
     <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-4">
@@ -117,32 +127,26 @@ export default function CareersPage() {
     </p>
 
     <h2 className="reveal text-[clamp(2.4rem,7vw,5rem)] font-semibold">
-      Join our team
+      Join Qiro Tech
     </h2>
-
-    <p className="reveal mt-6 max-w-[520px] text-black/60 leading-[1.8]">
-      We’re looking for thoughtful people who care about craft.
-    </p>
   </div>
 
   <div className="max-w-[1100px] mx-auto">
 
-    {[
-      { role:"UI/UX Designer", type:"Full-time", desc:"Design digital experiences."},
-      { role:"Frontend Developer", type:"Full-time", desc:"Build modern interfaces."},
-      { role:"Brand Designer", type:"Contract", desc:"Craft brand identities."},
-      { role:"Motion Designer", type:"Full-time", desc:"Create cinematic motion."},
-    ].map((job,i)=>(
-      <div key={i} className="reveal group py-8 border-t border-[#1F6677]/20">
+    {jobs.map((job,i)=>(
+      <div key={i} className="reveal border-t border-[#1F6677]/20 py-8">
 
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-
+        {/* TOP ROW */}
+        <div
+          onClick={() => toggleJob(i)}
+          className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 cursor-pointer group"
+        >
           <div>
             <h3 className="text-[clamp(1.8rem,5vw,2.6rem)] font-semibold">
               {job.role}
             </h3>
 
-            <p className="mt-3 text-black/60 max-w-[520px] leading-[1.8] md:opacity-0 md:group-hover:opacity-100 transition">
+            <p className="mt-3 text-black/60 max-w-[520px] leading-[1.8]">
               {job.desc}
             </p>
           </div>
@@ -152,17 +156,55 @@ export default function CareersPage() {
               {job.type}
             </span>
 
-            <span className="text-xl md:group-hover:translate-x-2 transition text-[#1F6677]">
+            <span
+              className={`text-xl text-[#1F6677] transition ${
+                openIndex === i ? "rotate-90" : ""
+              }`}
+            >
               →
             </span>
           </div>
-
         </div>
+
+        {/* EXPANDED SECTION */}
+        {openIndex === i && (
+          <div className="mt-8 grid md:grid-cols-2 gap-10 bg-white p-6 rounded-xl shadow-md">
+
+            <div>
+              <h4 className="font-semibold mb-3 text-[#1F6677]">
+                Responsibilities
+              </h4>
+              <ul className="space-y-2 text-black/70">
+                {job.responsibilities.map((r,idx)=>(
+                  <li key={idx}>• {r}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-3 text-[#1F6677]">
+                Requirements
+              </h4>
+              <ul className="space-y-2 text-black/70">
+                {job.requirements.map((r,idx)=>(
+                  <li key={idx}>• {r}</li>
+                ))}
+              </ul>
+
+              <a
+                href="mailto:careers@qirotech.com"
+                className="inline-block mt-6 px-6 py-3 bg-[#1F6677] text-white rounded-full hover:opacity-90 transition"
+              >
+                Apply Now
+              </a>
+            </div>
+
+          </div>
+        )}
 
       </div>
     ))}
 
-    <div className="border-t border-[#1F6677]/20 mt-4"/>
   </div>
 </section>
 
@@ -178,45 +220,7 @@ export default function CareersPage() {
   </div>
 </section>
 
-{/* ================= CTA ================= */}
-<section className="
-  bg-[#071A1F]
-  px-5 sm:px-10 lg:px-[8vw]
-  py-[16vh] sm:py-[18vh] lg:py-[22vh]
-">
-
-  <div className="max-w-[900px] mx-auto text-center text-white">
-
-    <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-6">
-      Careers
-    </p>
-
-    <h2 className="reveal text-[clamp(2.4rem,7vw,5rem)] font-semibold mb-8">
-      Don’t see your role?
-    </h2>
-
-    <p className="reveal text-white/70 text-[16px] sm:text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12">
-      We’re always open to meeting thoughtful people.
-    </p>
-
-    <a
-      href="mailto:careers@novastudio.com"
-      className="
-        reveal inline-flex items-center gap-3
-        px-10 py-4
-        border border-[#1F6677]
-        rounded-full
-        text-[15px]
-        transition
-        hover:bg-[#1F6677]
-      "
-    >
-      careers@novastudio.com
-      <span>→</span>
-    </a>
-
-  </div>
-</section>
+{/* ================= CTA ================= */} <section className=" bg-[#071A1F] px-5 sm:px-10 lg:px-[8vw] py-[16vh] sm:py-[18vh] lg:py-[22vh] "> <div className="max-w-[900px] mx-auto text-center text-white"> <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-6"> Careers </p> <h2 className="reveal text-[clamp(2.4rem,7vw,5rem)] font-semibold mb-8"> Don’t see your role? </h2> <p className="reveal text-white/70 text-[16px] sm:text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12"> We’re always looking for talented engineers and innovators. </p> <a href="mailto:careers@qirotech.com" className=" reveal inline-flex items-center gap-3 px-10 py-4 border border-[#1F6677] rounded-full text-[15px] transition hover:bg-[#1F6677] " > careers@qirotech.com <span>→</span> </a> </div> </section>
 
     </main>
   );
