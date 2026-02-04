@@ -99,11 +99,10 @@ export default function CareersPage() {
       className="bg-white text-black overflow-x-hidden text-[15px] sm:text-[16px]"
     >
 
-{/* ================= HERO ================= */}
-<section className="relative min-h-[70vh] sm:min-h-[80vh] lg:h-[90vh] flex items-center justify-center text-center bg-[#071A1F]">
-  <div className="absolute inset-0 bg-gradient-to-b from-[#0E2E34] to-[#071A1F]" />
+{/* ================= HERO (UPDATED) ================= */}
+<section className="relative min-h-[70vh] sm:min-h-[80vh] lg:h-[90vh] flex items-center justify-center text-center bg-white">
 
-  <div className="relative z-10 px-5 sm:px-10 lg:px-[8vw] text-white">
+  <div className="relative z-10 px-5 sm:px-10 lg:px-[8vw] text-black">
     <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-6">
       CAREERS
     </p>
@@ -112,14 +111,14 @@ export default function CareersPage() {
       Build technology<br/>that shapes the future.
     </h1>
 
-    <p className="reveal mt-6 max-w-[620px] mx-auto text-white/80 text-[16px] sm:text-lg leading-[1.8]">
+    <p className="reveal mt-6 max-w-[620px] mx-auto text-black/70 text-[16px] sm:text-lg leading-[1.8]">
       Join Qiro Tech and work on real-world software solutions.
     </p>
   </div>
 </section>
 
-{/* ================= OPEN ROLES ================= */}
-<section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] bg-[#F6FBFC]">
+{/* ================= OPEN ROLES (UPDATED) ================= */}
+<section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] bg-gradient-to-br from-[#071A1F] via-[#0E3A43] to-[#1F6677] text-white">
 
   <div className="mb-[10vh]">
     <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-4">
@@ -134,7 +133,7 @@ export default function CareersPage() {
   <div className="max-w-[1100px] mx-auto">
 
     {jobs.map((job,i)=>(
-      <div key={i} className="reveal border-t border-[#1F6677]/20 py-8">
+      <div key={i} className="reveal border-t border-white/20 py-8">
 
         {/* TOP ROW */}
         <div
@@ -146,18 +145,19 @@ export default function CareersPage() {
               {job.role}
             </h3>
 
-            <p className="mt-3 text-black/60 max-w-[520px] leading-[1.8]">
+            <p className="mt-3 text-white/70 max-w-[520px] leading-[1.8]">
               {job.desc}
             </p>
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="uppercase text-xs tracking-[0.3em] text-[#1F6677]">
-              {job.type}
-            </span>
+            <span className="uppercase text-xs tracking-[0.3em] text-white">
+  {job.type}
+</span>
+
 
             <span
-              className={`text-xl text-[#1F6677] transition ${
+              className={`text-xl text-white transition ${
                 openIndex === i ? "rotate-90" : ""
               }`}
             >
@@ -168,7 +168,7 @@ export default function CareersPage() {
 
         {/* EXPANDED SECTION */}
         {openIndex === i && (
-          <div className="mt-8 grid md:grid-cols-2 gap-10 bg-white p-6 rounded-xl shadow-md">
+          <div className="mt-8 grid md:grid-cols-2 gap-10 bg-white text-black p-6 rounded-xl shadow-md">
 
             <div>
               <h4 className="font-semibold mb-3 text-[#1F6677]">
@@ -219,8 +219,45 @@ export default function CareersPage() {
     />
   </div>
 </section>
+{/* ================= CTA (UPDATED LIGHT) ================= */}
+<section className="bg-[#F6FBFC] px-5 sm:px-10 lg:px-[8vw] py-[16vh] sm:py-[18vh] lg:py-[22vh]">
 
-{/* ================= CTA ================= */} <section className=" bg-[#071A1F] px-5 sm:px-10 lg:px-[8vw] py-[16vh] sm:py-[18vh] lg:py-[22vh] "> <div className="max-w-[900px] mx-auto text-center text-white"> <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-6"> Careers </p> <h2 className="reveal text-[clamp(2.4rem,7vw,5rem)] font-semibold mb-8"> Don’t see your role? </h2> <p className="reveal text-white/70 text-[16px] sm:text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12"> We’re always looking for talented engineers and innovators. </p> <a href="mailto:careers@qirotech.com" className=" reveal inline-flex items-center gap-3 px-10 py-4 border border-[#1F6677] rounded-full text-[15px] transition hover:bg-[#1F6677] " > careers@qirotech.com <span>→</span> </a> </div> </section>
+  <div className="max-w-[900px] mx-auto text-center text-black">
+
+    <p className="reveal uppercase tracking-[0.35em] text-sm text-[#1F6677] mb-6">
+      Careers
+    </p>
+
+    <h2 className="reveal text-[clamp(2.4rem,7vw,5rem)] font-semibold mb-8">
+      Don’t see your role?
+    </h2>
+
+    <p className="reveal text-black/70 text-[16px] sm:text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12">
+      We’re always looking for talented engineers and innovators.
+    </p>
+
+    <a
+      href="mailto:careers@qirotech.com"
+      className="
+        reveal inline-flex items-center gap-3
+        px-10 py-4
+        border border-[#1F6677]
+        text-[#1F6677]
+        rounded-full
+        text-[15px]
+        transition
+        hover:bg-[#1F6677]
+        hover:text-white
+      "
+    >
+      careers@qirotech.com
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>
+
 
     </main>
   );

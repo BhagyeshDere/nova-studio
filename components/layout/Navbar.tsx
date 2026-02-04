@@ -14,7 +14,8 @@ const links = [
   { name: "Contact", href: "/contact" },
 ];
 
-const darkRoutes = ["/", "/works", "/about", "/career"];
+/* ✅ ONLY routes that need WHITE text */
+const darkRoutes = ["/works"];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -60,29 +61,37 @@ export default function Navbar() {
       >
         <div
           className={`
-            w-full px-5 md:px-[6vw]
-            h-[90px] md:h-[110px]
+            w-full 
+            px-4 sm:px-6 md:px-[6vw]
+            h-[70px] sm:h-[80px] md:h-[100px]
             flex items-center justify-between
             ${textColor}
           `}
         >
-          {/* ===== LOGO (NO BORDER) ===== */}
-          <Link href="/" className="group">
+          {/* ===== LOGO ===== */}
+          <Link href="/" className="group shrink-0">
             <Image
               src="/images/logo.svg"
               alt="Logo"
               width={50}
               height={50}
               priority
-              className="transition-transform duration-300 group-hover:scale-105"
+              className="
+                w-[38px] sm:w-[42px] md:w-[50px]
+                h-auto
+                transition-transform duration-300 
+                group-hover:scale-105
+              "
             />
           </Link>
 
           {/* ===== DESKTOP MENU ===== */}
           <div
             className={`
-              hidden md:flex items-center gap-[3vw]
-              text-[13px] tracking-[0.28em]
+              hidden md:flex items-center
+              gap-[4vw] lg:gap-[3vw]
+              text-[11px] lg:text-[13px]
+              tracking-[0.22em] lg:tracking-[0.28em]
               uppercase font-semibold
               ${textColor}
             `}
@@ -98,7 +107,9 @@ export default function Navbar() {
                   style={{ opacity: active ? 1 : 0.7 }}
                 >
                   {active && (
-                    <span className="absolute -left-4 text-[#1F6677]">•</span>
+                    <span className="absolute -left-4 text-[#1F6677]">
+                      •
+                    </span>
                   )}
                   {link.name}
                 </Link>
@@ -111,7 +122,7 @@ export default function Navbar() {
             className={`md:hidden ${textColor}`}
             onClick={() => setMenuOpen(true)}
           >
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               <span className="block w-6 h-[2px] bg-current"></span>
               <span className="block w-6 h-[2px] bg-current"></span>
               <span className="block w-6 h-[2px] bg-current"></span>
@@ -132,7 +143,7 @@ export default function Navbar() {
 
       {/* ===== MOBILE MENU ===== */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[80%] max-w-[420px] bg-[#071A1F] text-white z-[999] transform transition-transform duration-500 md:hidden ${
+        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[75%] max-w-[420px] bg-[#071A1F] text-white z-[999] transform transition-transform duration-500 md:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -143,7 +154,7 @@ export default function Navbar() {
           ×
         </button>
 
-        <div className="flex flex-col justify-center items-center h-full gap-10 text-[20px] tracking-[0.25em] uppercase font-semibold">
+        <div className="flex flex-col justify-center items-center h-full gap-8 sm:gap-10 text-[18px] sm:text-[20px] tracking-[0.2em] sm:tracking-[0.25em] uppercase font-semibold">
           {links.map((link) => (
             <Link
               key={link.name}
