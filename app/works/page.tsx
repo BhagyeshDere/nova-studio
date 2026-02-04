@@ -38,11 +38,11 @@ export default function WorksPage() {
   ];
 
   return (
-<main ref={pageRef} className="w-full overflow-x-hidden bg-[#071A1F]">
+<main ref={pageRef} className="w-full overflow-x-hidden bg-white">
 
 {/* HERO */}
 <section className="min-h-screen flex items-center px-5 sm:px-8 lg:px-[8vw] pt-[18vh]">
-  <h1 className="text-white font-semibold leading-[1] text-[clamp(3rem,8vw,8rem)]">
+  <h1 className="text-black font-semibold leading-[1] text-[clamp(3rem,8vw,8rem)]">
     We embark on <br/> creative journeys.
   </h1>
 </section>
@@ -52,14 +52,14 @@ export default function WorksPage() {
 <section key={p.id} className="relative py-[16vh] lg:py-[22vh] overflow-hidden">
 
 {/* BIG NUMBER */}
-<div className={`hidden md:block absolute ${i%2?"left-[4vw]":"right-[4vw]"} top-[6vh] text-[22vw] font-semibold text-[#1F6677]/10 select-none`}>
+<div className={`hidden md:block absolute ${i%2?"left-[4vw]":"right-[4vw]"} top-[6vh] text-[22vw] font-semibold text-[#1F6677]/12 select-none`}>
   {p.id}
 </div>
 
 <div className="px-5 sm:px-8 lg:px-[8vw] max-w-[1900px] mx-auto">
 
 {/* TITLE */}
-<h3 className={`work-anim text-white text-3xl sm:text-4xl font-semibold mb-[6vh] ${i%2?"text-right":""}`}>
+<h3 className={`work-anim text-black text-3xl sm:text-4xl font-semibold mb-[6vh] ${i%2?"text-right":""}`}>
   {p.title}
 </h3>
 
@@ -76,11 +76,11 @@ export default function WorksPage() {
       className="object-cover"
     />
 
-    {/* Teal cinematic overlay */}
-    <div className="absolute inset-0 bg-[#1F6677]/15 hover:bg-[#1F6677]/5 transition"/>
+    {/* Soft teal overlay */}
+    <div className="absolute inset-0 bg-[#1F6677]/10 hover:bg-[#1F6677]/5 transition"/>
   </div>
 
-  <h2 className={`work-anim text-white mt-[4vh] text-[clamp(1.8rem,3.5vw,3.2rem)] font-semibold leading-tight ${i%2?"text-right":""}`}>
+  <h2 className={`work-anim text-black mt-[4vh] text-[clamp(1.8rem,3.5vw,3.2rem)] font-semibold leading-tight ${i%2?"text-right":""}`}>
     {p.desc}
   </h2>
 </div>

@@ -14,8 +14,8 @@ const links = [
   { name: "Contact", href: "/contact" },
 ];
 
-/* ✅ ONLY routes that need WHITE text */
-const darkRoutes = ["/works"];
+/* ✅ NO routes forcing white text now */
+const darkRoutes: string[] = [];
 
 export default function Navbar() {
   const pathname = usePathname();

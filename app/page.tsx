@@ -3,9 +3,9 @@
 import Hero from "@/components/home/Hero";
 import WorksShowcase from "@/components/home/WorksShowcase";
 import About from "@/components/home/About";
-import Philosophy from "@/components/home/Philosophy";
+
 import Clients from "@/components/home/Clients";
-import CTA from "@/components/home/CTA";
+
 
 import BlurText from "@/reactbits/BlurText";
 import ScrollReveal from "@/reactbits/ScrollReveal";
@@ -20,32 +20,33 @@ export default function Home() {
       <WorksShowcase />
 
       {/* ABOUT */}
-      <section className="w-full bg-white text-black px-6 sm:px-10 lg:px-[8vw] pt-0 pb-[8vh] sm:pb-[10vh]">
+<section className="w-full bg-white text-black px-6 sm:px-10 lg:px-[8vw] pt-[4vh] sm:pt-[6vh] pb-[8vh] sm:pb-[10vh]">
 
-        <ScrollReveal>
-          <span
-            className="
-              block
-              font-semibold
-              leading-[1.2]
-              tracking-[-0.02em]
-              text-black
-              text-[clamp(2.4rem,6vw,4.5rem)]
-              max-w-[1200px] xl:max-w-[1400px]
-            "
-          >
-            Qiro Tech delivers smart software solutions that help businesses
-            innovate, automate, and grow in the digital era.
-          </span>
-        </ScrollReveal>
+  <ScrollReveal>
+    <span
+      className="
+        block
+        font-semibold
+        leading-[1.2]
+        tracking-[-0.02em]
+        text-black
+        text-[clamp(2.4rem,6vw,4.5rem)]
+        max-w-[1200px] xl:max-w-[1400px]
+      "
+    >
+      Qiro Tech delivers smart software solutions that help businesses
+      innovate, automate, and grow in the digital era.
+    </span>
+  </ScrollReveal>
 
-        <div className="mt-[5vh] sm:mt-[6vh]">
-          <About />
-        </div>
+  <div className="mt-[5vh] sm:mt-[6vh]">
+    <About />
+  </div>
 
-      </section>
+</section>
 
-      <Philosophy />
+
+      
 
       {/* CINEMATIC LINE */}
       <section
@@ -103,7 +104,7 @@ export default function Home() {
 
       <ServicesFlowing />
       <Clients />
-      <CTA />
+      
 
     </main>
   );

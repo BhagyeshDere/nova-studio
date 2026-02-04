@@ -37,22 +37,24 @@ export default function ContactPage() {
 {/* ================= HERO ================= */}
 <section className="
   text-center
-  px-5 sm:px-10 lg:px-[6vw]
-  pt-[14vh] sm:pt-[16vh] lg:pt-[18vh]
-  pb-[8vh] sm:pb-[10vh]
+  px-5 sm:px-8 lg:px-[6vw]
+  pt-[12vh] sm:pt-[14vh] lg:pt-[16vh]
+  pb-[7vh]
 ">
 
-  <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-6">
+  <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-5">
     CONTACT DW INNOVATION
   </p>
 
-  <h1 className="reveal text-[clamp(2.2rem,7vw,4.5rem)] font-semibold leading-[1.1]">
+  <h1 className="reveal text-[clamp(2rem,7vw,4.5rem)] font-semibold leading-[1.1]">
     Let’s Build the Future
     <br />
     Together
   </h1>
 
-  <p className="reveal mt-6 text-black/60 max-w-[640px] mx-auto text-[16px] sm:text-lg leading-[1.8]">
+  <div className="reveal mx-auto mt-6 w-[60px] h-[3px] bg-[#1F6677]/40"/>
+
+  <p className="reveal mt-6 text-black/60 max-w-[640px] mx-auto text-[15px] sm:text-lg leading-[1.8]">
     Connect with our team to build powerful digital solutions
     and innovative technology experiences.
   </p>
@@ -61,23 +63,24 @@ export default function ContactPage() {
 
 {/* ================= CONTENT ================= */}
 <section className="
-  px-5 sm:px-10 lg:px-[6vw]
-  pb-[12vh]
+  px-5 sm:px-8 lg:px-[6vw]
+  pb-[10vh]
 ">
 
   <div className="
     max-w-[1200px]
     mx-auto
     grid grid-cols-1 lg:grid-cols-2
-    gap-10 lg:gap-[8vw]
+    gap-8 lg:gap-[6vw]
     items-start
   ">
 
 {/* ===== FORM ===== */}
 <div className="
   reveal
-  bg-white
-  shadow-xl
+  bg-white/95
+  backdrop-blur-sm
+  shadow-2xl
   border border-[#1F6677]/15
   rounded-2xl
   p-6 sm:p-10
@@ -91,33 +94,34 @@ export default function ContactPage() {
 
     <input
       placeholder="Full Name"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-[#1F6677] transition"
+      className="w-full border border-black/20 rounded-lg px-4 py-3 outline-none focus:border-[#1F6677] focus:ring-2 focus:ring-[#1F6677]/20 transition"
     />
 
     <input
       placeholder="Email Address"
       type="email"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-[#1F6677] transition"
+      className="w-full border border-black/20 rounded-lg px-4 py-3 outline-none focus:border-[#1F6677] focus:ring-2 focus:ring-[#1F6677]/20 transition"
     />
 
     <input
       placeholder="Company (Optional)"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none focus:border-[#1F6677] transition"
+      className="w-full border border-black/20 rounded-lg px-4 py-3 outline-none focus:border-[#1F6677] focus:ring-2 focus:ring-[#1F6677]/20 transition"
     />
 
     <textarea
       rows={4}
       placeholder="Project Details"
-      className="w-full border border-black/20 rounded-md px-4 py-3 outline-none resize-none focus:border-[#1F6677] transition"
+      className="w-full border border-black/20 rounded-lg px-4 py-3 outline-none resize-none focus:border-[#1F6677] focus:ring-2 focus:ring-[#1F6677]/20 transition"
     />
 
     <button className="
       w-full
       bg-[#071A1F] text-white
       py-4
-      rounded-md
+      rounded-lg
       transition
       hover:bg-[#1F6677]
+      shadow-lg hover:shadow-xl
     ">
       Submit Inquiry
     </button>
@@ -126,18 +130,18 @@ export default function ContactPage() {
 </div>
 
 {/* ===== INFO ===== */}
-<div className="reveal pt-4 lg:pt-6">
+<div className="reveal pt-2 lg:pt-4">
 
   <h3 className="text-xl sm:text-2xl font-semibold mb-4">
     Get in Touch
   </h3>
 
-  <p className="text-black/60 mb-8 sm:mb-10 leading-[1.7]">
+  <p className="text-black/60 mb-8 leading-[1.7]">
     Our experts are ready to collaborate on your next
     technology project.
   </p>
 
-  <div className="space-y-7">
+  <div className="space-y-6">
 
     <div>
       <p className="text-xs sm:text-sm text-[#1F6677] uppercase mb-2 tracking-wide">
@@ -187,8 +191,8 @@ export default function ContactPage() {
 {/* ================= MAP ================= */}
 <section className="
   reveal
-  px-5 sm:px-10 lg:px-[6vw]
-  pb-[14vh] sm:pb-[18vh]
+  px-5 sm:px-8 lg:px-[6vw]
+  pb-[12vh]
 ">
 
   <div className="max-w-[1200px] mx-auto">
@@ -196,7 +200,7 @@ export default function ContactPage() {
     <div className="
       rounded-2xl
       overflow-hidden
-      shadow-xl
+      shadow-2xl
       border border-[#1F6677]/20
     ">
 

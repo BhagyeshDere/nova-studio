@@ -52,7 +52,7 @@ export default function SayHi() {
         w-full
         bg-[#0E2E34] text-white
         px-5 sm:px-8 md:px-10 lg:px-[6vw]
-        py-[10vh] sm:py-[14vh] lg:py-[20vh]
+        py-[6vh] sm:py-[8vh] lg:py-[10vh]
         overflow-hidden
       "
     >
@@ -61,7 +61,7 @@ export default function SayHi() {
 <div className="
   grid
   lg:grid-cols-2
-  gap-[8vh] sm:gap-[10vh]
+  gap-[6vh] sm:gap-[8vh]
   items-start
 ">
 
@@ -81,10 +81,9 @@ export default function SayHi() {
   SAY HI!
 </h1>
 
-
 <div className="
   hi-sub
-  mt-[4vh]
+  mt-[3vh]
   max-w-[520px]
   text-[14px] sm:text-[16px]
   text-white/70
@@ -136,7 +135,7 @@ export default function SayHi() {
 </div>
 
 {/* ===== DIVIDER ===== */}
-<div className="relative mt-[8vh] sm:mt-[10vh] w-full h-[1px] bg-white/20">
+<div className="relative mt-[6vh] sm:mt-[7vh] w-full h-[1px] bg-white/20">
   <div
     ref={dotRef}
     className="
@@ -155,7 +154,7 @@ export default function SayHi() {
 <div
   className="
     hi-nav
-    mt-[5vh] sm:mt-[6vh]
+    mt-[4vh]
     flex flex-wrap
     gap-x-5 sm:gap-x-6
     gap-y-3
@@ -179,7 +178,7 @@ export default function SayHi() {
 <div
   className="
     hi-footer
-    mt-[6vh]
+    mt-[5vh]
     flex flex-col md:flex-row
     justify-between
     items-start md:items-center

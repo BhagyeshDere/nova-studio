@@ -10,14 +10,12 @@ export default function ServicesPage() {
   useEffect(() => {
     if (!pageRef.current) return;
 
-    // ===== PAGE LOAD ANIMATION =====
     gsap.fromTo(
       pageRef.current,
       { opacity: 0, scale: 0.98 },
       { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }
     );
 
-    // ===== STAGGER ALL SECTIONS =====
     gsap.fromTo(
       pageRef.current.querySelectorAll("section"),
       { y: 60, opacity: 0 },
@@ -30,7 +28,6 @@ export default function ServicesPage() {
       }
     );
 
-    // ===== SCROLL REVEAL =====
     gsap.utils.toArray<HTMLElement>(".srv-anim").forEach((el) => {
       gsap.fromTo(
         el,
@@ -48,7 +45,6 @@ export default function ServicesPage() {
       );
     });
 
-    // ===== SERVICE CARDS PARALLAX REVEAL =====
     gsap.utils.toArray<HTMLElement>(".group").forEach((card) => {
       gsap.fromTo(
         card,
@@ -123,14 +119,16 @@ export default function ServicesPage() {
 <main ref={pageRef} className="w-full overflow-x-hidden bg-white text-[#071A1F]">
 
 {/* HERO */}
-<section className="px-5 sm:px-10 lg:px-[6vw] pt-[14vh] sm:pt-[18vh] lg:pt-[22vh] pb-[10vh]">
+<section className="px-5 sm:px-8 lg:px-[6vw] pt-[12vh] sm:pt-[16vh] lg:pt-[20vh] pb-[8vh]">
 
-  <h1 className="srv-anim font-semibold text-[#071A1F] leading-[0.95] tracking-[-0.03em] text-[clamp(2.6rem,6.5vw,8rem)] w-full">
+  <h1 className="srv-anim font-semibold leading-[0.95] tracking-[-0.03em] text-[clamp(2.4rem,6.5vw,8rem)]">
     <span className="block">We build powerful software</span>
     <span className="block">for modern businesses.</span>
   </h1>
 
-  <p className="srv-anim mt-8 sm:mt-10 max-w-[560px] text-[15px] sm:text-[17px] leading-[1.8] text-[#071A1F]/80">
+  <div className="srv-anim mt-6 w-[70px] h-[3px] bg-[#1F6677]/40"/>
+
+  <p className="srv-anim mt-6 sm:mt-8 max-w-[560px] text-[15px] sm:text-[17px] leading-[1.8] text-[#071A1F]/70">
     At Qiro Tech, we partner with businesses to design,
     develop, and scale digital solutions — from custom
     software and AI systems to cloud infrastructure and
@@ -142,17 +140,17 @@ export default function ServicesPage() {
 {/* SERVICES */}
 <section className="w-full">
 
-  <div className="px-5 sm:px-10 lg:px-[8vw] pt-[10vh] pb-[6vh]">
-    <span className="uppercase text-sm tracking-[0.3em] text-[#1F6677]">
+  <div className="px-5 sm:px-8 lg:px-[8vw] pt-[8vh] pb-[5vh]">
+    <span className="uppercase text-xs sm:text-sm tracking-[0.3em] text-[#1F6677]">
       Our Expertise
     </span>
 
-    <h2 className="text-[clamp(2.5rem,7vw,6rem)] font-semibold mt-4">
+    <h2 className="text-[clamp(2.2rem,7vw,6rem)] font-semibold mt-4">
       Technology Solutions We Deliver
     </h2>
   </div>
 
-  <div className="flex flex-col gap-[14vh] sm:gap-[18vh]">
+  <div className="flex flex-col gap-[10vh] sm:gap-[14vh]">
 
     {services.map((s,i)=>{
       const isRight = i % 2 !== 0;
@@ -160,29 +158,29 @@ export default function ServicesPage() {
       return(
         <div key={i} className="group">
 
-          <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden">
+          <div className="relative w-full h-[38vh] sm:h-[55vh] lg:h-[80vh] overflow-hidden">
             <Image
               src={s.img}
               alt={s.title}
               fill
               className="object-cover transition duration-[1200ms] group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-[#1F6677]/30 group-hover:bg-[#1F6677]/10 transition"/>
+            <div className="absolute inset-0 bg-[#1F6677]/25 group-hover:bg-[#1F6677]/10 transition"/>
           </div>
 
-          <div className="relative -mt-[8vh] sm:-mt-[12vh] px-5 sm:px-10 lg:px-[8vw]">
+          <div className="relative -mt-[6vh] sm:-mt-[10vh] px-5 sm:px-8 lg:px-[8vw]">
 
-            <div className={`bg-white max-w-[680px] p-6 sm:p-10 shadow-xl text-left ${isRight ? "ml-auto" : ""}`}>
+            <div className={`bg-white/95 backdrop-blur-sm max-w-[680px] p-6 sm:p-10 shadow-2xl rounded-2xl ${isRight ? "ml-auto" : ""}`}>
 
-              <h3 className="text-[clamp(1.8rem,5vw,3rem)] font-semibold mb-4">
+              <h3 className="text-[clamp(1.6rem,5vw,3rem)] font-semibold mb-4">
                 {s.title}
               </h3>
 
-              <p className="text-[#071A1F]/70 text-[16px] leading-[1.8] mb-4">
+              <p className="text-[#071A1F]/70 text-[15px] sm:text-[16px] leading-[1.8] mb-4">
                 {s.desc}
               </p>
 
-              <ul className="space-y-2 text-[#071A1F]/80 text-[15px]">
+              <ul className="space-y-2 text-[#071A1F]/80 text-[14px] sm:text-[15px]">
                 {s.bullets.map((b,idx)=>(
                   <li key={idx} className="flex gap-2">
                     <span className="text-[#1F6677]">•</span>
@@ -204,17 +202,17 @@ export default function ServicesPage() {
 </section>
 
 {/* WHY US */}
-<section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] text-center">
+<section className="px-5 sm:px-8 lg:px-[8vw] py-[12vh] sm:py-[16vh] text-center bg-gradient-to-b from-white to-[#F6FBFC]">
 
-<span className="uppercase text-sm tracking-[0.3em] text-[#1F6677]">
+<span className="uppercase text-xs sm:text-sm tracking-[0.3em] text-[#1F6677]">
   Partnership
 </span>
 
-<h2 className="text-[clamp(2.5rem,7vw,6rem)] font-semibold mt-6 mb-10">
+<h2 className="text-[clamp(2.2rem,7vw,6rem)] font-semibold mt-6 mb-8">
   Why work with us
 </h2>
 
-<p className="text-[18px] leading-[1.9] text-[#071A1F]/70 max-w-[900px] mx-auto">
+<p className="text-[16px] sm:text-[18px] leading-[1.9] text-[#071A1F]/70 max-w-[900px] mx-auto">
   We simplify complexity and amplify impact. Working with us is partnership —
   we embed into your culture and vision, building long-term systems.
 </p>
