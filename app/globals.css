@@ -38,11 +38,11 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%; /* ✅ FIX */
+    min-height: 100%;
     overflow-x: hidden;
 
-    background: #ffffff;
-    color: #0d0d0d;
+    background: #F6FBFC; /* themed light bg */
+    color: #071A1F; /* primary dark */
 
     font-family: "Satoshi", sans-serif;
 
@@ -72,7 +72,7 @@
 #smooth-wrapper {
   width: 100%;
   min-height: 100vh;
-  overflow: visible; /* ✅ FIX */
+  overflow: visible;
   position: relative;
 }
 
@@ -97,7 +97,7 @@ a, button {
 .custom-cursor {
   width: 14px;
   height: 14px;
-  background: white;
+  background: #1F6677; /* themed */
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -118,7 +118,7 @@ a, button {
 .cursor-big {
   width: 220px;
   height: 220px;
-  background: white;
+  background: #1F6677; /* themed */
   mix-blend-mode: difference;
 }
 
@@ -165,13 +165,13 @@ a, button {
 }
 
 .section-dark {
-  background: #0d0d0d;
+  background: #071A1F; /* themed */
   color: white;
 }
 
 .section-light {
-  background: white;
-  color: #0f0f0f;
+  background: #F6FBFC; /* themed */
+  color: #071A1F;
 }
 
 
@@ -192,12 +192,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #bbb;
+  background: #1F6677; /* themed */
   border-radius: 10px;
 }
 
 body.dark-theme::-webkit-scrollbar-thumb {
-  background: #444;
+  background: #0E3A43;
 }
 
 
@@ -205,7 +205,7 @@ body.dark-theme::-webkit-scrollbar-thumb {
    SELECTION STYLE
 ============================ */
 ::selection {
-  background: #1F6677; /* ✅ brand color */
+  background: #1F6677;
   color: white;
 }
 

@@ -42,8 +42,25 @@ export default function WorksPage() {
 
 {/* HERO */}
 <section className="min-h-screen flex items-center px-5 sm:px-8 lg:px-[8vw] pt-[18vh]">
-  <h1 className="text-black font-semibold leading-[1] text-[clamp(3rem,8vw,8rem)]">
-    We embark on <br/> creative journeys.
+  <h1 className="font-semibold leading-[1] text-[clamp(3rem,8vw,8rem)]">
+    
+    {/* GRADIENT PART */}
+    <span className="
+      block
+      bg-gradient-to-r
+      from-[#071A1F]
+      via-[#1F6677]
+      to-[#4DA6B8]
+      bg-clip-text text-transparent
+    ">
+      We embark on
+    </span>
+
+    {/* BLACK PART */}
+    <span className="block text-black">
+      creative journeys.
+    </span>
+
   </h1>
 </section>
 
@@ -51,22 +68,18 @@ export default function WorksPage() {
 {projects.map((p,i)=>(
 <section key={p.id} className="relative py-[16vh] lg:py-[22vh] overflow-hidden">
 
-{/* BIG NUMBER */}
 <div className={`hidden md:block absolute ${i%2?"left-[4vw]":"right-[4vw]"} top-[6vh] text-[22vw] font-semibold text-[#1F6677]/12 select-none`}>
   {p.id}
 </div>
 
 <div className="px-5 sm:px-8 lg:px-[8vw] max-w-[1900px] mx-auto">
 
-{/* TITLE */}
 <h3 className={`work-anim text-black text-3xl sm:text-4xl font-semibold mb-[6vh] ${i%2?"text-right":""}`}>
   {p.title}
 </h3>
 
-{/* ROW */}
 <div className={`flex flex-col lg:flex-row gap-[6vh] items-center ${i%2?"lg:flex-row-reverse":""}`}>
 
-{/* IMAGE */}
 <div className="w-full lg:w-[60%]">
   <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden hover:scale-[1.03] transition duration-700">
     <Image
@@ -76,7 +89,6 @@ export default function WorksPage() {
       className="object-cover"
     />
 
-    {/* Soft teal overlay */}
     <div className="absolute inset-0 bg-[#1F6677]/10 hover:bg-[#1F6677]/5 transition"/>
   </div>
 

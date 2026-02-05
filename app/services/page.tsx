@@ -122,8 +122,24 @@ export default function ServicesPage() {
 <section className="px-5 sm:px-8 lg:px-[6vw] pt-[12vh] sm:pt-[16vh] lg:pt-[20vh] pb-[8vh]">
 
   <h1 className="srv-anim font-semibold leading-[0.95] tracking-[-0.03em] text-[clamp(2.4rem,6.5vw,8rem)]">
-    <span className="block">We build powerful software</span>
-    <span className="block">for modern businesses.</span>
+    
+    {/* LINE 1 — GRADIENT */}
+    <span className="
+      block
+      bg-gradient-to-r 
+      from-[#071A1F] 
+      via-[#1F6677] 
+      to-[#4DA6B8]
+      bg-clip-text text-transparent
+    ">
+      We build powerful software
+    </span>
+
+    {/* LINE 2 — BLACK */}
+    <span className="block text-black">
+      for modern businesses.
+    </span>
+
   </h1>
 
   <div className="srv-anim mt-6 w-[70px] h-[3px] bg-[#1F6677]/40"/>

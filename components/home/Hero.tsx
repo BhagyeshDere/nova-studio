@@ -27,7 +27,6 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="
             font-semibold
-            text-black
             leading-[1.05]
             tracking-[-0.02em]
 
@@ -39,13 +38,22 @@ export default function Hero() {
             text-[clamp(2rem,6vw,6rem)]
           "
         >
-          {/* LINE 1 */}
-          <span className="block md:whitespace-nowrap">
+          {/* LINE 1 — GRADIENT */}
+          <span
+            className="
+              block md:whitespace-nowrap
+              bg-gradient-to-r 
+              from-[#071A1F] 
+              via-[#1F6677] 
+              to-[#4DA6B8]
+              bg-clip-text text-transparent
+            "
+          >
             We build powerful software
           </span>
 
-          {/* LINE 2 */}
-          <span className="block">
+          {/* LINE 2 — BLACK */}
+          <span className="block text-black">
             for modern businesses.
           </span>
         </motion.h1>

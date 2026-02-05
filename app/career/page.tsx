@@ -99,7 +99,7 @@ export default function CareersPage() {
       className="bg-white text-black overflow-x-hidden text-[15px] sm:text-[16px]"
     >
 
-{/* ================= HERO (UPDATED) ================= */}
+{/* ================= HERO ================= */}
 <section className="relative min-h-[70vh] sm:min-h-[80vh] lg:h-[90vh] flex items-center justify-center text-center bg-white">
 
   <div className="relative z-10 px-5 sm:px-10 lg:px-[8vw] text-black">
@@ -108,7 +108,24 @@ export default function CareersPage() {
     </p>
 
     <h1 className="reveal text-[clamp(2.4rem,9vw,6rem)] font-semibold leading-[1.05]">
-      Build technology<br/>that shapes the future.
+
+      {/* GRADIENT PART */}
+      <span className="
+        block
+        bg-gradient-to-r
+        from-[#071A1F]
+        via-[#1F6677]
+        to-[#4DA6B8]
+        bg-clip-text text-transparent
+      ">
+        Build technology
+      </span>
+
+      {/* BLACK PART */}
+      <span className="block text-black">
+        that shapes the future.
+      </span>
+
     </h1>
 
     <p className="reveal mt-6 max-w-[620px] mx-auto text-black/70 text-[16px] sm:text-lg leading-[1.8]">
@@ -117,7 +134,7 @@ export default function CareersPage() {
   </div>
 </section>
 
-{/* ================= OPEN ROLES (UPDATED) ================= */}
+{/* ================= OPEN ROLES ================= */}
 <section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] bg-gradient-to-br from-[#071A1F] via-[#0E3A43] to-[#1F6677] text-white">
 
   <div className="mb-[10vh]">
@@ -135,7 +152,6 @@ export default function CareersPage() {
     {jobs.map((job,i)=>(
       <div key={i} className="reveal border-t border-white/20 py-8">
 
-        {/* TOP ROW */}
         <div
           onClick={() => toggleJob(i)}
           className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 cursor-pointer group"
@@ -152,21 +168,15 @@ export default function CareersPage() {
 
           <div className="flex items-center gap-6">
             <span className="uppercase text-xs tracking-[0.3em] text-white">
-  {job.type}
-</span>
+              {job.type}
+            </span>
 
-
-            <span
-              className={`text-xl text-white transition ${
-                openIndex === i ? "rotate-90" : ""
-              }`}
-            >
+            <span className={`text-xl text-white transition ${openIndex === i ? "rotate-90" : ""}`}>
               →
             </span>
           </div>
         </div>
 
-        {/* EXPANDED SECTION */}
         {openIndex === i && (
           <div className="mt-8 grid md:grid-cols-2 gap-10 bg-white text-black p-6 rounded-xl shadow-md">
 
@@ -219,7 +229,8 @@ export default function CareersPage() {
     />
   </div>
 </section>
-{/* ================= CTA (UPDATED LIGHT) ================= */}
+
+{/* ================= CTA ================= */}
 <section className="bg-[#F6FBFC] px-5 sm:px-10 lg:px-[8vw] py-[16vh] sm:py-[18vh] lg:py-[22vh]">
 
   <div className="max-w-[900px] mx-auto text-center text-black">
@@ -257,7 +268,6 @@ export default function CareersPage() {
   </div>
 
 </section>
-
 
     </main>
   );

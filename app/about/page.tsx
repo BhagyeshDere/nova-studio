@@ -59,7 +59,24 @@ export default function AboutPage() {
   <div className="max-w-[1400px] mx-auto">
 
     <h1 className="about-anim text-[clamp(2.4rem,8vw,8rem)] leading-[1.05] font-semibold">
-      Engineering powerful<br/>digital solutions.
+
+      {/* LINE 1 — GRADIENT */}
+      <span className="
+        block
+        bg-gradient-to-r 
+        from-[#071A1F] 
+        via-[#1F6677] 
+        to-[#4DA6B8]
+        bg-clip-text text-transparent
+      ">
+        Engineering powerful
+      </span>
+
+      {/* LINE 2 — BLACK */}
+      <span className="block text-black">
+        digital solutions.
+      </span>
+
     </h1>
 
     <div className="about-anim mt-5 sm:mt-6 w-[70px] sm:w-[80px] h-[3px] bg-[#1F6677]/40"/>

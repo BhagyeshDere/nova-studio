@@ -47,9 +47,24 @@ export default function ContactPage() {
   </p>
 
   <h1 className="reveal text-[clamp(2rem,7vw,4.5rem)] font-semibold leading-[1.1]">
-    Let’s Build the Future
-    <br />
-    Together
+    
+    {/* GRADIENT LINE */}
+    <span className="
+      block
+      bg-gradient-to-r
+      from-[#071A1F]
+      via-[#1F6677]
+      to-[#4DA6B8]
+      bg-clip-text text-transparent
+    ">
+      Let’s Build the Future
+    </span>
+
+    {/* BLACK LINE */}
+    <span className="block text-black">
+      Together
+    </span>
+
   </h1>
 
   <div className="reveal mx-auto mt-6 w-[60px] h-[3px] bg-[#1F6677]/40"/>
