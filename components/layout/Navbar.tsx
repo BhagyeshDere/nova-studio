@@ -71,18 +71,20 @@ export default function Navbar() {
           {/* ===== LOGO ===== */}
           <Link href="/" className="group shrink-0">
             <Image
-              src="/images/logo.svg"
-              alt="Logo"
-              width={50}
-              height={50}
-              priority
-              className="
-                w-[38px] sm:w-[42px] md:w-[50px]
-                h-auto
-                transition-transform duration-300 
-                group-hover:scale-105
-              "
-            />
+  src="/images/logo4.png"
+  alt="Logo"
+  width={140}
+  height={140}
+  priority
+  className="
+  w-[48px] sm:w-[56px] md:w-[64px] lg:w-[72px]
+  h-auto
+  transition-transform duration-300 
+  group-hover:scale-105
+"
+
+/>
+
           </Link>
 
           {/* ===== DESKTOP MENU ===== */}
