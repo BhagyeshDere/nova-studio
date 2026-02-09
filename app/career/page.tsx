@@ -108,24 +108,13 @@ export default function CareersPage() {
     </p>
 
     <h1 className="reveal text-[clamp(2.4rem,9vw,6rem)] font-semibold leading-[1.05]">
-
-      {/* GRADIENT PART */}
-      <span className="
-        block
-        bg-gradient-to-r
-        from-[#071A1F]
-        via-[#1F6677]
-        to-[#4DA6B8]
-        bg-clip-text text-transparent
-      ">
+      <span className="block bg-gradient-to-r from-[#071A1F] via-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
         Build technology
       </span>
 
-      {/* BLACK PART */}
       <span className="block text-black">
         that shapes the future.
       </span>
-
     </h1>
 
     <p className="reveal mt-6 max-w-[620px] mx-auto text-black/70 text-[16px] sm:text-lg leading-[1.8]">
@@ -133,6 +122,92 @@ export default function CareersPage() {
     </p>
   </div>
 </section>
+
+
+{/* ================= JOIN OUR TEAM ================= */}
+<section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] bg-[#F6FBFC]">
+
+  <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+    <div className="reveal">
+      <h2 className="text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-tight">
+        Join <span className="text-[#1F6677]">Our Team</span>
+      </h2>
+
+      <p className="mt-6 text-black/70 leading-[1.9] max-w-[520px]">
+        At Qiro Tech, you’ll work on impactful projects,
+        collaborate with talented people and grow your career
+        in a culture that values innovation and learning.
+      </p>
+
+      <p className="mt-4 text-black/60 leading-[1.9] max-w-[520px]">
+        We believe great products are built by great teams.
+        If you love solving problems and building technology,
+        you’ll feel at home here.
+      </p>
+    </div>
+
+    <div className="reveal relative h-[420px] rounded-2xl overflow-hidden shadow-xl">
+      <Image
+        src="/images/careers/team2.png"
+        alt="Join our team"
+        fill
+        className="object-cover"
+      />
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* ================= WHY JOIN QIRO TECH ================= */}
+<section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] bg-white">
+
+  <div className="max-w-[1000px] mx-auto text-center">
+
+    <h2 className="reveal text-[clamp(2.2rem,5vw,4rem)] font-semibold">
+      Why Join <span className="text-[#1F6677]">Qiro Tech Innovation?</span>
+    </h2>
+
+    <p className="reveal mt-6 text-black/70 leading-[1.9] max-w-[720px] mx-auto">
+      We create an environment where creativity meets technology.
+      Our teams work on cutting-edge solutions across AI,
+      cloud and enterprise platforms.
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-10 mt-14 text-left">
+
+      <div className="reveal">
+        <h4 className="font-semibold text-[#1F6677] mb-3">Growth</h4>
+        <p className="text-black/70 leading-[1.8]">
+          Continuous learning, mentorship and real-world
+          project experience.
+        </p>
+      </div>
+
+      <div className="reveal">
+        <h4 className="font-semibold text-[#1F6677] mb-3">Innovation</h4>
+        <p className="text-black/70 leading-[1.8]">
+          Work on modern technologies and
+          forward-thinking solutions.
+        </p>
+      </div>
+
+      <div className="reveal">
+        <h4 className="font-semibold text-[#1F6677] mb-3">Culture</h4>
+        <p className="text-black/70 leading-[1.8]">
+          A collaborative and transparent workplace
+          that values ideas.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 {/* ================= OPEN ROLES ================= */}
 <section className="px-5 sm:px-10 lg:px-[8vw] py-[16vh] bg-gradient-to-br from-[#071A1F] via-[#0E3A43] to-[#1F6677] text-white">
@@ -148,7 +223,6 @@ export default function CareersPage() {
   </div>
 
   <div className="max-w-[1100px] mx-auto">
-
     {jobs.map((job,i)=>(
       <div key={i} className="reveal border-t border-white/20 py-8">
 
@@ -214,24 +288,12 @@ export default function CareersPage() {
 
       </div>
     ))}
-
   </div>
 </section>
 
-{/* ================= TEAM IMAGE ================= */}
-<section className="relative w-full py-[12vh] bg-white">
-  <div className="relative w-full h-[55vh] sm:h-[70vh] lg:h-[100vh] overflow-hidden">
-    <Image
-      src="/images/careers/team1.png"
-      alt="Team"
-      fill
-      className="object-cover transition duration-[1400ms] hover:scale-105"
-    />
-  </div>
-</section>
 
 {/* ================= CTA ================= */}
-<section className="bg-[#F6FBFC] px-5 sm:px-10 lg:px-[8vw] py-[16vh] sm:py-[18vh] lg:py-[22vh]">
+<section className="bg-[#F6FBFC] px-5 sm:px-10 lg:px-[8vw] py-[16vh]">
 
   <div className="max-w-[900px] mx-auto text-center text-black">
 
@@ -243,26 +305,15 @@ export default function CareersPage() {
       Don’t see your role?
     </h2>
 
-    <p className="reveal text-black/70 text-[16px] sm:text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12">
+    <p className="reveal text-black/70 text-[18px] leading-[1.8] max-w-[520px] mx-auto mb-12">
       We’re always looking for talented engineers and innovators.
     </p>
 
     <a
       href="mailto:hr@qirotec.com"
-      className="
-        reveal inline-flex items-center gap-3
-        px-10 py-4
-        border border-[#1F6677]
-        text-[#1F6677]
-        rounded-full
-        text-[15px]
-        transition
-        hover:bg-[#1F6677]
-        hover:text-white
-      "
+      className="reveal inline-flex items-center gap-3 px-10 py-4 border border-[#1F6677] text-[#1F6677] rounded-full hover:bg-[#1F6677] hover:text-white transition"
     >
-      hr@qirotec.com
-      <span>→</span>
+      hr@qirotec.com →
     </a>
 
   </div>
