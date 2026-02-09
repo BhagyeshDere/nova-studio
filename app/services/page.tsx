@@ -69,7 +69,13 @@ export default function ServicesPage() {
       title:"Website Development & SEO Services",
       desc:"High-performance websites built for visibility and growth.",
       bullets:["Corporate sites","E-commerce","SEO optimization","Speed performance"],
-      img:"/images/services/web.png"
+      img:"/images/services/web2.png"
+    },
+     {
+      title:"Mobile & Web App",
+      desc:"Apps that feel smooth, fast and intuitive.",
+      bullets:["iOS & Android","Cross-platform","Backend APIs","Deployment"],
+      img:"/images/services/app3.png"
     },
     {
       title:"UI & UX Design",
@@ -83,12 +89,7 @@ export default function ServicesPage() {
       bullets:["Enterprise apps","API integrations","Cloud systems","Security-first"],
       img:"/images/services/software.png"
     },
-    {
-      title:"Mobile & Web App",
-      desc:"Apps that feel smooth, fast and intuitive.",
-      bullets:["iOS & Android","Cross-platform","Backend APIs","Deployment"],
-      img:"/images/services/app1.png"
-    },
+    
     {
       title:"Software Maintenance & Support",
       desc:"Reliable support to keep systems running.",

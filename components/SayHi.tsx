@@ -107,18 +107,19 @@ export default function SayHi() {
 
 <div>
   <p className="text-white font-medium mb-2">Mail ID</p>
-  <p className="break-all">info@dwi4u.com</p>
+  <p className="break-all">hr@qirotec.com</p>
 </div>
 
 <div>
   <p className="text-white font-medium mb-2">Phone</p>
-  <p>+91 9284117439</p>
+  <p>+91 9860507744 </p>
+<p>+91 9113882782</p>
 </div>
 
 <div>
   <p className="text-white font-medium mb-2">Business Enquiry</p>
-  <p>+91 8669086844</p>
-  <p>+91 9595505063</p>
+  <p>+91 9860507744 </p>
+<p>+91 9113882782</p>
 </div>
 
 <div>
@@ -189,13 +190,13 @@ export default function SayHi() {
 >
 
 <p>
-  © 2025 DW Innovation Pvt. Ltd. All rights reserved.
+  © QIRO TECH Innovation Pvt. Ltd. All rights reserved.
 </p>
 
 <div className="flex flex-wrap gap-4 sm:gap-6">
-  <Link href="#" className="hover:text-[#1F6677]">Privacy Policy</Link>
-  <Link href="#" className="hover:text-[#1F6677]">Terms of Service</Link>
-  <Link href="#" className="hover:text-[#1F6677]">Sitemap</Link>
+  <Link href="/privacy-policy" className="hover:text-[#1F6677]">Privacy Policy</Link>
+  <Link href="/terms-of-service" className="hover:text-[#1F6677]">Terms of Service</Link>
+  <Link href="/sitemap" className="hover:text-[#1F6677]">Sitemap</Link>
 </div>
 
 </div>

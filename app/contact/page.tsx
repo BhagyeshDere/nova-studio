@@ -43,7 +43,7 @@ export default function ContactPage() {
 ">
 
   <p className="reveal uppercase tracking-[0.35em] text-xs sm:text-sm text-[#1F6677] mb-5">
-    CONTACT DW INNOVATION
+    CONTACT QIRO TECH INNOVATION PVT. LTD.
   </p>
 
   <h1 className="reveal text-[clamp(2rem,7vw,4.5rem)] font-semibold leading-[1.1]">
@@ -163,7 +163,7 @@ export default function ContactPage() {
         Email
       </p>
       <p className="text-base sm:text-lg font-medium break-all">
-        info@dwi4u.com
+        hr@qirotec.com
       </p>
     </div>
 

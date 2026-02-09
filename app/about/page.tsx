@@ -99,7 +99,7 @@ export default function AboutPage() {
 <section className="py-[8vh] sm:py-[12vh]">
   <div className="group overflow-hidden rounded-2xl mx-5 sm:mx-8 lg:mx-[6vw] shadow-xl">
     <Image
-      src="/images/about/team.png"
+      src="/images/about/team1.png"
       alt="Team"
       width={2200}
       height={900}
@@ -181,7 +181,7 @@ export default function AboutPage() {
 
     <div className="about-anim group relative w-full h-[45vh] sm:h-[60vh] lg:h-[75vh] rounded-3xl overflow-hidden shadow-2xl">
       <Image
-        src="/images/about/culture.png"
+        src="/images/about/culture1.png"
         alt="Culture"
         fill
         className="object-cover transition duration-700 group-hover:scale-110"
@@ -215,7 +215,7 @@ export default function AboutPage() {
 
   <div className="group relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden rounded-2xl shadow-xl">
     <Image
-      src="/images/about/cinematic-1.png"
+      src="/images/about/cinematic-2.png"
       alt="Process"
       fill
       className="object-cover transition duration-700 group-hover:scale-110"

@@ -40,7 +40,7 @@ export default function ServicesFlowing() {
           OUR EXPERTISE
         </p>
 
-        {/* ===== 3 RESPONSIVE LINES ===== */}
+        {/* ===== FLOWING LINES ===== */}
         <div
           className="
             font-semibold
@@ -50,31 +50,62 @@ export default function ServicesFlowing() {
           "
         >
 
-          {/* LINE 1 */}
+          {/* 1 */}
           <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>SOFTWARE</span>
-
-            <Capsule text="CUSTOM DEV" image="/images/services/software.png" />
-
+            <span>WEBSITE</span>
+            <Capsule text="WEB & SEO" image="/images/services/web.png" />
             <span>DEVELOPMENT</span>
           </div>
 
-          {/* LINE 2 */}
+  {/* 4 */}
           <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>AI</span>
-
-            <Capsule text="AI & ML" image="/images/services/ai.png" />
-
+            <span>MOBILE</span>
+            <Capsule text="APP DEV" image="/images/services/app1.png" />
             <span>SOLUTIONS</span>
           </div>
 
-          {/* LINE 3 */}
+          {/* 2 */}
+          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
+            <span>UI/UX</span>
+            <Capsule text="UI & UX" image="/images/services/uiux1.png" />
+            <span>DESIGN</span>
+          </div>
+
+          {/* 3 */}
+          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
+            <span>CUSTOM</span>
+            <Capsule text="SOFTWARE" image="/images/services/software.png" />
+            <span>DEVELOPMENT</span>
+          </div>
+
+         
+
+          {/* 5 */}
+          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
+            <span>SOFTWARE</span>
+            <Capsule text="SUPPORT" image="/images/services/support.png" />
+            <span>MAINTENANCE</span>
+          </div>
+
+          {/* 6 */}
+          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
+            <span>SMART</span>
+            <Capsule text="IOT APPS" image="/images/services/iot.png" />
+            <span>SYSTEMS</span>
+          </div>
+
+          {/* 7 */}
+          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
+            <span>AI</span>
+            <Capsule text="AI & ML" image="/images/services/ai.png" />
+            <span>SOLUTIONS</span>
+          </div>
+
+          {/* 8 */}
           <div className="flow-line flex flex-wrap items-center justify-center gap-3">
             <span>CLOUD</span>
-
             <Capsule text="INFRASTRUCTURE" image="/images/services/infrastructure.png" />
-
-            <span>INFRASTRUCTURE</span>
+            <span>MANAGEMENT</span>
           </div>
 
         </div>

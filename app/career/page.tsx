@@ -222,7 +222,7 @@ export default function CareersPage() {
 <section className="relative w-full py-[12vh] bg-white">
   <div className="relative w-full h-[55vh] sm:h-[70vh] lg:h-[100vh] overflow-hidden">
     <Image
-      src="/images/careers/team.png"
+      src="/images/careers/team1.png"
       alt="Team"
       fill
       className="object-cover transition duration-[1400ms] hover:scale-105"
@@ -248,7 +248,7 @@ export default function CareersPage() {
     </p>
 
     <a
-      href="mailto:careers@qirotech.com"
+      href="mailto:hr@qirotec.com"
       className="
         reveal inline-flex items-center gap-3
         px-10 py-4
@@ -261,7 +261,7 @@ export default function CareersPage() {
         hover:text-white
       "
     >
-      careers@qirotech.com
+      hr@qirotec.com
       <span>→</span>
     </a>
 

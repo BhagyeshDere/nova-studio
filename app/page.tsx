@@ -4,7 +4,7 @@ import Hero from "@/components/home/Hero";
 import WorksShowcase from "@/components/home/WorksShowcase";
 import About from "@/components/home/About";
 
-import Clients from "@/components/home/Clients";
+
 
 
 import BlurText from "@/reactbits/BlurText";
@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       <ServicesFlowing />
-      <Clients />
+      
       
 
     </main>

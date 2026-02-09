@@ -3,14 +3,23 @@
 import { useState } from "react";
 import Image from "next/image";
 
+/* ✅ 4 SLIDES (2 images each) */
 const slides = [
   {
-    left: "/images/works/poster.png",
-    right: "/images/works/mobile.png",
+    left: "/images/services/web3.png",
+    right: "/images/services/uiux3.png",
   },
   {
-    left: "/images/works/mobile.png",
-    right: "/images/works/poster.png",
+    left: "/images/services/software1.png",
+    right: "/images/services/app4.png",
+  },
+  {
+    left: "/images/services/support1.png",
+    right: "/images/services/iot1.png",
+  },
+  {
+    left: "/images/services/ai1.png",
+    right: "/images/services/infrastructure1.png",
   },
 ];
 
@@ -132,9 +141,7 @@ export default function WorkSlider() {
             </div>
 
             {/* TEXT */}
-            <p className="italic tracking-widest text-white/90 text-sm sm:text-base">
-              GEN
-            </p>
+            
           </div>
         </div>
       </div>

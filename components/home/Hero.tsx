@@ -7,103 +7,89 @@ export default function Hero() {
   return (
     <section
       className="
-        relative h-screen w-full overflow-visible
+        relative
+        min-h-screen
+        w-full
+        overflow-visible
         bg-white
+        flex flex-col
+        justify-center
       "
     >
-
       {/* HERO TEXT */}
       <div
         className="
           relative z-20
-          h-full
-          flex items-center
+          flex flex-col
+          justify-center
+          items-center
+          text-center
           px-6 sm:px-10 lg:px-[8vw]
+          pb-[24vh] md:pb-[28vh]
         "
       >
-       <motion.h1
-          initial={{ opacity: 0, y: 60 }}
+        {/* COMPANY NAME */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1 }}
           className="
-            font-semibold
-            leading-[1.05]
-            tracking-[-0.02em]
-
-            text-right
-            ml-auto
-            w-full
-            max-w-[1400px]
-
-            text-[clamp(2rem,6vw,6rem)]
+            mb-6
+            text-[13px] sm:text-[15px]
+            tracking-[0.35em]
+            uppercase
+            font-medium
+            text-black/60
           "
         >
-          {/* LINE 1 — GRADIENT */}
+          QIRO TECH INNOVATION PVT. LTD.
+        </motion.p>
+
+        {/* MAIN HEADING */}
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="
+            font-semibold
+            leading-[1.02]
+            tracking-[-0.03em]
+            text-[clamp(3rem,7vw,6.5rem)]
+            max-w-[1200px]
+          "
+        >
           <span
             className="
-              block md:whitespace-nowrap
-              bg-gradient-to-r 
-              from-[#071A1F] 
-              via-[#1F6677] 
+              block
+              bg-gradient-to-r
+              from-[#071A1F]
+              via-[#1F6677]
               to-[#4DA6B8]
-              bg-clip-text text-transparent
+              bg-clip-text
+              text-transparent
             "
           >
-            We build powerful software
+            Powerful digital solutions
           </span>
 
-          {/* LINE 2 — BLACK */}
           <span className="block text-black">
             for modern businesses.
           </span>
         </motion.h1>
-
       </div>
 
-      {/* UI CONTENT */}
+      {/* FLOATING IMAGE */}
       <div
         className="
           absolute
-          bottom-[6vh] sm:bottom-[8vh]
-          left-0 w-full z-30
-          px-6 sm:px-10 lg:px-[8vw]
+          bottom-[-14vh] md:bottom-[-18vh]
+          left-[5vw]
+          z-10
+          pointer-events-none
         "
       >
-        <div
-          className="
-            flex items-center justify-between
-            text-black/90
-            flex-col sm:flex-row
-            gap-6 sm:gap-0
-          "
-        >
-          <div className="flex items-center gap-5">
-            <button className="w-[44px] h-[44px] rounded-full border border-black/40 hover:border-black transition">
-              ●
-            </button>
-            <button className="w-[44px] h-[44px] rounded-full border border-black/40 hover:border-black transition">
-              ▶
-            </button>
-          </div>
-
-          <div className="text-center">
-            <p className="text-[14px] tracking-wide font-semibold text-black">
-              GEN
-            </p>
-            <p className="text-[14px] text-black/70">
-              Branding, brand guide
-            </p>
-          </div>
-
-          <button className="text-[14px] text-black/80 hover:text-black transition">
-            ← Our Works
-          </button>
-        </div>
+        <FloatingHero />
       </div>
-
-      {/* Floating image INSIDE hero */}
-      <FloatingHero />
-
     </section>
   );
 }

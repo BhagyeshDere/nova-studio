@@ -14,7 +14,6 @@ const links = [
   { name: "Contact", href: "/contact" },
 ];
 
-/* ✅ NO routes forcing white text now */
 const darkRoutes: string[] = [];
 
 export default function Navbar() {
@@ -53,48 +52,54 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
       <nav
-        className={`fixed top-0 left-0 w-full z-[1000] transition-transform duration-500 ${
+        className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${
           show ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <div
           className={`
+            relative
             w-full 
             px-4 sm:px-6 md:px-[6vw]
-            h-[70px] sm:h-[80px] md:h-[100px]
-            flex items-center justify-between
+            h-[65px] sm:h-[75px] md:h-[80px]
+
+            flex items-center
+
+            backdrop-blur-md
+            bg-white/70
+            border-b border-black/5
+
             ${textColor}
           `}
         >
-          {/* ===== LOGO ===== */}
-          <Link href="/" className="group shrink-0">
+          {/* LOGO */}
+          <Link href="/" className="group shrink-0 z-10">
             <Image
-  src="/images/logo4.png"
-  alt="Logo"
-  width={140}
-  height={140}
-  priority
-  className="
-  w-[48px] sm:w-[56px] md:w-[64px] lg:w-[72px]
-  h-auto
-  transition-transform duration-300 
-  group-hover:scale-105
-"
-
-/>
-
+              src="/images/logo4.png"
+              alt="Logo"
+              width={350}
+              height={350}
+              priority
+              className="
+                w-[44px] sm:w-[52px] md:w-[58px]
+                h-auto
+                transition-transform duration-300 
+                group-hover:scale-105
+              "
+            />
           </Link>
 
-          {/* ===== DESKTOP MENU ===== */}
+          {/* CENTER MENU */}
           <div
             className={`
               hidden md:flex items-center
-              gap-[4vw] lg:gap-[3vw]
-              text-[11px] lg:text-[13px]
-              tracking-[0.22em] lg:tracking-[0.28em]
-              uppercase font-semibold
+              gap-[2.6vw]
+              text-[12px] lg:text-[13px]
+              tracking-[0.18em]
+              uppercase font-medium
+
+              absolute left-1/2 -translate-x-1/2
               ${textColor}
             `}
           >
@@ -105,23 +110,28 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="relative hover:text-[#1F6677] transition"
-                  style={{ opacity: active ? 1 : 0.7 }}
+                  className="relative group"
                 >
+                  <span className="opacity-80 group-hover:opacity-100 transition">
+                    {link.name}
+                  </span>
+
+                  {/* ACTIVE UNDERLINE */}
                   {active && (
-                    <span className="absolute -left-4 text-[#1F6677]">
-                      •
-                    </span>
+                    <span className="
+                      absolute left-0 -bottom-2
+                      w-full h-[2px]
+                      bg-[#1F6677]
+                    " />
                   )}
-                  {link.name}
                 </Link>
               );
             })}
           </div>
 
-          {/* ===== HAMBURGER ===== */}
+          {/* HAMBURGER */}
           <button
-            className={`md:hidden ${textColor}`}
+            className={`md:hidden ml-auto ${textColor}`}
             onClick={() => setMenuOpen(true)}
           >
             <div className="space-y-1.5">
@@ -133,7 +143,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ===== OVERLAY ===== */}
+      {/* OVERLAY */}
       <div
         onClick={() => setMenuOpen(false)}
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[998] transition-opacity duration-400 md:hidden ${
@@ -143,7 +153,7 @@ export default function Navbar() {
         }`}
       />
 
-      {/* ===== MOBILE MENU ===== */}
+      {/* MOBILE MENU */}
       <div
         className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[75%] max-w-[420px] bg-[#071A1F] text-white z-[999] transform transition-transform duration-500 md:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
@@ -156,13 +166,13 @@ export default function Navbar() {
           ×
         </button>
 
-        <div className="flex flex-col justify-center items-center h-full gap-8 sm:gap-10 text-[18px] sm:text-[20px] tracking-[0.2em] sm:tracking-[0.25em] uppercase font-semibold">
+        <div className="flex flex-col justify-center items-center h-full gap-8 text-[18px] tracking-[0.2em] uppercase font-semibold">
           {links.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="hover:text-[#1F6677] transition"
+              className="hover:text-[#4DA6B8] transition"
             >
               {link.name}
             </Link>

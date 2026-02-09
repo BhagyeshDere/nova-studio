@@ -7,9 +7,10 @@ import ClientLayout from "./ClientLayout";
 ============================ */
 export const metadata: Metadata = {
   title: {
-    default: "NOVA Studio",
-    template: "%s | NOVA Studio",
+    default: "QIRO TECH",
+    template: "%s | QIRO TECH",
   },
+
   description: "Designing identity, experience & presence.",
 
   keywords: [
@@ -21,24 +22,30 @@ export const metadata: Metadata = {
     "NOVA Studio",
   ],
 
-  authors: [{ name: "NOVA Studio" }],
+  authors: [{ name: "QIRO TECH" }],
 
   openGraph: {
-    title: "NOVA Studio",
+    title: "QIRO TECH",
     description: "Designing identity, experience & presence.",
-    siteName: "NOVA Studio",
+    siteName: "QIRO TECH",
     type: "website",
     locale: "en_US",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "NOVA Studio",
+    title: "QIRO TECH",
     description: "Designing identity, experience & presence.",
   },
 
+  /* ✅ Bigger & sharper icons */
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon2.ico", sizes: "32x32" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -49,7 +56,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#071A1F", // brand color
+  themeColor: "#071A1F",
 };
 
 /* ============================

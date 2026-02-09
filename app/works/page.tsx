@@ -1,107 +1,199 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "@/lib/animations";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link"; // ✅ added
 
 export default function WorksPage() {
-  const pageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!pageRef.current) return;
-
-    gsap.fromTo(pageRef.current,{opacity:0},{opacity:1,duration:1});
-
-    gsap.utils.toArray<HTMLElement>(".work-anim").forEach((el)=>{
-      gsap.fromTo(el,{y:80,opacity:0},{
-        y:0,opacity:1,duration:1.2,
-        scrollTrigger:{trigger:el,start:"top 88%"}
-      });
-    });
-  }, []);
-
-  const projects = [
-    {id:"01",title:"GEN",img:"gen.png",desc:"Building a Cohesive Identity for Global Engineers"},
-    {id:"02",title:"Berrics",img:"berrics.png",desc:"A Revitalized Brand for a Connected Skateboarding Community"},
-    {id:"03",title:"Cariuma",img:"cariuma.png",desc:"A Blend of Sustainability, Urban Style, and Brazilian Identity"},
-    {id:"04",title:"Zuso",img:"zuso.png",desc:"Reinventing Culinary Experience"},
-    {id:"05",title:"Superela",img:"superela.png",desc:"Where busy women find their way back to wellness"},
-    {id:"06",title:"Waypoint Group",img:"waypoint.png",desc:"Built to grow with clarity and strength"},
-    {id:"07",title:"Fapes",img:"fapes.png",desc:"Take care of your patients anywhere"},
-    {id:"08",title:"Go HQ",img:"gohq.png",desc:"A strategic rebrand for a leader on the move"},
-    {id:"09",title:"Sextante",img:"sextante.png",desc:"A universe of stories ready to be explored"},
-    {id:"10",title:"Grasshopper",img:"grasshopper.png",desc:"Where all climbing athletes meet"},
-    {id:"11",title:"Opplio",img:"opplio.png",desc:"Everything you need to management"},
-    {id:"12",title:"CEO",img:"ceo.png",desc:"Empowering Leaders through a Digital Platform"},
-    {id:"13",title:"Ecological Footprint",img:"ecological.png",desc:"How your lifestyle impacts the planet"},
-    {id:"14",title:"Little Black Book",img:"little-black-book.png",desc:"A visual identity for digital empowerment"},
-  ];
-
   return (
-<main ref={pageRef} className="w-full overflow-x-hidden bg-white">
+    <main className="w-full bg-white text-[#071A1F] overflow-x-hidden">
 
-{/* HERO */}
-<section className="min-h-screen flex items-center px-5 sm:px-8 lg:px-[8vw] pt-[18vh]">
-  <h1 className="font-semibold leading-[1] text-[clamp(3rem,8vw,8rem)]">
-    
-    {/* GRADIENT PART */}
-    <span className="
-      block
-      bg-gradient-to-r
-      from-[#071A1F]
-      via-[#1F6677]
-      to-[#4DA6B8]
-      bg-clip-text text-transparent
-    ">
-      We embark on
-    </span>
+      {/* HERO */}
+      <section className="px-6 sm:px-10 lg:px-[8vw] pt-[16vh] pb-[10vh] text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-[clamp(3rem,6vw,6rem)] font-semibold tracking-tight"
+        >
+          <span className="bg-gradient-to-r from-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
+            Our Works
+          </span>
+        </motion.h1>
 
-    {/* BLACK PART */}
-    <span className="block text-black">
-      creative journeys.
-    </span>
+        <p className="text-black/60 mt-4 max-w-xl mx-auto">
+          Custom Digital Products & Enterprise Solutions crafted with
+          performance, scalability, and modern design.
+        </p>
+      </section>
 
-  </h1>
-</section>
+      {/* PROJECTS */}
+      <section className="px-6 sm:px-10 lg:px-[8vw] pb-[14vh] space-y-28">
 
-{/* PROJECT LOOP */}
-{projects.map((p,i)=>(
-<section key={p.id} className="relative py-[16vh] lg:py-[22vh] overflow-hidden">
+        {projects.map((project, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
 
-<div className={`hidden md:block absolute ${i%2?"left-[4vw]":"right-[4vw]"} top-[6vh] text-[22vw] font-semibold text-[#1F6677]/12 select-none`}>
-  {p.id}
-</div>
+            {/* TEXT SIDE */}
+            <div className="space-y-6">
 
-<div className="px-5 sm:px-8 lg:px-[8vw] max-w-[1900px] mx-auto">
+              <h2 className="text-4xl font-semibold">
+                {project.title}
+              </h2>
 
-<h3 className={`work-anim text-black text-3xl sm:text-4xl font-semibold mb-[6vh] ${i%2?"text-right":""}`}>
-  {p.title}
-</h3>
+              <div className="bg-[#1F6677]/10 p-6 rounded-xl border border-[#1F6677]/20">
+                <h3 className="font-semibold mb-2 text-[#1F6677]">
+                  Project Overview
+                </h3>
+                <p className="text-sm text-black/70 leading-relaxed">
+                  {project.overview}
+                </p>
+              </div>
 
-<div className={`flex flex-col lg:flex-row gap-[6vh] items-center ${i%2?"lg:flex-row-reverse":""}`}>
+              <div className="bg-[#1F6677]/10 p-6 rounded-xl border border-[#1F6677]/20">
+                <h3 className="font-semibold mb-2 text-[#1F6677]">
+                  Key Features
+                </h3>
+                <ul className="text-sm space-y-2 text-black/70">
+                  {project.features.map((f, idx) => (
+                    <li key={idx}>• {f}</li>
+                  ))}
+                </ul>
+              </div>
 
-<div className="w-full lg:w-[60%]">
-  <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden hover:scale-[1.03] transition duration-700">
-    <Image
-      src={`/images/works/${p.img}`}
-      alt={p.title}
-      fill
-      className="object-cover"
-    />
+            </div>
 
-    <div className="absolute inset-0 bg-[#1F6677]/10 hover:bg-[#1F6677]/5 transition"/>
-  </div>
+            {/* IMAGE SIDE */}
+            <div className="relative w-full h-[420px] rounded-xl overflow-hidden shadow-xl border border-[#1F6677]/20">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+            </div>
 
-  <h2 className={`work-anim text-black mt-[4vh] text-[clamp(1.8rem,3.5vw,3.2rem)] font-semibold leading-tight ${i%2?"text-right":""}`}>
-    {p.desc}
-  </h2>
-</div>
+          </motion.div>
+        ))}
 
-</div>
-</div>
-</section>
-))}
+      </section>
 
-</main>
+      {/* CONTACT SECTION */}
+      <section className="bg-[#E6F4F7] px-6 sm:px-10 lg:px-[8vw] py-[12vh] text-center text-[#071A1F]">
+
+        <h2 className="text-4xl font-semibold mb-6">
+          Let's Build Something Great
+        </h2>
+
+        <p className="text-black/60 mb-10">
+          Have a project in mind? Reach out to Qiro Tech.
+        </p>
+
+        <div className="space-y-3 text-black/80 text-lg">
+          <p>📧 hr@qirotec.com</p>
+          <p>📞 +91 9284117439</p>
+          <p>
+            📍 Office No. 235, 2nd Floor, Xion Mall,  
+            Hinjewadi Phase 1, Pune – 411057
+          </p>
+        </div>
+
+        {/* ✅ Updated button */}
+        <Link href="/contact">
+          <button className="mt-10 bg-[#1F6677] hover:bg-[#4DA6B8] text-white px-8 py-4 rounded-full transition shadow-lg">
+            Contact Us
+          </button>
+        </Link>
+
+      </section>
+
+    </main>
   );
 }
+
+/* ================= PROJECT DATA ================= */
+
+const projects = [
+  {
+    title: "P. N. Gadgil & Sons Ltd.",
+    image: "/images/projects/project1.png",
+    overview:
+      "Enterprise retail solution enabling fleet tracking, expense reporting, and large-scale operational control.",
+    features: [
+      "Vehicle tracking & fleet management",
+      "Expense reporting system",
+      "Driver management",
+      "Multi-location retail support",
+    ],
+  },
+
+  {
+    title: "Solarica Nexus – CRM",
+    image: "/images/projects/project2.png",
+    overview:
+      "Centralized CRM unifying operations across multiple companies.",
+    features: [
+      "Central CRM database",
+      "Multi-company management",
+      "Workflow automation",
+      "Unified reporting",
+    ],
+  },
+
+  {
+    title: "LGM Sports – Ecommerce",
+    image: "/images/projects/project3.png",
+    overview:
+      "Modern ecommerce platform for sports retail with secure payments.",
+    features: [
+      "Advanced catalog system",
+      "Secure checkout",
+      "Admin dashboard",
+      "High scalability",
+    ],
+  },
+
+  {
+    title: "Admark Digitech",
+    image: "/images/projects/project4.png",
+    overview:
+      "Sales management platform for tracking leads and performance.",
+    features: [
+      "Lead management",
+      "Sales pipeline tracking",
+      "Live reports",
+      "Access control",
+    ],
+  },
+
+  {
+    title: "DW Innovation HRMS",
+    image: "/images/projects/project5.png",
+    overview:
+      "Employee management system centralizing HR operations.",
+    features: [
+      "Attendance management",
+      "Leave system",
+      "Performance tracking",
+      "Secure storage",
+    ],
+  },
+
+  {
+    title: "Aquagreen Tech",
+    image: "/images/projects/project6.png",
+    overview:
+      "Corporate website for sustainable water solutions company.",
+    features: [
+      "SEO-optimized design",
+      "Responsive layout",
+      "Modern UI/UX",
+      "Brand storytelling",
+    ],
+  },
+];
