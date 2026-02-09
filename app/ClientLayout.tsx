@@ -32,21 +32,29 @@ export default function ClientLayout({
         className={`
           relative
           w-full
+          max-w-[100vw]
           overflow-x-hidden
+          min-h-[100dvh]
           ${isDarkPage ? "bg-[#2f3437]" : "bg-white"}
         `}
       >
         <div
           id="smooth-content"
           className="
-            min-h-screen
+            min-h-[100dvh]
             flex
             flex-col
+            w-full
           "
         >
 
           {/* Page Content */}
-          <main className="flex-1 w-full">
+          <main className="
+            flex-1
+            w-full
+            max-w-[100vw]
+            overflow-x-hidden
+          ">
             {children}
           </main>
 

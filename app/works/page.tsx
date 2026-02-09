@@ -8,14 +8,22 @@ export default function WorksPage() {
   return (
     <main className="w-full bg-white text-[#071A1F] overflow-x-hidden">
 
-     
       {/* HERO */}
-      <section className="px-6 sm:px-10 lg:px-[8vw] pt-[16vh] pb-[10vh] text-center">
+      <section className="
+        px-5 sm:px-8 lg:px-[8vw]
+        pt-[12vh] sm:pt-[14vh] lg:pt-[16vh]
+        pb-[8vh] sm:pb-[10vh]
+        text-center
+      ">
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-[clamp(3rem,6vw,6rem)] font-semibold tracking-tight"
+          className="
+            text-[clamp(2.5rem,7vw,6rem)]
+            font-semibold
+            tracking-tight
+          "
         >
           <span className="text-black">Our </span>
 
@@ -24,7 +32,14 @@ export default function WorksPage() {
           </span>
         </motion.h1>
 
-        <p className="text-black/60 mt-4 max-w-xl mx-auto">
+        <p className="
+          text-black/60
+          mt-4
+          max-w-xl
+          mx-auto
+          text-[15px] sm:text-[16px] lg:text-[18px]
+          leading-[1.8]
+        ">
           Custom Digital Products & Enterprise Solutions crafted with
           performance, scalability, and modern design.
         </p>
@@ -33,7 +48,11 @@ export default function WorksPage() {
 
 
       {/* PROJECTS */}
-      <section className="px-6 sm:px-10 lg:px-[8vw] pb-[14vh] space-y-32">
+      <section className="
+        px-5 sm:px-8 lg:px-[8vw]
+        pb-[12vh] sm:pb-[14vh]
+        space-y-[12vh] sm:space-y-[18vh] lg:space-y-[32]
+      ">
 
         {projects.map((project, i) => (
           <motion.div
@@ -48,24 +67,49 @@ export default function WorksPage() {
             {/* TEXT CONTENT */}
             <div className="space-y-6 text-center">
 
-              <h2 className="text-4xl font-semibold">
+              <h2 className="
+                text-[clamp(1.8rem,4.5vw,2.6rem)]
+                font-semibold
+              ">
                 {project.title}
               </h2>
 
-              <div className="bg-[#1F6677]/10 p-6 rounded-xl border border-[#1F6677]/20 text-left">
+              <div className="
+                bg-[#1F6677]/10
+                p-5 sm:p-6
+                rounded-xl
+                border border-[#1F6677]/20
+                text-left
+              ">
                 <h3 className="font-semibold mb-2 text-[#1F6677]">
                   Project Overview
                 </h3>
-                <p className="text-sm text-black/70 leading-relaxed">
+
+                <p className="
+                  text-sm
+                  text-black/70
+                  leading-relaxed
+                ">
                   {project.overview}
                 </p>
               </div>
 
-              <div className="bg-[#1F6677]/10 p-6 rounded-xl border border-[#1F6677]/20 text-left">
+              <div className="
+                bg-[#1F6677]/10
+                p-5 sm:p-6
+                rounded-xl
+                border border-[#1F6677]/20
+                text-left
+              ">
                 <h3 className="font-semibold mb-2 text-[#1F6677]">
                   Key Features
                 </h3>
-                <ul className="text-sm space-y-2 text-black/70">
+
+                <ul className="
+                  text-sm
+                  space-y-2
+                  text-black/70
+                ">
                   {project.features.map((f, idx) => (
                     <li key={idx}>• {f}</li>
                   ))}
@@ -75,7 +119,16 @@ export default function WorksPage() {
             </div>
 
             {/* BIG IMAGE BELOW */}
-            <div className="relative w-full h-[520px] mt-10 rounded-2xl overflow-hidden shadow-2xl border border-[#1F6677]/20">
+            <div className="
+              relative
+              w-full
+              h-[260px] sm:h-[380px] md:h-[460px] lg:h-[520px]
+              mt-8 sm:mt-10
+              rounded-2xl
+              overflow-hidden
+              shadow-2xl
+              border border-[#1F6677]/20
+            ">
               <Image
                 src={project.image}
                 alt={project.title}

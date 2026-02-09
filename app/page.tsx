@@ -4,49 +4,63 @@ import Hero from "@/components/home/Hero";
 import WorksShowcase from "@/components/home/WorksShowcase";
 import About from "@/components/home/About";
 
-
-
-
 import BlurText from "@/reactbits/BlurText";
 import ScrollReveal from "@/reactbits/ScrollReveal";
 import ServicesFlowing from "@/components/home/ServicesFlowing";
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-x-hidden">
+    <main
+      className="
+        relative
+        w-full
+        max-w-[100vw]
+        overflow-x-hidden
+      "
+    >
 
       <Hero />
 
       <WorksShowcase />
 
       {/* ABOUT */}
-<section className="w-full bg-white text-black px-6 sm:px-10 lg:px-[8vw] pt-[4vh] sm:pt-[6vh] pb-[8vh] sm:pb-[10vh]">
+      <section
+        className="
+          w-full
+          bg-white
+          text-black
+          px-5 sm:px-8 md:px-10 lg:px-[8vw]
+          pt-[4vh] sm:pt-[5vh] lg:pt-[6vh]
+          pb-[8vh] sm:pb-[9vh] lg:pb-[10vh]
+        "
+      >
 
-  <ScrollReveal>
-    <span
-      className="
-        block
-        font-semibold
-        leading-[1.2]
-        tracking-[-0.02em]
-        text-black
-        text-[clamp(2.4rem,6vw,4.5rem)]
-        max-w-[1200px] xl:max-w-[1400px]
-      "
-    >
-      Qiro Tech delivers smart software solutions that help businesses
-      innovate, automate, and grow in the digital era.
-    </span>
-  </ScrollReveal>
+        <div className="max-w-[1600px] mx-auto w-full">
 
-  <div className="mt-[5vh] sm:mt-[6vh]">
-    <About />
-  </div>
+          <ScrollReveal>
+            <span
+              className="
+                block
+                font-semibold
+                leading-[1.2]
+                tracking-[-0.02em]
+                text-black
+                text-[clamp(2.2rem,6vw,4.5rem)]
+                max-w-[1200px] xl:max-w-[1400px]
+              "
+            >
+              Qiro Tech delivers smart software solutions that help businesses
+              innovate, automate, and grow in the digital era.
+            </span>
+          </ScrollReveal>
 
-</section>
+          <div className="mt-[5vh] sm:mt-[6vh] lg:mt-[7vh]">
+            <About />
+          </div>
 
+        </div>
 
-      
+      </section>
 
       {/* CINEMATIC LINE */}
       <section
@@ -54,11 +68,12 @@ export default function Home() {
           w-full
           bg-white
           text-black
-          px-6 sm:px-10 lg:px-[8vw]
-          pt-0 pb-[6vh] sm:pb-[8vh] lg:pb-[10vh]
+          px-5 sm:px-8 md:px-10 lg:px-[8vw]
+          pt-0
+          pb-[6vh] sm:pb-[8vh] lg:pb-[10vh]
         "
       >
-        <div className="max-w-[1500px] mx-auto">
+        <div className="max-w-[1500px] mx-auto w-full">
 
           <BlurText
             text="We build future-ready software for modern businesses."
@@ -69,7 +84,7 @@ export default function Home() {
               uppercase
               tracking-[-0.02em]
               leading-[1.05]
-              text-[clamp(2.6rem,7vw,5.5rem)]
+              text-[clamp(2.3rem,7vw,5.5rem)]
               max-w-[1100px]
             "
           />
@@ -78,11 +93,11 @@ export default function Home() {
             className="
               mt-[3vh] sm:mt-[4vh] lg:mt-[5vh]
               max-w-[720px]
-              space-y-6
+              space-y-5 sm:space-y-6
               text-black/70
               leading-[1.9]
-              text-[16px]
-              sm:text-[18px]
+              text-[15px]
+              sm:text-[17px]
               lg:text-[19px]
             "
           >
@@ -103,8 +118,6 @@ export default function Home() {
       </section>
 
       <ServicesFlowing />
-      
-      
 
     </main>
   );

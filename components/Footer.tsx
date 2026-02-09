@@ -58,12 +58,14 @@ export default function SayHi() {
     >
 
 {/* ================= TOP GRID ================= */}
-<div className="
-  grid
-  lg:grid-cols-2
-  gap-[6vh] sm:gap-[8vh]
-  items-start
-">
+<div
+  className="
+    grid
+    lg:grid-cols-2
+    gap-[6vh] sm:gap-[8vh]
+    items-start
+  "
+>
 
 {/* ===== LEFT SIDE ===== */}
 <div>
@@ -75,7 +77,7 @@ export default function SayHi() {
     tracking-tight
     leading-[0.9]
     whitespace-nowrap
-    text-[clamp(2.5rem,10vw,12rem)]
+    text-[clamp(2.5rem,12vw,12rem)]
   "
 >
   SAY HI!
@@ -102,6 +104,7 @@ export default function SayHi() {
     grid grid-cols-1 sm:grid-cols-2
     gap-6 sm:gap-8
     text-sm text-white/70
+    w-full
   "
 >
 
@@ -112,14 +115,14 @@ export default function SayHi() {
 
 <div>
   <p className="text-white font-medium mb-2">Phone</p>
-  <p>+91 9860507744 </p>
-<p>+91 9113882782</p>
+  <p>+91 9860507744</p>
+  <p>+91 9113882782</p>
 </div>
 
 <div>
   <p className="text-white font-medium mb-2">Business Enquiry</p>
-  <p>+91 9860507744 </p>
-<p>+91 9113882782</p>
+  <p>+91 9860507744</p>
+  <p>+91 9113882782</p>
 </div>
 
 <div>
@@ -136,7 +139,7 @@ export default function SayHi() {
 </div>
 
 {/* ===== DIVIDER ===== */}
-<div className="relative mt-[6vh] sm:mt-[7vh] w-full h-[1px] bg-white/20">
+<div className="relative mt-[6vh] sm:mt-[7vh] w-full h-[1px] bg-white/20 overflow-hidden">
   <div
     ref={dotRef}
     className="

@@ -8,12 +8,12 @@ export default function SitemapPage() {
     <main className="w-full bg-white text-[#071A1F] overflow-x-hidden">
 
       {/* HERO */}
-      <section className="px-6 sm:px-10 lg:px-[8vw] pt-[16vh] pb-[10vh] text-center">
+      <section className="px-5 sm:px-8 lg:px-[8vw] pt-[12vh] sm:pt-[14vh] lg:pt-[16vh] pb-[8vh] sm:pb-[10vh] text-center">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           className="
-            text-[clamp(2.8rem,6vw,5.5rem)]
+            text-[clamp(2.2rem,7vw,5.5rem)]
             font-semibold
             tracking-[-0.03em]
             mb-4
@@ -24,14 +24,14 @@ export default function SitemapPage() {
           </span>
         </motion.h1>
 
-        <p className="text-black/50">
+        <p className="text-black/50 text-sm sm:text-base">
           Explore all pages of Qiro Tech
         </p>
       </section>
 
       {/* SITEMAP GRID */}
-      <section className="px-6 sm:px-10 lg:px-[8vw] pb-[14vh]">
-        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <section className="px-5 sm:px-8 lg:px-[8vw] pb-[10vh] sm:pb-[12vh] lg:pb-[14vh]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
 
           {sitemap.map((group, i) => (
             <motion.div
@@ -42,18 +42,18 @@ export default function SitemapPage() {
               transition={{ duration: 0.6 }}
               className="
                 bg-[#F6FBFC]
-                p-8
+                p-6 sm:p-7 lg:p-8
                 rounded-2xl
                 shadow-sm
                 hover:shadow-md
                 transition
               "
             >
-              <h3 className="text-xl font-semibold mb-5 text-[#071A1F]">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-5 text-[#071A1F]">
                 {group.title}
               </h3>
 
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {group.links.map((link, idx) => (
                   <li key={idx}>
                     <Link
@@ -62,6 +62,8 @@ export default function SitemapPage() {
                         text-black/70
                         hover:text-[#1F6677]
                         transition
+                        text-sm sm:text-base
+                        break-words
                       "
                     >
                       → {link.name}

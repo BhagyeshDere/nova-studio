@@ -71,7 +71,7 @@ export default function ServicesPage() {
       bullets:["Corporate sites","E-commerce","SEO optimization","Speed performance"],
       img:"/images/services/web2.png"
     },
-     {
+    {
       title:"Mobile & Web App",
       desc:"Apps that feel smooth, fast and intuitive.",
       bullets:["iOS & Android","Cross-platform","Backend APIs","Deployment"],
@@ -89,7 +89,6 @@ export default function ServicesPage() {
       bullets:["Enterprise apps","API integrations","Cloud systems","Security-first"],
       img:"/images/services/software.png"
     },
-    
     {
       title:"Software Maintenance & Support",
       desc:"Reliable support to keep systems running.",
@@ -120,32 +119,21 @@ export default function ServicesPage() {
 <main ref={pageRef} className="w-full overflow-x-hidden bg-white text-[#071A1F]">
 
 {/* HERO */}
-<section className="px-5 sm:px-8 lg:px-[6vw] pt-[12vh] sm:pt-[16vh] lg:pt-[20vh] pb-[8vh]">
+<section className="px-5 sm:px-8 lg:px-[6vw] pt-[10vh] sm:pt-[14vh] lg:pt-[20vh] pb-[6vh] sm:pb-[8vh]">
 
-  <h1 className="srv-anim font-semibold leading-[0.95] tracking-[-0.03em] text-[clamp(2.4rem,6.5vw,8rem)]">
-    
-    {/* LINE 1 — GRADIENT */}
-    <span className="
-      block
-      bg-gradient-to-r 
-      from-[#071A1F] 
-      via-[#1F6677] 
-      to-[#4DA6B8]
-      bg-clip-text text-transparent
-    ">
+  <h1 className="srv-anim font-semibold leading-[1] tracking-[-0.03em] text-[clamp(2.2rem,7vw,8rem)]">
+    <span className="block bg-gradient-to-r from-[#071A1F] via-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
       We build powerful software
     </span>
 
-    {/* LINE 2 — BLACK */}
     <span className="block text-black">
       for modern businesses.
     </span>
-
   </h1>
 
-  <div className="srv-anim mt-6 w-[70px] h-[3px] bg-[#1F6677]/40"/>
+  <div className="srv-anim mt-5 sm:mt-6 w-[60px] sm:w-[70px] h-[3px] bg-[#1F6677]/40"/>
 
-  <p className="srv-anim mt-6 sm:mt-8 max-w-[560px] text-[15px] sm:text-[17px] leading-[1.8] text-[#071A1F]/70">
+  <p className="srv-anim mt-6 sm:mt-8 max-w-[560px] text-[14px] sm:text-[17px] leading-[1.8] text-[#071A1F]/70">
     At Qiro Tech, we partner with businesses to design,
     develop, and scale digital solutions — from custom
     software and AI systems to cloud infrastructure and
@@ -157,17 +145,17 @@ export default function ServicesPage() {
 {/* SERVICES */}
 <section className="w-full">
 
-  <div className="px-5 sm:px-8 lg:px-[8vw] pt-[8vh] pb-[5vh]">
+  <div className="px-5 sm:px-8 lg:px-[8vw] pt-[6vh] sm:pt-[8vh] pb-[4vh]">
     <span className="uppercase text-xs sm:text-sm tracking-[0.3em] text-[#1F6677]">
       Our Expertise
     </span>
 
-    <h2 className="text-[clamp(2.2rem,7vw,6rem)] font-semibold mt-4">
+    <h2 className="text-[clamp(2rem,7vw,6rem)] font-semibold mt-3 sm:mt-4">
       Technology Solutions We Deliver
     </h2>
   </div>
 
-  <div className="flex flex-col gap-[10vh] sm:gap-[14vh]">
+  <div className="flex flex-col gap-[8vh] sm:gap-[12vh] lg:gap-[14vh]">
 
     {services.map((s,i)=>{
       const isRight = i % 2 !== 0;
@@ -175,7 +163,7 @@ export default function ServicesPage() {
       return(
         <div key={i} className="group">
 
-          <div className="relative w-full h-[38vh] sm:h-[55vh] lg:h-[80vh] overflow-hidden">
+          <div className="relative w-full h-[30vh] sm:h-[45vh] md:h-[55vh] lg:h-[80vh] overflow-hidden">
             <Image
               src={s.img}
               alt={s.title}
@@ -185,19 +173,19 @@ export default function ServicesPage() {
             <div className="absolute inset-0 bg-[#1F6677]/25 group-hover:bg-[#1F6677]/10 transition"/>
           </div>
 
-          <div className="relative -mt-[6vh] sm:-mt-[10vh] px-5 sm:px-8 lg:px-[8vw]">
+          <div className="relative -mt-[5vh] sm:-mt-[8vh] lg:-mt-[10vh] px-5 sm:px-8 lg:px-[8vw]">
 
-            <div className={`bg-white/95 backdrop-blur-sm max-w-[680px] p-6 sm:p-10 shadow-2xl rounded-2xl ${isRight ? "ml-auto" : ""}`}>
+            <div className={`bg-white/95 backdrop-blur-sm max-w-[680px] p-5 sm:p-8 lg:p-10 shadow-2xl rounded-2xl ${isRight ? "ml-auto" : ""}`}>
 
-              <h3 className="text-[clamp(1.6rem,5vw,3rem)] font-semibold mb-4">
+              <h3 className="text-[clamp(1.4rem,5vw,3rem)] font-semibold mb-3 sm:mb-4">
                 {s.title}
               </h3>
 
-              <p className="text-[#071A1F]/70 text-[15px] sm:text-[16px] leading-[1.8] mb-4">
+              <p className="text-[#071A1F]/70 text-[14px] sm:text-[16px] leading-[1.8] mb-3 sm:mb-4">
                 {s.desc}
               </p>
 
-              <ul className="space-y-2 text-[#071A1F]/80 text-[14px] sm:text-[15px]">
+              <ul className="space-y-2 text-[#071A1F]/80 text-[13px] sm:text-[15px]">
                 {s.bullets.map((b,idx)=>(
                   <li key={idx} className="flex gap-2">
                     <span className="text-[#1F6677]">•</span>
@@ -219,17 +207,17 @@ export default function ServicesPage() {
 </section>
 
 {/* WHY US */}
-<section className="px-5 sm:px-8 lg:px-[8vw] py-[12vh] sm:py-[16vh] text-center bg-gradient-to-b from-white to-[#F6FBFC]">
+<section className="px-5 sm:px-8 lg:px-[8vw] py-[10vh] sm:py-[14vh] lg:py-[16vh] text-center bg-gradient-to-b from-white to-[#F6FBFC]">
 
 <span className="uppercase text-xs sm:text-sm tracking-[0.3em] text-[#1F6677]">
   Partnership
 </span>
 
-<h2 className="text-[clamp(2.2rem,7vw,6rem)] font-semibold mt-6 mb-8">
+<h2 className="text-[clamp(2rem,7vw,6rem)] font-semibold mt-5 sm:mt-6 mb-6 sm:mb-8">
   Why work with us
 </h2>
 
-<p className="text-[16px] sm:text-[18px] leading-[1.9] text-[#071A1F]/70 max-w-[900px] mx-auto">
+<p className="text-[14px] sm:text-[18px] leading-[1.9] text-[#071A1F]/70 max-w-[900px] mx-auto">
   We simplify complexity and amplify impact. Working with us is partnership —
   we embed into your culture and vision, building long-term systems.
 </p>

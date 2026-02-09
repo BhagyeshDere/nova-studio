@@ -7,7 +7,7 @@ export default function PrivacyPolicyPage() {
     <main className="w-full bg-[#FAFCFD] text-[#071A1F] overflow-x-hidden">
 
       {/* HERO */}
-      <section className="px-6 sm:px-10 lg:px-[8vw] pt-[16vh] pb-[10vh]">
+      <section className="px-4 sm:px-8 lg:px-[8vw] pt-[12vh] sm:pt-[14vh] lg:pt-[16vh] pb-[8vh] sm:pb-[10vh]">
         <div className="max-w-[1100px] mx-auto text-center">
 
           <motion.h1
@@ -15,11 +15,11 @@ export default function PrivacyPolicyPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="
-              text-[clamp(2.8rem,6vw,5.5rem)]
+              text-[clamp(2.2rem,7vw,5.5rem)]
               font-semibold
               leading-tight
               tracking-[-0.03em]
-              mb-6
+              mb-5 sm:mb-6
             "
           >
             <span className="bg-gradient-to-r from-[#071A1F] via-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
             </span>
           </motion.h1>
 
-          <p className="text-black/50 text-sm">
+          <p className="text-black/50 text-xs sm:text-sm">
             Last Updated: September 04, 2025
           </p>
 
@@ -35,8 +35,8 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* INTRO */}
-      <section className="px-6 sm:px-10 lg:px-[8vw] pb-[4vh]">
-        <div className="max-w-[900px] mx-auto text-[16px] leading-[1.9] text-black/70">
+      <section className="px-4 sm:px-8 lg:px-[8vw] pb-[3vh] sm:pb-[4vh]">
+        <div className="max-w-[900px] mx-auto text-[14px] sm:text-[16px] leading-[1.9] text-black/70">
           <p>
             QIRO TECH Innovation Pvt. Ltd. is committed to respecting your privacy and protecting your
             personal information. This Privacy Policy explains how we collect, use, disclose,
@@ -47,8 +47,8 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* POLICY SECTIONS */}
-      <section className="px-6 sm:px-10 lg:px-[8vw] pb-[14vh]">
-        <div className="max-w-[900px] mx-auto space-y-8">
+      <section className="px-4 sm:px-8 lg:px-[8vw] pb-[10vh] sm:pb-[12vh] lg:pb-[14vh]">
+        <div className="max-w-[900px] mx-auto space-y-6 sm:space-y-8">
 
           {sections.map((sec, i) => (
             <motion.div
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
               transition={{ duration: 0.6 }}
               className="
                 bg-white
-                p-7 sm:p-9
+                p-5 sm:p-7 lg:p-9
                 rounded-2xl
                 shadow-sm
                 border border-black/5
@@ -68,16 +68,16 @@ export default function PrivacyPolicyPage() {
               "
             >
               <h2 className="
-                text-[22px]
+                text-[18px] sm:text-[20px] lg:text-[22px]
                 font-semibold
-                mb-4
+                mb-3 sm:mb-4
                 flex items-center gap-3
               ">
-                <span className="w-2 h-6 bg-[#1F6677] rounded-full"/>
+                <span className="w-2 h-5 sm:h-6 bg-[#1F6677] rounded-full"/>
                 {sec.title}
               </h2>
 
-              <div className="space-y-3 text-black/70 leading-[1.8]">
+              <div className="space-y-2 sm:space-y-3 text-[14px] sm:text-[15px] lg:text-[16px] text-black/70 leading-[1.8]">
                 {sec.content.map((c, idx) => (
                   <p key={idx}>{c}</p>
                 ))}
@@ -96,28 +96,30 @@ export default function PrivacyPolicyPage() {
               via-[#0E3A43]
               to-[#1F6677]
               text-white
-              p-10
+              p-6 sm:p-8 lg:p-10
               rounded-2xl
               shadow-lg
-              space-y-4
+              space-y-3 sm:space-y-4
             "
           >
-            <h2 className="text-[24px] font-semibold mb-2">
+            <h2 className="text-[20px] sm:text-[22px] lg:text-[24px] font-semibold mb-1 sm:mb-2">
               Contact Us
             </h2>
 
-            <p className="text-white/80">QIRO TECH Innovation Pvt. Ltd.</p>
+            <p className="text-white/80 text-sm sm:text-base">
+              QIRO TECH Innovation Pvt. Ltd.
+            </p>
 
-            <p className="text-white/80 leading-relaxed">
+            <p className="text-white/80 leading-relaxed text-sm sm:text-base">
               Office No. 13, 3rd Floor, Shreya Business Hub, Pari Chowk,
               Near CNG Gas Station, Narhe, Pune, Maharashtra – 411041
             </p>
 
-            <p className="text-white/90 font-medium">
+            <p className="text-white/90 font-medium text-sm sm:text-base break-all">
               Email: hr@qirotec.com
             </p>
 
-            <p className="text-white/90 font-medium">
+            <p className="text-white/90 font-medium text-sm sm:text-base">
               Phone: +91 8669086844, +91 9595505063
             </p>
           </motion.div>

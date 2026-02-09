@@ -61,8 +61,8 @@ export default function Navbar() {
           className={`
             relative
             w-full 
-            px-4 sm:px-6 md:px-[6vw]
-            h-[65px] sm:h-[75px] md:h-[80px]
+            px-4 sm:px-6 md:px-[6vw] lg:px-[7vw]
+            h-[60px] sm:h-[70px] md:h-[80px]
 
             flex items-center
 
@@ -81,8 +81,9 @@ export default function Navbar() {
               width={400}
               height={400}
               priority
+              sizes="(max-width:768px) 44px, (max-width:1024px) 52px, 58px"
               className="
-                w-[44px] sm:w-[52px] md:w-[58px]
+                w-[40px] sm:w-[50px] md:w-[58px]
                 h-auto
                 transition-transform duration-300 
                 group-hover:scale-105
@@ -94,8 +95,8 @@ export default function Navbar() {
           <div
             className={`
               hidden md:flex items-center
-              gap-[2.6vw]
-              text-[12px] lg:text-[13px]
+              gap-[3vw] lg:gap-[2.6vw]
+              text-[11px] lg:text-[13px]
               tracking-[0.18em]
               uppercase font-medium
 
@@ -116,13 +117,14 @@ export default function Navbar() {
                     {link.name}
                   </span>
 
-                  {/* ACTIVE UNDERLINE */}
                   {active && (
-                    <span className="
+                    <span
+                      className="
                       absolute left-0 -bottom-2
                       w-full h-[2px]
                       bg-[#1F6677]
-                    " />
+                    "
+                    />
                   )}
                 </Link>
               );
@@ -135,9 +137,9 @@ export default function Navbar() {
             onClick={() => setMenuOpen(true)}
           >
             <div className="space-y-1.5">
-              <span className="block w-6 h-[2px] bg-current"></span>
-              <span className="block w-6 h-[2px] bg-current"></span>
-              <span className="block w-6 h-[2px] bg-current"></span>
+              <span className="block w-5 sm:w-6 h-[2px] bg-current"></span>
+              <span className="block w-5 sm:w-6 h-[2px] bg-current"></span>
+              <span className="block w-5 sm:w-6 h-[2px] bg-current"></span>
             </div>
           </button>
         </div>
@@ -155,18 +157,18 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[75%] max-w-[420px] bg-[#071A1F] text-white z-[999] transform transition-transform duration-500 md:hidden ${
+        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[75%] md:w-[60%] max-w-[420px] bg-[#071A1F] text-white z-[999] transform transition-transform duration-500 md:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <button
-          className="absolute top-6 right-6 text-3xl"
+          className="absolute top-5 sm:top-6 right-5 sm:right-6 text-3xl"
           onClick={() => setMenuOpen(false)}
         >
           ×
         </button>
 
-        <div className="flex flex-col justify-center items-center h-full gap-8 text-[18px] tracking-[0.2em] uppercase font-semibold">
+        <div className="flex flex-col justify-center items-center h-full gap-6 sm:gap-8 text-[16px] sm:text-[18px] tracking-[0.2em] uppercase font-semibold">
           {links.map((link) => (
             <Link
               key={link.name}
