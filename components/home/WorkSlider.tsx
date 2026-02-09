@@ -6,20 +6,20 @@ import Image from "next/image";
 /* ✅ 4 SLIDES (2 images each) */
 const slides = [
   {
-    left: "/images/services/web3.png",
-    right: "/images/services/uiux3.png",
+    left: "/images/services/web4.png",
+    right: "/images/services/uiux4.png",
   },
   {
-    left: "/images/services/software1.png",
-    right: "/images/services/app4.png",
+    left: "/images/services/software2.png",
+    right: "/images/services/app5.png",
   },
   {
-    left: "/images/services/support1.png",
-    right: "/images/services/iot1.png",
+    left: "/images/services/support2.png",
+    right: "/images/services/iot2.png",
   },
   {
-    left: "/images/services/ai1.png",
-    right: "/images/services/infrastructure1.png",
+    left: "/images/services/ai2.png",
+    right: "/images/services/infrastructure2.png",
   },
 ];
 
