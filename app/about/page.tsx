@@ -50,189 +50,249 @@ export default function AboutPage() {
 <main ref={pageRef} className="w-full bg-white text-[#071A1F] overflow-x-hidden">
 
 {/* ================= HERO ================= */}
-<section className="
-  bg-gradient-to-b from-white to-[#F6FBFC]
-  px-5 sm:px-8 lg:px-[8vw]
-  pt-[14vh] sm:pt-[18vh]
-  pb-[10vh] sm:pb-[14vh]
-">
+<section className="bg-gradient-to-b from-white to-[#F6FBFC] px-5 sm:px-8 lg:px-[8vw] pt-[16vh] pb-[12vh]">
+
   <div className="max-w-[1400px] mx-auto">
 
-    <h1 className="about-anim text-[clamp(2.4rem,8vw,8rem)] leading-[1.05] font-semibold">
+    <h1 className="about-anim text-[clamp(2.5rem,8vw,7rem)] leading-[1.05] font-semibold">
 
-      {/* LINE 1 — GRADIENT */}
-      <span className="
-        block
-        bg-gradient-to-r 
-        from-[#071A1F] 
-        via-[#1F6677] 
-        to-[#4DA6B8]
-        bg-clip-text text-transparent
-      ">
+      <span className="block bg-gradient-to-r from-[#071A1F] via-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
         Engineering powerful
       </span>
 
-      {/* LINE 2 — BLACK */}
       <span className="block text-black">
         digital solutions.
       </span>
 
     </h1>
 
-    <div className="about-anim mt-5 sm:mt-6 w-[70px] sm:w-[80px] h-[3px] bg-[#1F6677]/40"/>
+    <div className="about-anim mt-6 w-[80px] h-[3px] bg-[#1F6677]/40"/>
 
-    <p className="about-anim mt-6 sm:mt-8 max-w-[720px]
-      text-[15px] sm:text-[18px]
-      leading-[1.8]
-      text-black/70
-    ">
-      Qiro Tech is a software company delivering scalable web,
-      mobile, and cloud solutions. We combine engineering excellence,
-      innovation, and strategy to build technology that drives
-      real business growth.
+    <p className="about-anim mt-8 max-w-[720px] text-[18px] leading-[1.8] text-black/70">
+      Qiro Tech is a modern software company delivering scalable web,
+      mobile, AI and cloud solutions that help businesses grow,
+      automate, and innovate.
     </p>
 
   </div>
 </section>
 
-{/* TEAM IMAGE */}
-<section className="py-[8vh] sm:py-[12vh]">
-  <div className="group overflow-hidden rounded-2xl mx-5 sm:mx-8 lg:mx-[6vw] shadow-xl">
+{/* ================= TEAM IMAGE ================= */}
+<section className="py-[10vh]">
+  <div className="group overflow-hidden rounded-3xl mx-5 sm:mx-8 lg:mx-[6vw] shadow-xl">
     <Image
       src="/images/about/team1.png"
-      alt="Team"
+      alt="Qiro Tech Team"
       width={2200}
       height={900}
-      className="w-full h-auto object-cover transition duration-700 group-hover:scale-110"
+      className="w-full h-auto object-cover transition duration-700 group-hover:scale-105"
     />
   </div>
 </section>
 
-{/* ================= INTRO ================= */}
-<section className="
-  bg-gradient-to-br from-[#071A1F] via-[#0E3A43] to-[#1F6677]
-  text-white
-  px-5 sm:px-8 lg:px-[8vw]
-  py-[10vh] sm:py-[16vh]
-">
-  <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-[8vh] lg:gap-[8vw]">
+{/* ================= ABOUT QIRO TECH ================= */}
+<section className="px-6 lg:px-[8vw] py-[16vh] bg-white">
 
-    <div>
-      <h2 className="about-anim text-[clamp(2rem,5vw,4.5rem)] font-semibold leading-[1.1]">
-        We build software that <br /> powers businesses.
-      </h2>
+  <div className="max-w-[1100px] mx-auto text-center">
 
-      <div className="about-anim mt-6 sm:mt-8 w-[60px] h-[2px] bg-white/40"/>
+    {/* Heading */}
+    <h2 className="about-anim text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-tight">
+      <span className="text-black">About </span>
+
+      <span className="bg-gradient-to-r from-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
+        Qiro Tech
+      </span>
+    </h2>
+
+    {/* Accent Line */}
+    <div className="about-anim w-24 h-[3px] bg-gradient-to-r from-[#1F6677] to-[#4DA6B8] mx-auto mt-6 rounded-full"/>
+
+    {/* Main Content */}
+    <p className="about-anim mt-10 text-lg leading-[2] text-black/70 max-w-[900px] mx-auto">
+      Qiro Tech is a technology-driven company focused on building
+      smart, scalable and secure digital products. We partner with
+      startups, SMEs and enterprises to transform ideas into
+      impactful digital solutions that drive real business growth.
+    </p>
+
+    <p className="about-anim mt-6 text-lg leading-[2] text-black/70 max-w-[900px] mx-auto">
+      Our expertise spans web platforms, mobile applications,
+      enterprise systems and cloud solutions. Every product we
+      build is designed with performance, user experience and
+      long-term scalability in mind.
+    </p>
+
+    <p className="about-anim mt-6 text-lg leading-[2] text-black/60 max-w-[850px] mx-auto">
+      At Qiro Tech, we don’t just develop software —
+      we create digital experiences that help businesses
+      innovate, automate and stay ahead in a fast-changing world.
+    </p>
+
+  </div>
+
+</section>
+
+{/* ================= STORY / WHO / ACTION ================= */}
+<section className="bg-[#F6FBFC] px-6 lg:px-[8vw] py-[18vh]">
+
+  <div className="max-w-[1200px] mx-auto space-y-32">
+
+    {/* OUR STORY */}
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+
+      <div className="about-anim">
+        <h3 className="text-4xl lg:text-5xl font-semibold text-[#1F6677] leading-tight">
+          Our Story
+        </h3>
+
+        <div className="w-16 h-[2px] bg-[#1F6677]/40 mt-6"/>
+
+        <p className="mt-8 text-lg leading-[2] text-black/70">
+          Qiro Tech started with one belief —
+          technology should create real impact.
+          What began as a small group of passionate
+          developers has evolved into a digital
+          partner for growing businesses.
+        </p>
+
+        <p className="mt-6 text-lg leading-[2] text-black/70">
+          Over the years, we’ve helped companies
+          launch platforms, automate operations
+          and scale digitally in competitive markets.
+        </p>
+      </div>
+
+      <div className="about-anim text-[120px] lg:text-[160px] font-semibold text-[#1F6677]/10">
+        01
+      </div>
+
     </div>
 
-    <div className="space-y-5 sm:space-y-6 text-[15px] sm:text-[18px] leading-[1.9] text-white/80 max-w-[720px]">
-      <p className="about-anim">
-        At Qiro Tech, technology is more than code — it is a business enabler.
-        We design and develop systems that improve efficiency,
-        enhance user experience, and accelerate growth.
-      </p>
 
-      <p className="about-anim">
-        From startups to enterprises, we partner with organizations
-        to build reliable digital platforms tailored to their goals.
-      </p>
+    {/* EMPOWERING */}
+    <div className="grid md:grid-cols-2 gap-16 items-center">
 
-      <p className="about-anim text-white/70">
-        Our solutions are secure, scalable, and built for long-term success.
-      </p>
+      <div className="about-anim text-[120px] lg:text-[160px] font-semibold text-[#1F6677]/10 md:text-left text-right order-2 md:order-1">
+        02
+      </div>
+
+      <div className="about-anim order-1 md:order-2">
+        <h3 className="text-4xl lg:text-5xl font-semibold text-[#1F6677] leading-tight">
+          Empowering Through Action
+        </h3>
+
+        <div className="w-16 h-[2px] bg-[#1F6677]/40 mt-6"/>
+
+        <p className="mt-8 text-lg leading-[2] text-black/70">
+          We focus on execution, not just ideas.
+          Our team builds solutions that automate
+          workflows, reduce manual effort and
+          increase business efficiency.
+        </p>
+
+        <p className="mt-6 text-lg leading-[2] text-black/70">
+          Every product we develop is designed
+          to deliver measurable value and
+          long-term scalability.
+        </p>
+      </div>
+
+    </div>
+
+
+    {/* WHO WE ARE */}
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+
+      <div className="about-anim">
+        <h3 className="text-4xl lg:text-5xl font-semibold text-[#1F6677] leading-tight">
+          Who We Are
+        </h3>
+
+        <div className="w-16 h-[2px] bg-[#1F6677]/40 mt-6"/>
+
+        <p className="mt-8 text-lg leading-[2] text-black/70">
+          We are designers, engineers and
+          problem-solvers who love building
+          meaningful digital experiences.
+        </p>
+
+        <p className="mt-6 text-lg leading-[2] text-black/70">
+          Collaboration, innovation and
+          transparency define our culture.
+          We work as partners, not vendors.
+        </p>
+      </div>
+
+      <div className="about-anim text-[120px] lg:text-[160px] font-semibold text-[#1F6677]/10">
+        03
+      </div>
+
     </div>
 
   </div>
+
+</section>
+
+
+{/* ================= STATS ================= */}
+<section className="bg-[#071A1F] text-white px-6 lg:px-[8vw] py-[12vh]">
+
+  <div className="max-w-[1200px] mx-auto grid md:grid-cols-3 gap-10 text-center">
+
+    {[
+      { num: "50+", label: "Projects Delivered" },
+      { num: "20+", label: "Global Clients" },
+      { num: "5+", label: "Years Experience" },
+    ].map((s, i) => (
+      <div key={i} className="about-anim">
+        <h3 className="text-5xl font-semibold text-[#4DA6B8]">{s.num}</h3>
+        <p className="mt-3 text-white/70">{s.label}</p>
+      </div>
+    ))}
+
+  </div>
+
 </section>
 
 {/* ================= VISION & MISSION ================= */}
-<section className="bg-[#F6FBFC] px-5 sm:px-8 lg:px-[8vw] py-[10vh] sm:py-[14vh]">
-  <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-[6vh] sm:gap-[8vh]">
+<section className="bg-white px-6 lg:px-[8vw] py-[14vh]">
 
-    <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-md">
-      <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">Vision</span>
-      <h3 className="about-anim text-[clamp(1.8rem,4vw,3rem)] font-semibold mt-5 mb-5">
+  <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12">
+
+    <div className="about-anim bg-[#F6FBFC] p-10 rounded-2xl">
+      <span className="uppercase tracking-[0.35em] text-sm text-[#1F6677]">Vision</span>
+      <h3 className="text-3xl font-semibold mt-5 mb-4">
         Empower businesses with technology
       </h3>
-      <p className="about-anim text-[15px] sm:text-[17px] leading-[1.9] text-black/70">
-        Our vision is to become a trusted global technology partner,
-        enabling companies to innovate and scale through modern software.
+      <p className="text-black/70 leading-[1.8]">
+        Become a trusted global technology partner helping companies
+        innovate and scale through digital solutions.
       </p>
     </div>
 
-    <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-md">
-      <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">Mission</span>
-      <h3 className="about-anim text-[clamp(1.8rem,4vw,3rem)] font-semibold mt-5 mb-5">
+    <div className="about-anim bg-[#F6FBFC] p-10 rounded-2xl">
+      <span className="uppercase tracking-[0.35em] text-sm text-[#1F6677]">Mission</span>
+      <h3 className="text-3xl font-semibold mt-5 mb-4">
         Deliver reliable digital solutions
       </h3>
-      <p className="about-anim text-[15px] sm:text-[17px] leading-[1.9] text-black/70">
-        We aim to build secure, scalable, and user-centric applications
-        that solve real business challenges.
+      <p className="text-black/70 leading-[1.8]">
+        Build secure, scalable and user-centric applications
+        solving real-world business challenges.
       </p>
     </div>
 
-  </div>
-</section>
-
-{/* ================= CULTURE ================= */}
-<section className="bg-white px-5 sm:px-8 lg:px-[8vw] py-[12vh] sm:py-[16vh]">
-
-  <div className="grid lg:grid-cols-2 gap-[6vh] sm:gap-[8vh] lg:gap-[8vw] items-center">
-
-    <div className="about-anim group relative w-full h-[45vh] sm:h-[60vh] lg:h-[75vh] rounded-3xl overflow-hidden shadow-2xl">
-      <Image
-        src="/images/about/culture1.png"
-        alt="Culture"
-        fill
-        className="object-cover transition duration-700 group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-[#071A1F]/10"/>
-    </div>
-
-    <div className="max-w-[620px]">
-      <span className="about-anim uppercase tracking-[0.35em] text-sm text-[#1F6677]">
-        Culture
-      </span>
-
-      <h3 className="about-anim text-[clamp(1.8rem,3vw,2.6rem)] font-semibold mt-4 mb-6">
-        Our Work Culture
-      </h3>
-
-      <div className="about-anim w-[60px] h-[2px] bg-[#1F6677]/40 mb-6"/>
-
-      <div className="space-y-5 text-[15px] sm:text-[18px] leading-[1.9] text-black/70">
-        <p className="about-anim">We believe in collaboration, transparency, and innovation.</p>
-        <p className="about-anim">Our teams work closely with clients to ensure success.</p>
-        <p className="about-anim text-black/60">Continuous learning and improvement define our mindset.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-{/* ================= PROCESS ================= */}
-<section className="bg-white py-[10vh] sm:py-[12vh]">
-
-  <div className="group relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden rounded-2xl shadow-xl">
-    <Image
-      src="/images/about/cinematic-2.png"
-      alt="Process"
-      fill
-      className="object-cover transition duration-700 group-hover:scale-110"
-    />
-    <div className="absolute inset-0 bg-[#071A1F]/10"/>
   </div>
 
 </section>
 
 {/* ================= FINAL ================= */}
-<section className="px-5 sm:px-8 lg:px-[8vw] py-[12vh] sm:py-[16vh] text-center bg-gradient-to-b from-white to-[#F6FBFC]">
+<section className="px-6 lg:px-[8vw] py-[14vh] text-center bg-gradient-to-b from-white to-[#F6FBFC]">
 
-  <h2 className="about-anim text-[clamp(1.8rem,6vw,5rem)] font-semibold">
+  <h2 className="about-anim text-[clamp(2rem,6vw,4.5rem)] font-semibold">
     We don’t just build software.<br/>We build growth.
   </h2>
 
-  <p className="about-anim mt-5 sm:mt-6 text-[#1F6677] font-medium">
+  <p className="about-anim mt-6 text-[#1F6677] font-medium">
     Qiro Tech — Smart Software for Modern Businesses.
   </p>
 

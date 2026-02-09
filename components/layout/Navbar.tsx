@@ -78,8 +78,8 @@ export default function Navbar() {
             <Image
               src="/images/logo4.png"
               alt="Logo"
-              width={350}
-              height={350}
+              width={400}
+              height={400}
               priority
               className="
                 w-[44px] sm:w-[52px] md:w-[58px]
