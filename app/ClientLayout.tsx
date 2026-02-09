@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Cursor from "@/components/layout/Cursor";
-import SayHi from "@/components/SayHi";
+import Footer from "@/components/Footer"; // ✅ FIXED IMPORT
 
 export default function ClientLayout({
   children,
@@ -51,7 +51,7 @@ export default function ClientLayout({
           </main>
 
           {/* Global Footer / CTA */}
-          <SayHi />
+          <Footer />
 
         </div>
       </div>
