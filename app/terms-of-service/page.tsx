@@ -28,7 +28,7 @@ export default function TermsPage() {
           </motion.h1>
 
           <p className="text-black/50 text-xs sm:text-sm">
-            Last Updated: September 04, 2025
+            Last Updated: February 01, 2026
           </p>
 
         </div>
@@ -106,7 +106,7 @@ export default function TermsPage() {
             </h2>
 
             <p className="text-white/80 text-sm sm:text-base">
-              QIRO TECH Innovation Pvt. Ltd.
+              QIRO TECH INNOVATION PVT. LTD.
             </p>
 
             <p className="text-white/80 leading-relaxed text-sm sm:text-base">
@@ -138,7 +138,7 @@ const sections = [
   {
     title: "1. Ownership of Rights & Use of Content",
     content: [
-      "All materials, content, logos, trademarks, software, code, designs, graphics, text, and data are the intellectual property of DW Innovation or its licensors.",
+      "All materials, content, logos, trademarks, software, code, designs, graphics, text, and data are the intellectual property of QIRO TECH Innovation or its licensors.",
       "You may not copy, reproduce, modify, distribute, publish, or create derivative works without written consent.",
       "We grant a limited, non-exclusive license to use the Services for lawful business purposes.",
     ],
@@ -164,7 +164,7 @@ const sections = [
   {
     title: "4. Limitation of Liability",
     content: [
-      "DW Innovation is not liable for indirect or consequential damages.",
+      "QIRO TECH Innovation is not liable for indirect or consequential damages.",
       "Total liability shall not exceed fees paid in the last 12 months.",
     ],
   },
@@ -198,7 +198,7 @@ const sections = [
   {
     title: "9. Indemnification",
     content: [
-      "You agree to indemnify DW Innovation against claims arising from misuse or violations.",
+      "You agree to indemnify QIRO TECH Innovation against claims arising from misuse or violations.",
     ],
   },
   {

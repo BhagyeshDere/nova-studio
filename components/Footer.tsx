@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations";
 import Link from "next/link";
-import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function SayHi() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -98,7 +99,7 @@ export default function SayHi() {
     </a>
 
     <a href="#" className="hover:text-[#1F6677] transition">
-      <FaTwitter />
+      <FaXTwitter />
     </a>
 
     <a href="#" className="hover:text-[#1F6677] transition">

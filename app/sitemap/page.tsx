@@ -86,25 +86,26 @@ export default function SitemapPage() {
 
 const sitemap = [
   {
-    title: "Home",
-    links: [
-      { name: "Home", href: "/" },
-      { name: "Our Valuable Clients", href: "/" },
-      { name: "Our Expertise", href: "/services" },
-    ],
-  },
+  title: "Home",
+  links: [
+    { name: "Home", href: "/" },
+    { name: "Who We Are", href: "/about" },
+    { name: "Our Expertise", href: "/services" },
+  ],
+},
+
 
   {
     title: "Services",
     links: [
-      { name: "Website Development & SEO", href: "/services" },
-      { name: "Mobile & Web App Development", href: "/services" },
-      { name: "UI/UX Design", href: "/services" },
-      { name: "Custom Software Development", href: "/services" },
-      { name: "AI & Machine Learning", href: "/services" },
-      { name: "Cloud & DevOps Solutions", href: "/services" },
-      { name: "ERP & CRM Systems", href: "/services" },
-      { name: "IoT & Hardware Solutions", href: "/services" },
+      { name: "Website Development & SEO Services", href: "/services" },
+    { name: "UI & UX Design", href: "/services" },
+    { name: "Custom Software Development", href: "/services" },
+    { name: "Mobile & Web App", href: "/services" },
+    { name: "Software Maintenance and Support", href: "/services" },
+    { name: "IoT Application Development", href: "/services" },
+    { name: "AI-ML Solutions", href: "/services" },
+    { name: "Infrastructure Management Services", href: "/services" },
     ],
   },
 
@@ -121,8 +122,7 @@ const sitemap = [
     title: "Works",
     links: [
       { name: "Our Projects", href: "/works" },
-      { name: "Case Studies", href: "/works" },
-      { name: "Portfolio", href: "/works" },
+     
     ],
   },
 

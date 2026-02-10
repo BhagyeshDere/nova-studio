@@ -86,9 +86,8 @@ export default function Navbar() {
               hidden md:flex
               flex-1
               items-center
-              justify-between
-
-              pl-[6vw] lg:pl-[7vw]
+              justify-center
+              gap-8 lg:gap-10
             "
           >
             {links.map((link) => {
@@ -104,8 +103,9 @@ export default function Navbar() {
                     {link.name}
                   </span>
 
+                  {/* ACTIVE DOT */}
                   {active && (
-                    <span className="absolute left-0 -bottom-2 w-full h-[2px] bg-[#1F6677]" />
+                    <span className="absolute left-1/2 -translate-x-1/2 -bottom-3 w-1.5 h-1.5 rounded-full bg-[#1F6677]" />
                   )}
                 </Link>
               );

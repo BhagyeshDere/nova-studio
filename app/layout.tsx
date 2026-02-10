@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import ClientLayout from "./ClientLayout";
+import WhatsAppButton from "@/components/WhatsAppButton"; // ✅ ADDED
 
 /* ============================
    SEO + META
@@ -91,6 +92,9 @@ export default function RootLayout({
         <ClientLayout>
           {children}
         </ClientLayout>
+
+        {/* ✅ WhatsApp Floating Button */}
+        <WhatsAppButton />
       </body>
     </html>
   );

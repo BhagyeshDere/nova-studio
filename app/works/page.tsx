@@ -26,7 +26,6 @@ export default function WorksPage() {
           "
         >
           <span className="text-black">Our </span>
-
           <span className="bg-gradient-to-r from-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
             Works
           </span>
@@ -57,81 +56,90 @@ export default function WorksPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="w-full"
+            className="
+              px-5 sm:px-8 lg:px-[8vw]
+              py-[10vh]
+            "
           >
 
-            {/* FULL HEIGHT IMAGE */}
+            {/* ALTERNATING LAYOUT */}
             <div className="
-              relative
-              w-full
-              h-screen
-            ">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                priority
-                className="object-cover"
-              />
-            </div>
-
-            {/* TEXT CONTENT */}
-            <div className="
-              px-5 sm:px-8 lg:px-[8vw]
-              max-w-5xl
+              grid lg:grid-cols-2
+              gap-12
+              items-center
+              max-w-7xl
               mx-auto
-              py-[8vh]
-              space-y-6
-              text-center
             ">
 
-              <h2 className="
-                text-[clamp(1.8rem,4.5vw,2.6rem)]
-                font-semibold
-              ">
-                {project.title}
-              </h2>
-
-              <div className="
-                bg-[#1F6677]/10
-                p-5 sm:p-6
-                rounded-xl
-                border border-[#1F6677]/20
-                text-left
-              ">
-                <h3 className="font-semibold mb-2 text-[#1F6677]">
-                  Project Overview
-                </h3>
-
-                <p className="
-                  text-sm
-                  text-black/70
-                  leading-relaxed
-                ">
-                  {project.overview}
-                </p>
+              {/* IMAGE */}
+              <div className={`
+                relative w-full
+                h-[95vh] lg:h-[110vh]
+                overflow-hidden
+                ${i % 2 !== 0 ? "lg:order-2" : ""}
+              `}>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain"
+                />
               </div>
 
-              <div className="
-                bg-[#1F6677]/10
-                p-5 sm:p-6
-                rounded-xl
-                border border-[#1F6677]/20
-                text-left
-              ">
-                <h3 className="font-semibold mb-2 text-[#1F6677]">
-                  Key Features
-                </h3>
+              {/* TEXT */}
+              <div className={`
+                space-y-6
+                ${i % 2 !== 0 ? "lg:order-1" : ""}
+              `}>
 
-                <ul className="
-                  text-sm
-                  space-y-2
-                  text-black/70
+                <h2 className="
+                  text-[clamp(2rem,4.5vw,3rem)]
+                  font-semibold
                 ">
-                  {project.features.map((f, idx) => (
-                    <li key={idx}>• {f}</li>
-                  ))}
-                </ul>
+                  {project.title}
+                </h2>
+
+                {/* OVERVIEW */}
+                <div className="
+                  bg-[#1F6677]/10
+                  p-6
+                  rounded-xl
+                  border border-[#1F6677]/20
+                ">
+                  <h3 className="font-semibold mb-3 text-[#1F6677]">
+                    Project Overview
+                  </h3>
+
+                  <p className="text-[15px] leading-relaxed text-black/70">
+                    {project.overview}
+                  </p>
+
+                  <p className="text-[15px] leading-relaxed text-black/70 mt-3">
+                    This project was designed with a strong focus on user
+                    experience, scalability, and long-term business growth.
+                    Our team ensured seamless performance, modern UI design,
+                    and future-ready architecture.
+                  </p>
+                </div>
+
+                {/* FEATURES */}
+                <div className="
+                  bg-[#1F6677]/10
+                  p-6
+                  rounded-xl
+                  border border-[#1F6677]/20
+                ">
+                  <h3 className="font-semibold mb-3 text-[#1F6677]">
+                    Key Features
+                  </h3>
+
+                  <ul className="space-y-2 text-black/70">
+                    {project.features.map((f, idx) => (
+                      <li key={idx}>• {f}</li>
+                    ))}
+                  </ul>
+                </div>
+
               </div>
 
             </div>
@@ -153,7 +161,7 @@ const projects = [
     title: "P. N. Gadgil & Sons Ltd.",
     image: "/images/projects/project11.png",
     overview:
-      "Enterprise retail solution enabling fleet tracking, expense reporting, and large-scale operational control.",
+      "Enterprise retail solution enabling fleet tracking, expense reporting, and large-scale operational control. Built to handle enterprise-scale logistics and improve operational visibility across locations.",
     features: [
       "Vehicle tracking & fleet management",
       "Expense reporting system",
@@ -166,7 +174,7 @@ const projects = [
     title: "Solarica Nexus – CRM",
     image: "/images/projects/project22.png",
     overview:
-      "Centralized CRM unifying operations across multiple companies.",
+      "Centralized CRM unifying operations across multiple companies with real-time data insights and streamlined communication between departments.",
     features: [
       "Central CRM database",
       "Multi-company management",
@@ -179,7 +187,7 @@ const projects = [
     title: "LGM Sports – Ecommerce",
     image: "/images/projects/project33.png",
     overview:
-      "Modern ecommerce platform for sports retail with secure payments.",
+      "Modern ecommerce platform for sports retail featuring a seamless shopping experience, fast performance, and secure transactions.",
     features: [
       "Advanced catalog system",
       "Secure checkout",
@@ -192,7 +200,7 @@ const projects = [
     title: "Admark Digitech",
     image: "/images/projects/project44.png",
     overview:
-      "Sales management platform for tracking leads and performance.",
+      "Sales management platform that empowers teams with insights, real-time tracking, and improved conversion strategies.",
     features: [
       "Lead management",
       "Sales pipeline tracking",
@@ -202,10 +210,10 @@ const projects = [
   },
 
   {
-    title: "DW Innovation HRMS",
+    title: "CRM Innovation HRMS",
     image: "/images/projects/project5555.png",
     overview:
-      "Employee management system centralizing HR operations.",
+      "Comprehensive HR management solution simplifying employee lifecycle management and internal processes.",
     features: [
       "Attendance management",
       "Leave system",
@@ -218,7 +226,7 @@ const projects = [
     title: "Aquagreen Tech",
     image: "/images/projects/project66.png",
     overview:
-      "Corporate website for sustainable water solutions company.",
+      "Corporate website built to showcase sustainable water solutions with a strong brand story and modern UI.",
     features: [
       "SEO-optimized design",
       "Responsive layout",

@@ -67,14 +67,25 @@ export default function WorkSlider() {
               aspect-[3/4]
               overflow-hidden
               bg-white
-              shadow-[0_20px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(255,255,255,0.15)]
+              transition-all duration-500
+
+              shadow-[0_30px_70px_rgba(0,0,0,0.9)]
+
+              hover:-translate-y-2
             "
             >
               <Image
                 src={slides[index].left}
                 alt=""
                 fill
-                className="object-cover"
+                className="
+                  object-cover
+                  grayscale
+                  contrast-125
+                  brightness-90
+                  transition-all duration-500
+                  hover:grayscale-0
+                "
               />
             </div>
 
@@ -87,19 +98,30 @@ export default function WorkSlider() {
               aspect-[3/4]
               overflow-hidden
               bg-white
-              shadow-[0_20px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(255,255,255,0.15)]
+              transition-all duration-500
+
+              shadow-[0_30px_70px_rgba(0,0,0,0.9)]
+
+              hover:-translate-y-2
             "
             >
               <Image
                 src={slides[index].right}
                 alt=""
                 fill
-                className="object-cover"
+                className="
+                  object-cover
+                  grayscale
+                  contrast-125
+                  brightness-90
+                  transition-all duration-500
+                  hover:grayscale-0
+                "
               />
             </div>
           </div>
 
-          {/* DOTS + TEXT */}
+          {/* DOTS */}
           <div
             className="
             flex items-center justify-between
@@ -108,7 +130,6 @@ export default function WorkSlider() {
             mx-auto lg:ml-auto
           "
           >
-            {/* DOT BUTTONS */}
             <div className="flex items-center gap-4">
               {slides.map((_, i) => (
                 <button
@@ -141,9 +162,6 @@ export default function WorkSlider() {
                 </button>
               ))}
             </div>
-
-            {/* TEXT */}
-            
           </div>
         </div>
       </div>

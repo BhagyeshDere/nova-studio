@@ -55,37 +55,7 @@ export default function WorksShowcase() {
           z-20
         "
       >
-        <div className="flex items-center gap-4 sm:gap-5">
-          <a href="#" className="hover:opacity-60">
-            <Image
-              src="images/icons/instagram.svg"
-              alt=""
-              width={18}
-              height={18}
-              className="sm:w-5 sm:h-5"
-            />
-          </a>
-
-          <a href="#" className="hover:opacity-60">
-            <Image
-              src="images/icons/linkedin.svg"
-              alt=""
-              width={18}
-              height={18}
-              className="sm:w-5 sm:h-5"
-            />
-          </a>
-
-          <a href="#" className="hover:opacity-60">
-            <Image
-              src="images/icons/whatsapp.svg"
-              alt=""
-              width={18}
-              height={18}
-              className="sm:w-5 sm:h-5"
-            />
-          </a>
-        </div>
+        
 
         {/* Scroll to slider */}
         <button

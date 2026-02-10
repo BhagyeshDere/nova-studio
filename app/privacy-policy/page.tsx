@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
           </motion.h1>
 
           <p className="text-black/50 text-xs sm:text-sm">
-            Last Updated: September 04, 2025
+            Last Updated: February 01, 2026
           </p>
 
         </div>
