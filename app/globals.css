@@ -232,3 +232,28 @@ body.dark-theme::-webkit-scrollbar-thumb {
     backdrop-filter: none !important;
   }
 }
+
+
+
+/* ===== BUBBLES ===== */
+
+.bubble {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.25;
+  animation: float 18s infinite linear;
+  background: linear-gradient(135deg,#1F6677,#4DA6B8);
+}
+
+.bubble1 { width:220px;height:220px;top:10%;left:5%;animation-duration:20s; }
+.bubble2 { width:160px;height:160px;top:60%;left:10%;animation-duration:18s; }
+.bubble3 { width:200px;height:200px;top:20%;right:5%;animation-duration:22s; }
+.bubble4 { width:140px;height:140px;bottom:10%;right:15%;animation-duration:16s; }
+.bubble5 { width:180px;height:180px;bottom:20%;left:40%;animation-duration:24s; }
+
+@keyframes float {
+  0% { transform:translateY(0) translateX(0); }
+  50% { transform:translateY(-60px) translateX(40px); }
+  100% { transform:translateY(0) translateX(0); }
+}

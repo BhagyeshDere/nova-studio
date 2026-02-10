@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations";
 import Link from "next/link";
+import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 export default function SayHi() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -58,39 +59,19 @@ export default function SayHi() {
     >
 
 {/* ================= TOP GRID ================= */}
-<div
-  className="
-    grid
-    lg:grid-cols-2
-    gap-[6vh] sm:gap-[8vh]
-    items-start
-  "
->
+<div className="grid lg:grid-cols-2 gap-[6vh] sm:gap-[8vh] items-start">
 
 {/* ===== LEFT SIDE ===== */}
 <div>
 
-<h1
-  className="
-    hi-line
-    font-bold
-    tracking-tight
-    leading-[0.9]
-    whitespace-nowrap
-    text-[clamp(2.5rem,12vw,12rem)]
-  "
->
+<h1 className="
+  hi-line font-bold tracking-tight leading-[0.9]
+  whitespace-nowrap text-[clamp(2.5rem,12vw,12rem)]
+">
   SAY HI!
 </h1>
 
-<div className="
-  hi-sub
-  mt-[3vh]
-  max-w-[520px]
-  text-[14px] sm:text-[16px]
-  text-white/70
-  leading-relaxed
-">
+<div className="hi-sub mt-[3vh] max-w-[520px] text-[14px] sm:text-[16px] text-white/70 leading-relaxed">
   <p>Tell us about your project.</p>
   <p>Let’s collaborate and make great stuff.</p>
 </div>
@@ -98,33 +79,43 @@ export default function SayHi() {
 </div>
 
 {/* ===== RIGHT SIDE CONTACT ===== */}
-<div
-  className="
-    hi-contact
-    grid grid-cols-1 sm:grid-cols-2
-    gap-6 sm:gap-8
-    text-sm text-white/70
-    w-full
-  "
->
+<div className="hi-contact grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-sm text-white/70 w-full">
 
+{/* MAIL */}
 <div>
   <p className="text-white font-medium mb-2">Mail ID</p>
   <p className="break-all">hr@qirotec.com</p>
 </div>
 
+{/* SOCIAL MEDIA */}
 <div>
-  <p className="text-white font-medium mb-2">Phone</p>
-  <p>+91 9860507744</p>
-  <p>+91 9113882782</p>
+  <p className="text-white font-medium mb-2">Social Media</p>
+
+  <div className="flex items-center gap-5 text-xl">
+
+    <a href="#" className="hover:text-[#1F6677] transition">
+      <FaInstagram />
+    </a>
+
+    <a href="#" className="hover:text-[#1F6677] transition">
+      <FaTwitter />
+    </a>
+
+    <a href="#" className="hover:text-[#1F6677] transition">
+      <FaLinkedin />
+    </a>
+
+  </div>
 </div>
 
+{/* BUSINESS ENQUIRY */}
 <div>
   <p className="text-white font-medium mb-2">Business Enquiry</p>
   <p>+91 9860507744</p>
   <p>+91 9113882782</p>
 </div>
 
+{/* LOCATION */}
 <div>
   <p className="text-white font-medium mb-2">Location</p>
   <p>
@@ -142,59 +133,23 @@ export default function SayHi() {
 <div className="relative mt-[6vh] sm:mt-[7vh] w-full h-[1px] bg-white/20 overflow-hidden">
   <div
     ref={dotRef}
-    className="
-      absolute
-      top-[-5px]
-      left-1/2
-      w-3 h-3
-      bg-[#1F6677]
-      rounded-full
-      shadow-[0_0_12px_#1F6677]
-    "
+    className="absolute top-[-5px] left-1/2 w-3 h-3 bg-[#1F6677] rounded-full shadow-[0_0_12px_#1F6677]"
   />
 </div>
 
-{/* ===== NAV ===== */}
-<div
-  className="
-    hi-nav
-    mt-[4vh]
-    flex flex-wrap
-    gap-x-5 sm:gap-x-6
-    gap-y-3
-    uppercase tracking-widest
-    text-white/70
-    text-xs sm:text-sm
-  "
->
+{/* NAV */}
+<div className="hi-nav mt-[4vh] flex flex-wrap gap-x-5 sm:gap-x-6 gap-y-3 uppercase tracking-widest text-white/70 text-xs sm:text-sm">
   {["Home","About","Services","Works","Career","Contact"].map((item,i)=>(
-    <Link 
-      key={i}
-      href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-      className="hover:text-[#1F6677] transition"
-    >
+    <Link key={i} href={item === "Home" ? "/" : `/${item.toLowerCase()}`} className="hover:text-[#1F6677] transition">
       {item}
     </Link>
   ))}
 </div>
 
-{/* ===== FOOTER BOTTOM ===== */}
-<div
-  className="
-    hi-footer
-    mt-[5vh]
-    flex flex-col md:flex-row
-    justify-between
-    items-start md:items-center
-    gap-4 sm:gap-6
-    text-xs sm:text-sm
-    text-white/50
-  "
->
+{/* FOOTER */}
+<div className="hi-footer mt-[5vh] flex flex-col md:flex-row justify-between items-start md:items-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/50">
 
-<p>
-  © QIRO TECH Innovation Pvt. Ltd. All rights reserved.
-</p>
+<p>© QIRO TECH INNOVATION PVT. LTD. All rights reserved.</p>
 
 <div className="flex flex-wrap gap-4 sm:gap-6">
   <Link href="/privacy-policy" className="hover:text-[#1F6677]">Privacy Policy</Link>
@@ -204,6 +159,6 @@ export default function SayHi() {
 
 </div>
 
-    </section>
-  );
+</section>
+);
 }

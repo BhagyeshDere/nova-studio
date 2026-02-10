@@ -44,10 +44,6 @@ export default function Navbar() {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
   const textColor = isDark ? "text-white" : "text-black";
 
   return (
@@ -59,12 +55,11 @@ export default function Navbar() {
       >
         <div
           className={`
-            relative
-            w-full 
-            px-4 sm:px-6 md:px-[6vw] lg:px-[7vw]
+            w-full
             h-[60px] sm:h-[70px] md:h-[80px]
-
             flex items-center
+
+            px-4 sm:px-6 md:px-[6vw] lg:px-[7vw]
 
             backdrop-blur-md
             bg-white/70
@@ -74,35 +69,27 @@ export default function Navbar() {
           `}
         >
           {/* LOGO */}
-          <Link href="/" className="group shrink-0 z-10">
+          <Link href="/" className="shrink-0">
             <Image
               src="/images/logo4.png"
               alt="Logo"
-              width={400}
-              height={400}
+              width={500}
+              height={500}
               priority
-              sizes="(max-width:768px) 44px, (max-width:1024px) 52px, 58px"
-              className="
-                w-[40px] sm:w-[50px] md:w-[58px]
-                h-auto
-                transition-transform duration-300 
-                group-hover:scale-105
-              "
+              className="w-[40px] sm:w-[50px] md:w-[58px] h-auto"
             />
           </Link>
 
-          {/* CENTER MENU */}
+          {/* MENU */}
           <div
-            className={`
-              hidden md:flex items-center
-              gap-[3vw] lg:gap-[2.6vw]
-              text-[11px] lg:text-[13px]
-              tracking-[0.18em]
-              uppercase font-medium
+            className="
+              hidden md:flex
+              flex-1
+              items-center
+              justify-between
 
-              absolute left-1/2 -translate-x-1/2
-              ${textColor}
-            `}
+              pl-[6vw] lg:pl-[7vw]
+            "
           >
             {links.map((link) => {
               const active = pathname === link.href;
@@ -111,76 +98,36 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="relative group"
+                  className="relative group text-[12px] lg:text-[13px] tracking-[0.18em] uppercase font-medium"
                 >
                   <span className="opacity-80 group-hover:opacity-100 transition">
                     {link.name}
                   </span>
 
                   {active && (
-                    <span
-                      className="
-                      absolute left-0 -bottom-2
-                      w-full h-[2px]
-                      bg-[#1F6677]
-                    "
-                    />
+                    <span className="absolute left-0 -bottom-2 w-full h-[2px] bg-[#1F6677]" />
                   )}
                 </Link>
               );
             })}
           </div>
 
-          {/* HAMBURGER */}
+          {/* RIGHT SPACER */}
+          <div className="hidden md:block w-[40px] sm:w-[50px] md:w-[58px]" />
+
+          {/* MOBILE MENU BUTTON */}
           <button
             className={`md:hidden ml-auto ${textColor}`}
             onClick={() => setMenuOpen(true)}
           >
             <div className="space-y-1.5">
-              <span className="block w-5 sm:w-6 h-[2px] bg-current"></span>
-              <span className="block w-5 sm:w-6 h-[2px] bg-current"></span>
-              <span className="block w-5 sm:w-6 h-[2px] bg-current"></span>
+              <span className="block w-6 h-[2px] bg-current"></span>
+              <span className="block w-6 h-[2px] bg-current"></span>
+              <span className="block w-6 h-[2px] bg-current"></span>
             </div>
           </button>
         </div>
       </nav>
-
-      {/* OVERLAY */}
-      <div
-        onClick={() => setMenuOpen(false)}
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[998] transition-opacity duration-400 md:hidden ${
-          menuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      />
-
-      {/* MOBILE MENU */}
-      <div
-        className={`fixed top-0 right-0 h-screen w-[85%] sm:w-[75%] md:w-[60%] max-w-[420px] bg-[#071A1F] text-white z-[999] transform transition-transform duration-500 md:hidden ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <button
-          className="absolute top-5 sm:top-6 right-5 sm:right-6 text-3xl"
-          onClick={() => setMenuOpen(false)}
-        >
-          ×
-        </button>
-
-        <div className="flex flex-col justify-center items-center h-full gap-6 sm:gap-8 text-[16px] sm:text-[18px] tracking-[0.2em] uppercase font-semibold">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-[#4DA6B8] transition"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      </div>
     </>
   );
 }

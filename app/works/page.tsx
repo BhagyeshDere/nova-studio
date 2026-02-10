@@ -48,11 +48,7 @@ export default function WorksPage() {
 
 
       {/* PROJECTS */}
-      <section className="
-        px-5 sm:px-8 lg:px-[8vw]
-        pb-[12vh] sm:pb-[14vh]
-        space-y-[12vh] sm:space-y-[18vh] lg:space-y-[32]
-      ">
+      <section className="w-full">
 
         {projects.map((project, i) => (
           <motion.div
@@ -61,11 +57,33 @@ export default function WorksPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="max-w-5xl mx-auto"
+            className="w-full"
           >
 
+            {/* FULL HEIGHT IMAGE */}
+            <div className="
+              relative
+              w-full
+              h-screen
+            ">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+
             {/* TEXT CONTENT */}
-            <div className="space-y-6 text-center">
+            <div className="
+              px-5 sm:px-8 lg:px-[8vw]
+              max-w-5xl
+              mx-auto
+              py-[8vh]
+              space-y-6
+              text-center
+            ">
 
               <h2 className="
                 text-[clamp(1.8rem,4.5vw,2.6rem)]
@@ -116,25 +134,6 @@ export default function WorksPage() {
                 </ul>
               </div>
 
-            </div>
-
-            {/* BIG IMAGE BELOW */}
-            <div className="
-              relative
-              w-full
-              h-[260px] sm:h-[380px] md:h-[460px] lg:h-[520px]
-              mt-8 sm:mt-10
-              rounded-2xl
-              overflow-hidden
-              shadow-2xl
-              border border-[#1F6677]/20
-            ">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
             </div>
 
           </motion.div>
@@ -204,7 +203,7 @@ const projects = [
 
   {
     title: "DW Innovation HRMS",
-    image: "/images/projects/project55.png",
+    image: "/images/projects/project5555.png",
     overview:
       "Employee management system centralizing HR operations.",
     features: [

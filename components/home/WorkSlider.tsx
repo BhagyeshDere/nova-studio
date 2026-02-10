@@ -67,6 +67,7 @@ export default function WorkSlider() {
               aspect-[3/4]
               overflow-hidden
               bg-white
+              shadow-[0_20px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(255,255,255,0.15)]
             "
             >
               <Image
@@ -86,6 +87,7 @@ export default function WorkSlider() {
               aspect-[3/4]
               overflow-hidden
               bg-white
+              shadow-[0_20px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(255,255,255,0.15)]
             "
             >
               <Image

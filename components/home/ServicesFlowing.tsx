@@ -24,103 +24,106 @@ export default function ServicesFlowing() {
     );
   }, []);
 
+  const services = [
+    {
+      name: "Website Development & SEO Services",
+      image: "/images/services/web4.png",
+    },
+    {
+      name: "UI & UX Design",
+      image: "/images/services/uiux4.png",
+    },
+    {
+      name: "Custom Software Development",
+      image: "/images/services/software2.png",
+    },
+    {
+      name: "Mobile & Web App",
+      image: "/images/services/app5.png",
+    },
+    {
+      name: "Software Maintenance and Support",
+      image: "/images/services/support2.png",
+    },
+    {
+      name: "IoT Application Development",
+      image: "/images/services/iot2.png",
+    },
+    {
+      name: "AI-ML Solutions",
+      image: "/images/services/ai2.png",
+    },
+    {
+      name: "Infrastructure Management Services",
+      image: "/images/services/infrastructure2.png",
+    },
+  ];
+
   return (
     <section
       ref={sectionRef}
       className="
-        w-full bg-white text-[#071A1F]
+        w-full
+        bg-white
+        text-[#071A1F]
         px-5 sm:px-10 lg:px-[6vw]
         pb-[12vh]
       "
     >
-      <div className="max-w-[1600px] mx-auto text-center">
+      <div className="max-w-[1500px] mx-auto text-center">
 
         {/* LABEL */}
-        <p className="flow-fade text-sm tracking-[0.35em] uppercase text-[#1F6677] mb-[6vh]">
+        <p className="flow-fade text-sm tracking-[0.35em] uppercase text-[#1F6677] mb-[7vh]">
           OUR EXPERTISE
         </p>
 
-        {/* ===== FLOWING LINES ===== */}
+        {/* SERVICES */}
         <div
           className="
             font-semibold
-            leading-[1.1]
-            space-y-[4vh]
-            text-[clamp(1.6rem,6vw,5rem)]
+            leading-[1.15]
+            space-y-[5vh]
+            text-[clamp(1.4rem,4vw,3rem)]
           "
         >
+          {services.map((service, i) => (
+            <div
+              key={i}
+              className="
+                flow-line
+                flex flex-col lg:flex-row
+                items-center
+                justify-center
+                gap-4 lg:gap-8
+              "
+            >
+              {/* TEXT */}
+              <span className="text-center">
+                {service.name}
+              </span>
 
-          {/* 1 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>WEBSITE</span>
-            <Capsule text="WEB & SEO" image="/images/services/web.png" />
-            <span>DEVELOPMENT</span>
-          </div>
-
-  {/* 4 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>MOBILE</span>
-            <Capsule text="APP DEV" image="/images/services/app1.png" />
-            <span>SOLUTIONS</span>
-          </div>
-
-          {/* 2 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>UI/UX</span>
-            <Capsule text="UI & UX" image="/images/services/uiux1.png" />
-            <span>DESIGN</span>
-          </div>
-
-          {/* 3 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>CUSTOM</span>
-            <Capsule text="SOFTWARE" image="/images/services/software.png" />
-            <span>DEVELOPMENT</span>
-          </div>
-
-         
-
-          {/* 5 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>SOFTWARE</span>
-            <Capsule text="SUPPORT" image="/images/services/support.png" />
-            <span>MAINTENANCE</span>
-          </div>
-
-          {/* 6 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>SMART</span>
-            <Capsule text="IOT APPS" image="/images/services/iot.png" />
-            <span>SYSTEMS</span>
-          </div>
-
-          {/* 7 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>AI</span>
-            <Capsule text="AI & ML" image="/images/services/ai.png" />
-            <span>SOLUTIONS</span>
-          </div>
-
-          {/* 8 */}
-          <div className="flow-line flex flex-wrap items-center justify-center gap-3">
-            <span>CLOUD</span>
-            <Capsule text="INFRASTRUCTURE" image="/images/services/infrastructure.png" />
-            <span>MANAGEMENT</span>
-          </div>
-
+              {/* CAPSULE */}
+              <Capsule
+                text={service.name}
+                image={service.image}
+              />
+            </div>
+          ))}
         </div>
 
         {/* BUTTON */}
-        <div className="flow-fade mt-[8vh]">
+        <div className="flow-fade mt-[9vh]">
           <Link href="/services">
             <button
               className="
                 px-8 py-4
-                bg-[#1F6677] text-white
+                bg-[#1F6677]
+                text-white
                 rounded-full
                 border border-[#1F6677]
                 transition
-                hover:bg-white hover:text-[#1F6677]
+                hover:bg-white
+                hover:text-[#1F6677]
               "
             >
               Explore Services →
@@ -133,16 +136,18 @@ export default function ServicesFlowing() {
   );
 }
 
-/* Capsule */
+/* CAPSULE COMPONENT */
 function Capsule({ text, image }: any) {
   return (
     <div
       className="
-        w-[120px] sm:w-[180px]
-        h-[38px] sm:h-[52px]
-        rounded-full overflow-hidden
+        w-[220px] sm:w-[260px] lg:w-[300px]
+        h-[46px] sm:h-[54px]
+        rounded-full
+        overflow-hidden
         border border-[#1F6677]/30
         flex-shrink-0
+        bg-white
       "
     >
       <FlowingCapsule

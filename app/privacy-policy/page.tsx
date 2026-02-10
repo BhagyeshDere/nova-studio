@@ -46,44 +46,48 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
-      {/* POLICY SECTIONS */}
+      {/* SINGLE POLICY BOX */}
       <section className="px-4 sm:px-8 lg:px-[8vw] pb-[10vh] sm:pb-[12vh] lg:pb-[14vh]">
-        <div className="max-w-[900px] mx-auto space-y-6 sm:space-y-8">
+        <div className="max-w-[900px] mx-auto">
 
-          {sections.map((sec, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="
-                bg-white
-                p-5 sm:p-7 lg:p-9
-                rounded-2xl
-                shadow-sm
-                border border-black/5
-                hover:shadow-md
-                transition
-              "
-            >
-              <h2 className="
-                text-[18px] sm:text-[20px] lg:text-[22px]
-                font-semibold
-                mb-3 sm:mb-4
-                flex items-center gap-3
-              ">
-                <span className="w-2 h-5 sm:h-6 bg-[#1F6677] rounded-full"/>
-                {sec.title}
-              </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="
+              bg-white
+              p-6 sm:p-8 lg:p-10
+              rounded-2xl
+              shadow-md
+              border border-black/5
+              space-y-8
+            "
+          >
 
-              <div className="space-y-2 sm:space-y-3 text-[14px] sm:text-[15px] lg:text-[16px] text-black/70 leading-[1.8]">
-                {sec.content.map((c, idx) => (
-                  <p key={idx}>{c}</p>
-                ))}
+            {sections.map((sec, i) => (
+              <div key={i}>
+
+                <h2 className="
+                  text-[18px] sm:text-[20px] lg:text-[22px]
+                  font-semibold
+                  mb-3 sm:mb-4
+                  flex items-center gap-3
+                ">
+                  <span className="w-2 h-5 sm:h-6 bg-[#1F6677] rounded-full"/>
+                  {sec.title}
+                </h2>
+
+                <div className="space-y-2 sm:space-y-3 text-[14px] sm:text-[15px] lg:text-[16px] text-black/70 leading-[1.8]">
+                  {sec.content.map((c, idx) => (
+                    <p key={idx}>{c}</p>
+                  ))}
+                </div>
+
               </div>
-            </motion.div>
-          ))}
+            ))}
+
+          </motion.div>
 
           {/* CONTACT CARD */}
           <motion.div
@@ -91,6 +95,7 @@ export default function PrivacyPolicyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="
+              mt-10
               bg-gradient-to-br
               from-[#071A1F]
               via-[#0E3A43]
@@ -122,6 +127,7 @@ export default function PrivacyPolicyPage() {
             <p className="text-white/90 font-medium text-sm sm:text-base">
               Phone: +91 8669086844, +91 9595505063
             </p>
+
           </motion.div>
 
         </div>

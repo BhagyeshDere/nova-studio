@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations";
+import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 export default function ContactPage() {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -166,13 +167,25 @@ export default function ContactPage() {
       </p>
     </div>
 
+    {/* SOCIAL MEDIA (replaced Phone) */}
     <div>
-      <p className="text-[11px] sm:text-sm text-[#1F6677] uppercase mb-2 tracking-wide">
-        Phone
+      <p className="text-[11px] sm:text-sm text-[#1F6677] uppercase mb-3 tracking-wide">
+        Social Media
       </p>
-      <p className="text-base sm:text-lg font-medium">
-        +91 9284117439
-      </p>
+
+      <div className="flex gap-5 text-2xl text-[#1F6677]">
+        <a href="#" className="hover:opacity-70 transition">
+          <FaInstagram />
+        </a>
+
+        <a href="#" className="hover:opacity-70 transition">
+          <FaTwitter />
+        </a>
+
+        <a href="#" className="hover:opacity-70 transition">
+          <FaLinkedin />
+        </a>
+      </div>
     </div>
 
     <div>
@@ -180,8 +193,8 @@ export default function ContactPage() {
         Business Enquiry
       </p>
       <p className="text-base sm:text-lg font-medium">
-        +91 8669086844<br/>
-        +91 9595505063
+        +91 9860507744<br/>
+        +91 9113882782
       </p>
     </div>
 

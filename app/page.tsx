@@ -65,15 +65,28 @@ export default function Home() {
       {/* CINEMATIC LINE */}
       <section
         className="
+          relative
           w-full
           bg-white
           text-black
           px-5 sm:px-8 md:px-10 lg:px-[8vw]
           pt-0
           pb-[6vh] sm:pb-[8vh] lg:pb-[10vh]
+          overflow-hidden
         "
       >
-        <div className="max-w-[1500px] mx-auto w-full">
+
+        {/* ANIMATED BUBBLES */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <div className="bubble bubble1" />
+          <div className="bubble bubble2" />
+          <div className="bubble bubble3" />
+          <div className="bubble bubble4" />
+          <div className="bubble bubble5" />
+        </div>
+
+        {/* CONTENT */}
+        <div className="relative z-10 w-full">
 
           <BlurText
             text="We build future-ready software for modern businesses."
@@ -85,36 +98,44 @@ export default function Home() {
               tracking-[-0.02em]
               leading-[1.05]
               text-[clamp(2.3rem,7vw,5.5rem)]
-              max-w-[1100px]
+              w-full
             "
           />
 
           <div
             className="
               mt-[3vh] sm:mt-[4vh] lg:mt-[5vh]
-              max-w-[720px]
-              space-y-5 sm:space-y-6
+              w-full
+              space-y-6
               text-black/70
               leading-[1.9]
               text-[15px]
               sm:text-[17px]
               lg:text-[19px]
+              max-w-[1100px]
             "
           >
             <p>
               At Qiro Tech, we specialize in Website Development, UI/UX Design,
               Custom Software, Mobile & Web Applications, and enterprise-grade
-              digital solutions.
+              digital solutions. From AI-ML systems and IoT platforms to
+              infrastructure management and long-term support, we design
+              technology that is scalable, secure, and built for real-world
+              performance.
             </p>
 
             <p>
-              From AI-ML systems and IoT platforms to infrastructure management
-              and long-term support, we create reliable technology that scales
-              with your business.
+              We partner with startups, enterprises, and growing businesses to
+              transform ideas into powerful digital products. Whether launching
+              a new platform or modernizing existing systems, Qiro Tech becomes
+              your long-term technology partner — helping you innovate,
+              automate, and grow in a fast-moving digital world.
             </p>
+
           </div>
 
         </div>
+
       </section>
 
       <ServicesFlowing />

@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 1.2 }}
           className="
             font-semibold
-            leading-[1.02]
+            leading-[1.12]   /* ✅ FIXED HERE */
             tracking-[-0.03em]
             text-[clamp(3rem,7vw,6.5rem)]
             max-w-[1200px]

@@ -100,27 +100,81 @@ export default function CareersPage() {
     >
 
 {/* ================= HERO ================= */}
-<section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[90vh] flex items-center justify-center text-center bg-white">
+<section className="
+  relative
+  min-h-[80vh]
+  flex items-center justify-center
+  text-center
+  bg-white
+">
 
-  <div className="relative z-10 px-4 sm:px-8 md:px-12 lg:px-[8vw] text-black max-w-[1100px] mx-auto">
-    <p className="reveal uppercase tracking-[0.3em] text-[11px] sm:text-xs md:text-sm text-[#1F6677] mb-4 sm:mb-6">
+  <div className="
+    w-full
+    max-w-[1000px]
+    mx-auto
+    px-6 sm:px-10 lg:px-[8vw]
+  ">
+
+    {/* CAREERS LABEL */}
+    <p className="
+      uppercase
+      tracking-[0.35em]
+      text-[12px]
+      text-[#1F6677]
+      mb-6
+    ">
       CAREERS
     </p>
 
-    <h1 className="reveal text-[clamp(2rem,7vw,6rem)] font-semibold leading-[1.1]">
-      <span className="block bg-gradient-to-r from-[#071A1F] via-[#1F6677] to-[#4DA6B8] bg-clip-text text-transparent">
+    {/* 2-LINE HEADING */}
+    <h1 className="
+      font-semibold
+      leading-[1.05]
+      tracking-[-0.02em]
+    ">
+
+      {/* LINE 1 */}
+      <span className="
+        block
+        text-[clamp(3rem,6vw,5.8rem)]
+        bg-gradient-to-r
+        from-[#071A1F]
+        via-[#1F6677]
+        to-[#4DA6B8]
+        bg-clip-text
+        text-transparent
+      ">
         Build technology
       </span>
-      <span className="block text-black">
+
+      {/* LINE 2 */}
+      <span className="
+        block
+        text-[clamp(2.8rem,5.5vw,5.3rem)]
+        text-black
+      ">
         that shapes the future.
       </span>
+
     </h1>
 
-    <p className="reveal mt-5 sm:mt-6 max-w-[620px] mx-auto text-black/70 text-sm sm:text-base md:text-lg leading-[1.8]">
+    {/* SUBTEXT */}
+    <p className="
+      mt-8
+      max-w-[560px]
+      mx-auto
+      text-black/60
+      text-[16px]
+      leading-[1.8]
+    ">
       Join Qiro Tech and work on real-world software solutions.
     </p>
+
   </div>
+
 </section>
+
+
 
 
 {/* ================= JOIN OUR TEAM ================= */}

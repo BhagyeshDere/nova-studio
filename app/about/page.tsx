@@ -233,21 +233,6 @@ export default function AboutPage() {
 
 </section>
 
-{/* ================= STATS ================= */}
-<section className="bg-[#071A1F] text-white px-5 sm:px-6 lg:px-[8vw] py-[10vh] sm:py-[12vh]">
-
-  <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
-
-    {[{num:"50+",label:"Projects Delivered"},{num:"20+",label:"Global Clients"},{num:"5+",label:"Years Experience"}].map((s,i)=>(
-      <div key={i} className="about-anim">
-        <h3 className="text-4xl sm:text-5xl font-semibold text-[#4DA6B8]">{s.num}</h3>
-        <p className="mt-3 text-white/70">{s.label}</p>
-      </div>
-    ))}
-
-  </div>
-
-</section>
 
 {/* ================= VISION & MISSION ================= */}
 <section className="bg-white px-5 sm:px-6 lg:px-[8vw] py-[12vh] sm:py-[14vh]">
