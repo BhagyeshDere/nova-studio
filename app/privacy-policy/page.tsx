@@ -125,7 +125,7 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <p className="text-white/90 font-medium text-sm sm:text-base">
-              Phone: +91 8669086844, +91 9595505063
+              Phone: +91 9860507744, +91 9113882782
             </p>
 
           </motion.div>

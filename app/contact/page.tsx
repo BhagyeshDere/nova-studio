@@ -195,6 +195,7 @@ export default function ContactPage() {
       <p className="text-base sm:text-lg font-medium">
         +91 9860507744<br/>
         +91 9113882782
+        
       </p>
     </div>
 
