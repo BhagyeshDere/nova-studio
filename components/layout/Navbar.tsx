@@ -87,7 +87,7 @@ export default function Navbar() {
               flex-1
               items-center
               justify-end
-              pr-14 lg:pr-18
+              pr-20 lg:pr-28
               gap-8 lg:gap-10
             "
           >
