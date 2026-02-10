@@ -86,7 +86,8 @@ export default function Navbar() {
               hidden md:flex
               flex-1
               items-center
-              justify-center
+              justify-end
+              pr-14 lg:pr-18
               gap-8 lg:gap-10
             "
           >
@@ -103,7 +104,6 @@ export default function Navbar() {
                     {link.name}
                   </span>
 
-                  {/* ACTIVE DOT */}
                   {active && (
                     <span className="absolute left-1/2 -translate-x-1/2 -bottom-3 w-1.5 h-1.5 rounded-full bg-[#1F6677]" />
                   )}
@@ -112,10 +112,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* RIGHT SPACER */}
-          <div className="hidden md:block w-[40px] sm:w-[50px] md:w-[58px]" />
-
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE BUTTON */}
           <button
             className={`md:hidden ml-auto ${textColor}`}
             onClick={() => setMenuOpen(true)}

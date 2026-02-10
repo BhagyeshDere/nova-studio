@@ -58,7 +58,7 @@ export default function WorksPage() {
             transition={{ duration: 0.7 }}
             className="
               px-5 sm:px-8 lg:px-[8vw]
-              py-[10vh]
+              py-[5vh]
             "
           >
 
@@ -74,7 +74,7 @@ export default function WorksPage() {
               {/* IMAGE */}
               <div className={`
                 relative w-full
-                h-[95vh] lg:h-[110vh]
+                h-[65vh] lg:h-[75vh]
                 overflow-hidden
                 ${i % 2 !== 0 ? "lg:order-2" : ""}
               `}>
